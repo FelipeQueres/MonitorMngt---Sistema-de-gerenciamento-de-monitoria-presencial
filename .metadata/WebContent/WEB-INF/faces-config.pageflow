@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pageflow:Pageflow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf14414088248142" configfile="/Monitoria/WebContent/WEB-INF/faces-config.xml">
+  <nodes xsi:type="pageflow:PFPage" name="*" x="122" y="754" id="pf14414089013153" referenceLink="//@navigationRule.3/@fromViewId|" outlinks="pf14414089013154 pf14414089013155 pf14414089013156 pf14414089013157 pf14414089013158 pf144140913571214" path="*"/>
+  <nodes xsi:type="pageflow:PFPage" name="atividadeCadastrar.xhtml" x="338" y="178" id="pf14414089013159" referenceLink="//@navigationRule.0/@navigationCase.0/@toViewId|" inlinks="pf14414089013154" path="/atividadeCadastrar.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="index.xhtml" x="338" y="562" id="pf144140890131510" referenceLink="//@navigationRule.1/@navigationCase.0/@toViewId|" inlinks="pf14414089013155" path="/index.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="atividadeEditar.xhtml" x="338" y="946" id="pf144140890131511" referenceLink="//@navigationRule.2/@navigationCase.0/@toViewId|" inlinks="pf14414089013156" path="/atividadeEditar.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="atividades.xhtml" x="338" y="1330" id="pf144140890131512" referenceLink="//@navigationRule.3/@navigationCase.0/@toViewId|" inlinks="pf14414089013157" path="/atividades.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="cadastros.xhtml" x="408" y="360" id="pf144140890131513" inlinks="pf14414089013158" path="/cadastros.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="relatorios.xhtml" x="450" y="756" id="pf144140913571215" inlinks="pf144140913571214" path="/relatorios.xhtml"/>
+  <links id="pf14414089013154" target="pf14414089013159" source="pf14414089013153" outcome="atividadeCadastrar"/>
+  <links id="pf14414089013155" target="pf144140890131510" source="pf14414089013153" outcome="home"/>
+  <links id="pf14414089013156" target="pf144140890131511" source="pf14414089013153" outcome="atividadeEditar"/>
+  <links id="pf14414089013157" target="pf144140890131512" source="pf14414089013153" outcome="atividade"/>
+  <links id="pf14414089013158" target="pf144140890131513" source="pf14414089013153" outcome="cadastros"/>
+  <links id="pf144140913571214" target="pf144140913571215" source="pf14414089013153"/>
+</pageflow:Pageflow>
