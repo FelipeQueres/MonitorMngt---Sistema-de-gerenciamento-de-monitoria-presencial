@@ -1,0 +1,53 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:b="http://bootsfaces.net/ui" xmlns:p="http://primefaces.org/ui"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html">
+
+<ui:composition template="/resources/pages/_menu.xhtml">
+
+	<ui:define name="titulo">Editais</ui:define>
+	<ui:define name="body">
+		<b:panel title="Editais" collapsible="false">
+			<h:form>
+				<h:dataTable headerClass="header">
+					<p:column>
+						<f:facet name="header">
+							<h:outputText value="Número" />
+						</f:facet>
+					</p:column>
+
+					<p:column>
+						<f:facet name="header">
+							<h:outputText value="Escola" />
+						</f:facet>
+					</p:column>
+
+					<p:column>
+						<f:facet name="header">
+							<h:outputText value="Curso" />
+						</f:facet>
+					</p:column>
+
+
+					<p:column>
+						<f:facet name="header">
+							<h:outputText value="Período letivo" />
+						</f:facet>
+					</p:column>
+
+					<p:column >
+						<f:facet name="header">
+							<b:button value="Novo" />
+						</f:facet>
+					</p:column>
+
+					<!-- período letivo, período de inscrição, número de vagas, conteúdo programático e bibliografia -->
+				</h:dataTable>
+			</h:form>
+		</b:panel>
+	</ui:define>
+</ui:composition>
+</html>

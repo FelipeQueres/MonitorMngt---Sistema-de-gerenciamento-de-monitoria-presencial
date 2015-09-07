@@ -1,0 +1,18 @@
+.header {
+	text-align: center;
+	padding-left: 80px;
+	width: 20%;
+}
+
+.nome {
+	width: 30px;
+	padding-right: 100px;
+}
+
+.descricao {
+	padding: 100px;
+}
+
+.corpo {
+	text-align: center;
+}

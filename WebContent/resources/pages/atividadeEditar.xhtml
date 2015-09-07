@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:b="http://bootsfaces.net/ui" xmlns:p="http://primefaces.org/ui"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html">
+
+<ui:composition template="/resources/pages/_menu.xhtml">
+	<ui:define name="titulo">Alteração de Atividade</ui:define>
+	<ui:define name="body">
+		<b:panelGrid colSpans="2,10" size="sm">
+
+			<h:outputLabel value="Nome: " />
+			<h:outputLabel value="Alunos: "/>
+			<b:selectMultiMenu value="#{checkboxView.alunosSelecionados}" />
+		</b:panelGrid>
+	</ui:define>
+</ui:composition>
+</html>

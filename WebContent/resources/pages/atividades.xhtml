@@ -1,0 +1,59 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:b="http://bootsfaces.net/ui" xmlns:p="http://primefaces.org/ui"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html">
+
+<ui:composition template="/resources/pages/_menu.xhtml">
+
+	<ui:define name="titulo">Atividade</ui:define>
+	<ui:define name="body">
+
+		<b:panel title="Atividades" collapsible="false">
+			<h:form>
+				<h:dataTable headerClass="header" columnClasses="corpo">
+
+					<p:column>
+						<f:facet name="header">
+							<h:outputText value="Nome" styleClass="nome" />
+						</f:facet>
+					</p:column>
+
+					<p:column>
+						<f:facet name="header">
+							<h:outputText value="Data" />
+						</f:facet>
+					</p:column>
+
+					<p:column>
+						<f:facet name="header">
+							<h:outputText value="Alunos" />
+						</f:facet>
+					</p:column>
+
+					<p:column>
+						<f:facet name="header">
+							<h:outputText value="Descrição" styleClass="descricao" />
+						</f:facet>
+					</p:column>
+
+					<p:column>
+						<f:facet name="header">
+							<h:outputText value="#" />
+						</f:facet>
+					</p:column>
+
+					<p:column>
+						<f:facet name="header">
+							<b:button value="Nova" outcome="atividadeCadastrar"/>
+						</f:facet>
+					</p:column>
+
+				</h:dataTable>
+			</h:form>
+		</b:panel>
+	</ui:define>
+</ui:composition>
+</html>

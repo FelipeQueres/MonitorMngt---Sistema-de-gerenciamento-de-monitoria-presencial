@@ -9,7 +9,7 @@
 		<from-view-id>*</from-view-id>
 		<navigation-case>
 			<from-outcome>atividadeCadastrar</from-outcome>
-			<to-view-id>/atividadeCadastrar.xhtml</to-view-id>
+			<to-view-id>/resources/pages/atividadeCadastrar.xhtml</to-view-id>
 		</navigation-case>
 	</navigation-rule>
 
@@ -24,7 +24,7 @@
 		<from-view-id>*</from-view-id>
 		<navigation-case>
 			<from-outcome>atividadeEditar</from-outcome>
-			<to-view-id>/atividadeEditar.xhtml</to-view-id>
+			<to-view-id>/resources/pages/atividadeEditar.xhtml</to-view-id>
 		</navigation-case>
 	</navigation-rule>
 	<navigation-rule>
@@ -32,22 +32,15 @@
 		<from-view-id>*</from-view-id>
 		<navigation-case>
 			<from-outcome>atividade</from-outcome>
-			<to-view-id>/atividades.xhtml</to-view-id>
+			<to-view-id>/resources/pages/atividades.xhtml</to-view-id>
 		</navigation-case>
 	</navigation-rule>
 	<navigation-rule>
 		<display-name>*</display-name>
 		<from-view-id>*</from-view-id>
 		<navigation-case>
-			<from-outcome>cadastros</from-outcome>
-			<to-view-id>/cadastros.xhtml</to-view-id>
-		</navigation-case>
-	</navigation-rule>
-	<navigation-rule>
-		<display-name>*</display-name>
-		<from-view-id>*</from-view-id>
-		<navigation-case>
-			<to-view-id>/relatorios.xhtml</to-view-id>
+			<from-outcome>edital</from-outcome>
+			<to-view-id>/resources/pages/editais.xhtml</to-view-id>
 		</navigation-case>
 	</navigation-rule>
 
