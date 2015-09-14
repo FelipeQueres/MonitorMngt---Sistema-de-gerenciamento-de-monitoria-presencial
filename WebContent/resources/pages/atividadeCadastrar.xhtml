@@ -15,41 +15,22 @@
 		<div align="center">
 			<h2>Cadastro de Atividade</h2>
 			<br /> <br />
-			<table>
-				<tr>
-					<TD><h:outputLabel value="Nome: " /></TD>
-					<td><h:inputText size="30" /></td>
-				</tr>
-				<tr>
-					<td height="15"></td>
-				</tr>
-				<tr>
-					<td><h:outputLabel value="Data: " /></td>
-					<TD><p:calendar></p:calendar></TD>
-				</tr>
-				<tr>
-					<td height="15"></td>
-				</tr>
-				<tr>
-					<td><h:outputLabel value="Alunos: " /></td>
-					<td><p:selectCheckboxMenu id="menu" filter="true"
-							label="Alunos" filterMatchMode="startsWith"
-							panelStyle="width:250px" scrollHeight="100">
-							<f:selectItems value="#{checkboxView.alunos}" />
-						</p:selectCheckboxMenu></td>
-				</tr>
-				<tr>
-					<td height="15"></td>
-				</tr>
-				<tr>
-					<td><h:outputLabel value="Descrição: "></h:outputLabel></td>
-					<td><h:inputTextarea rows="4" cols="30" /></td>
-				</tr>
-				<tr>
-					<td></td>
-					<td><b:button value="Incluir" /></td>
-				</tr>
-			</table>
+
+			<h:panelGrid columns="2">
+				<h:outputLabel value="Nome: " />
+				<h:inputText size="30" />
+				<h:outputLabel value="Data: " />
+				<p:calendar></p:calendar>
+				<h:outputLabel value="Alunos: " />
+				<p:selectCheckboxMenu id="menu" filter="true" label="Alunos"
+					filterMatchMode="startsWith" panelStyle="width:250px"
+					scrollHeight="100">
+					<f:selectItems value="#{checkboxView.alunos}" />
+				</p:selectCheckboxMenu>
+				<h:outputLabel value="Descrição: " />
+				<h:inputTextarea rows="4" cols="30" />
+				<b:button value="Incluir" />
+			</h:panelGrid>
 
 		</div>
 

@@ -1,7 +1,7 @@
 .header {
 	text-align: center;
-	padding-left: 80px;
-	width: 20%;
+	padding-left: 100px;
+	width: 30%;
 }
 
 .nome {
@@ -15,4 +15,8 @@
 
 .corpo {
 	text-align: center;
+}
+
+.acoes {
+	text-align: right;
 }

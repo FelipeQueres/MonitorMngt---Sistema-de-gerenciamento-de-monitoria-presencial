@@ -13,7 +13,9 @@
 
 	<ui:define name="body">
 		<div align="center">
-			<b:panelGrid colSpans="2,10">
+			<h2>Cadastrar Edital</h2>
+			<BR /> <BR />
+			<h:panelGrid columns="2">
 				<h:outputLabel value="Número" />
 				<h:inputText />
 				<h:outputLabel value="Escola" />
@@ -28,11 +30,12 @@
 				<h:inputText />
 				<h:outputLabel value="Número de Vagas" />
 				<h:inputText />
-				<h:outputLabel value="Contúdo Programático" />
-				<h:inputText />
+				<h:outputLabel value="Contúdo Programático " />
+				<h:inputTextarea />
 				<h:outputLabel value="Bibliografia" />
 				<h:inputTextarea />
-			</b:panelGrid>
+				<b:button value="Cadastrar" />
+			</h:panelGrid>
 		</div>
 	</ui:define>
 </ui:composition>

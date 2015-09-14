@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:b="http://bootsfaces.net/ui" xmlns:p="http://primefaces.org/ui"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html">
+
+<ui:composition template="/resources/pages/_menu.xhtml">
+
+	<ui:define name="titulo">Cadastro de Aluno</ui:define>
+
+
+	<ui:define name="body">
+		<div align="center">
+
+			<H2>Cadastro de Aluno</H2>
+			<HR />
+			<h:form>
+				<h:panelGrid columns="2" cellspacing="20p" cellpadding="20">
+					<h:outputLabel value="Nome" />
+					<h:inputText />
+					<h:outputLabel value="Matrícula" />
+					<h:inputText />
+					<h:outputLabel value="Curso" />
+					<h:inputText />
+					<h:outputLabel value="Disciplina" />
+					<h:inputText />
+					<h:outputLabel value="RG" />
+					<h:inputText />
+					<h:outputLabel value="E-mail" />
+					<h:inputText />
+				</h:panelGrid>
+				<b:commandButton value="Cadastrar" />
+			</h:form>
+		</div>
+	</ui:define>
+</ui:composition>
+</html>

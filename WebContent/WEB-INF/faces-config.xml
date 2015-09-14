@@ -44,4 +44,58 @@
 		</navigation-case>
 	</navigation-rule>
 
+	<navigation-rule>
+		<display-name>*</display-name>
+		<from-view-id>*</from-view-id>
+		<navigation-case>
+			<from-outcome>editalCadastrar</from-outcome>
+			<to-view-id>/resources/pages/editalCadastrar.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
+	<navigation-rule>
+		<display-name>*</display-name>
+		<from-view-id>*</from-view-id>
+		<navigation-case>
+			<from-outcome>relatorioQuantitativo</from-outcome>
+			<to-view-id>/resources/pages/relatorioQuantitativo.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
+	<navigation-rule>
+		<display-name>*</display-name>
+		<from-view-id>*</from-view-id>
+		<navigation-case>
+			<from-outcome>relatorioAtividade</from-outcome>
+			<to-view-id>/resources/pages/relatorioAtividade.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
+	<navigation-rule>
+		<display-name>*</display-name>
+		<from-view-id>*</from-view-id>
+		<navigation-case>
+			<from-outcome>cadastroProfessor</from-outcome>
+			<to-view-id>/resources/pages/cadastroProfessor.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
+	<navigation-rule>
+		<display-name>*</display-name>
+		<from-view-id>*</from-view-id>
+		<navigation-case>
+			<from-outcome>cadastroAluno</from-outcome>
+			<to-view-id>/resources/pages/cadastroAluno.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
+	<navigation-rule>
+		<display-name>*</display-name>
+		<from-view-id>*</from-view-id>
+		<navigation-case>
+			<from-outcome>cadastroFuncionario</from-outcome>
+			<to-view-id>/resources/pages/cadastroFuncionario.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
 </faces-config>

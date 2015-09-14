@@ -8,21 +8,11 @@
 
 <ui:composition template="/resources/pages/_menu.xhtml">
 
-	<ui:define name="titulo">Atividade</ui:define>
+	<ui:define name="titulo">Relatórios Quantitativos</ui:define>
 	<ui:define name="body">
 
-		<b:panel title="Atividades" collapsible="false">
+		<b:panel title="Relatórios Quantitativos" collapsible="false">
 			<h:form>
-				<b:panelGrid colSpans="1,1,2,3,2,2,1">
-					<h:outputLabel value="Nome" />
-					<b:inputText size="20" />
-					<h:outputLabel value="Data" />
-					<p:calendar />
-					<p:selectCheckboxMenu label="Alunos"></p:selectCheckboxMenu>
-					<b:button value="Filtrar" outcome="atividadeCadastrar" />
-					<b:button value="Nova" outcome="atividadeCadastrar" />
-				</b:panelGrid>
-				<hr />
 				<h:dataTable headerClass="header" columnClasses="corpo">
 
 					<p:column>
@@ -33,27 +23,18 @@
 
 					<p:column>
 						<f:facet name="header">
-							<h:outputText value="Data" />
+							<h:outputText value="Quantidade de Alunos" />
 						</f:facet>
 					</p:column>
 
-					<p:column>
-						<f:facet name="header">
-							<h:outputText value="Alunos" />
-						</f:facet>
-					</p:column>
-
-					<p:column>
-						<f:facet name="header">
-							<h:outputText value="Descrição" styleClass="descricao" />
-						</f:facet>
-					</p:column>
-
-					<p:column>
+					<p:column styleClass="acoes">
 						<f:facet name="header">
 							<h:outputText value="Ações" />
 						</f:facet>
 						<h:panelGroup>
+							<b:commandButton icon="glyphicon glyphicon-info-sign"
+								tooltip="Detalhes" />
+
 							<b:commandButton icon="glyphicon glyphicon-edit" tooltip="Editar" />
 
 							<p:confirmDialog message="Deseja excluir este registro?"

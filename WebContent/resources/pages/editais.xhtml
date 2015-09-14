@@ -38,9 +38,27 @@
 						</f:facet>
 					</p:column>
 
-					<p:column >
+					<p:column>
 						<f:facet name="header">
-							<b:button value="Novo" />
+							<h:outputText value="Ações" />
+						</f:facet>
+						<h:panelGroup>
+							<b:commandButton icon="glyphicon glyphicon-info-sign"
+								tooltip="Detalhes" />
+
+							<b:commandButton icon="glyphicon glyphicon-edit" tooltip="Editar" />
+
+							<p:confirmDialog message="Deseja excluir este registro?"
+								severity="alert" showEffect="bounce" hideEffect="explode">
+								<b:commandButton icon="glyphicon glyphicon-trash"
+									tooltip="Excluir" />
+							</p:confirmDialog>
+						</h:panelGroup>
+					</p:column>
+
+					<p:column>
+						<f:facet name="header">
+							<b:button value="Novo" outcome="editalCadastrar" />
 						</f:facet>
 					</p:column>
 

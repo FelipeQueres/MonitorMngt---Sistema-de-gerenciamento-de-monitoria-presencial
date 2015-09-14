@@ -6,7 +6,7 @@
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:h="http://java.sun.com/jsf/html">
 <h:head>
-	<title><ui:insert name="titulo">Título</ui:insert></title>
+	<title>SGM - <ui:insert name="titulo">Título</ui:insert></title>
 	<h:outputStylesheet library="css" name="tableStyle.css" />
 </h:head>
 <h:body>
@@ -16,9 +16,18 @@
 			<b:navLink value="Início" outcome="home" />
 			<b:navLink value="Atividades" outcome="atividade" />
 			<b:navLink value="Editais" outcome="edital" />
-			<b:navLink value="Relatórios" />
+			<b:dropMenu value="Relatórios">
+				<b:navLink value="Relatórios Quantitativos"
+					outcome="relatorioQuantitativo" />
+				<b:navLink value="Relatórios de Atividades"
+					outcome="relatorioAtividade" />
+			</b:dropMenu>
 			<b:navLink value="Processos Seletivos" />
-			<b:navLink value="Cadastro" />
+			<b:dropMenu value="Cadastro">
+				<b:navLink value="Aluno" outcome="cadastroAluno" />
+				<b:navLink value="Professor" outcome="cadastroProfessor" />
+				<b:navLink value="Funcionário" outcome="cadastroFuncionario" />
+			</b:dropMenu>
 			<b:navLink value="Documentos" />
 			<b:navLink value="Contato" />
 			<b:navLink value="Sair" />
@@ -26,7 +35,9 @@
 	</b:navBar>
 
 	<div>
-		<ui:insert name="body"></ui:insert>
+		<ui:insert name="body">
+
+		</ui:insert>
 	</div>
 
 </h:body>
