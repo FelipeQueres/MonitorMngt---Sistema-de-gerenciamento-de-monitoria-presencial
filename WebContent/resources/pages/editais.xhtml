@@ -12,6 +12,10 @@
 	<ui:define name="body">
 		<b:panel title="Editais" collapsible="false">
 			<h:form>
+				<div align="right">
+					<b:button value="Novo" outcome="editalCadastrar" />
+				</div>
+				<hr />
 				<h:dataTable headerClass="header">
 					<p:column>
 						<f:facet name="header">
@@ -42,25 +46,16 @@
 						<f:facet name="header">
 							<h:outputText value="Ações" />
 						</f:facet>
-						<h:panelGroup>
-							<b:commandButton icon="glyphicon glyphicon-info-sign"
-								tooltip="Detalhes" />
+						<h:panelGrid columns="2">
+							<b:button icon="glyphicon glyphicon-edit" tooltip="Editar"
+								value="" size="sm" />
 
-							<b:commandButton icon="glyphicon glyphicon-edit" tooltip="Editar" />
 
-							<p:confirmDialog message="Deseja excluir este registro?"
-								severity="alert" showEffect="bounce" hideEffect="explode">
-								<b:commandButton icon="glyphicon glyphicon-trash"
-									tooltip="Excluir" />
-							</p:confirmDialog>
-						</h:panelGroup>
+							<b:button icon="glyphicon glyphicon-trash" tooltip="Excluir"
+								value="" size="sm" />
+						</h:panelGrid>
 					</p:column>
 
-					<p:column>
-						<f:facet name="header">
-							<b:button value="Novo" outcome="editalCadastrar" />
-						</f:facet>
-					</p:column>
 
 					<!-- período letivo, período de inscrição, número de vagas, conteúdo programático e bibliografia -->
 				</h:dataTable>

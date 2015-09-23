@@ -14,7 +14,7 @@
 	<ui:define name="body">
 		<div align="center">
 			<h2>Cadastro de Atividade</h2>
-			<br /> <br />
+			<hr />
 
 			<h:panelGrid columns="2">
 				<h:outputLabel value="Nome: " />
@@ -27,10 +27,14 @@
 					scrollHeight="100">
 					<f:selectItems value="#{checkboxView.alunos}" />
 				</p:selectCheckboxMenu>
+
+				<h:outputLabel value="Local da atividade" />
+				<h:inputTextarea rows="4" cols="30" />
 				<h:outputLabel value="Descrição: " />
 				<h:inputTextarea rows="4" cols="30" />
-				<b:button value="Incluir" />
 			</h:panelGrid>
+			<br />
+			<b:button value="Cadastrar" />
 
 		</div>
 

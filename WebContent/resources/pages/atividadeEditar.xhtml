@@ -7,14 +7,34 @@
 	xmlns:h="http://java.sun.com/jsf/html">
 
 <ui:composition template="/resources/pages/_menu.xhtml">
-	<ui:define name="titulo">Alteração de Atividade</ui:define>
-	<ui:define name="body">
-		<b:panelGrid colSpans="2,10" size="sm">
 
-			<h:outputLabel value="Nome: " />
-			<h:outputLabel value="Alunos: "/>
-			<b:selectMultiMenu value="#{checkboxView.alunosSelecionados}" />
-		</b:panelGrid>
+	<ui:define name="titulo">Alterar de Atividade</ui:define>
+
+
+	<ui:define name="body">
+		<div align="center">
+			<h2>Alterar de Atividade</h2>
+			<br /> <br />
+
+			<h:panelGrid columns="2">
+				<h:outputLabel value="Nome: " />
+				<h:inputText size="30" value="#{AtvMB.nomeAtv}"/>
+				<h:outputLabel value="Data: " />
+				<p:calendar></p:calendar>
+				<h:outputLabel value="Alunos: " />
+				<p:selectCheckboxMenu id="menu" filter="true" label="Alunos"
+					filterMatchMode="startsWith" panelStyle="width:250px"
+					scrollHeight="100">
+					<f:selectItems value="#{checkboxView.alunos}" />
+				</p:selectCheckboxMenu>
+				<h:outputLabel value="Local da atividade" />
+				<h:inputTextarea rows="4" cols="30" />
+				<h:outputLabel value="Descrição: " />
+				<h:inputTextarea rows="4" cols="30" value="#{AtvMB.descAtv}" />
+			</h:panelGrid>
+			<b:button value="Alterar" />
+		</div>
+
 	</ui:define>
 </ui:composition>
 </html>

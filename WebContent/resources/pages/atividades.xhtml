@@ -10,10 +10,9 @@
 
 	<ui:define name="titulo">Atividade</ui:define>
 	<ui:define name="body">
-
 		<b:panel title="Atividades" collapsible="false">
 			<h:form>
-				<b:panelGrid colSpans="1,1,2,3,2,2,1">
+				<!-- <b:panelGrid >
 					<h:outputLabel value="Nome" />
 					<b:inputText size="20" />
 					<h:outputLabel value="Data" />
@@ -21,51 +20,63 @@
 					<p:selectCheckboxMenu label="Alunos"></p:selectCheckboxMenu>
 					<b:button value="Filtrar" outcome="atividadeCadastrar" />
 					<b:button value="Nova" outcome="atividadeCadastrar" />
-				</b:panelGrid>
+				</b:panelGrid> 
+				<hr />-->
+				<div align="right">
+					<b:button value="Nova" outcome="atividadeCadastrar" />
+				</div>
 				<hr />
-				<h:dataTable headerClass="header" columnClasses="corpo">
+				<h:dataTable headerClass="header" value="#{AtvMB.atividades}">
 
 					<p:column>
 						<f:facet name="header">
-							<h:outputText value="Nome" styleClass="nome" />
+							<h:outputText value="Nome" />
 						</f:facet>
+						<h:outputText value="#{AtvMB.nomeAtv}" styleClass="bodyText" />
 					</p:column>
 
 					<p:column>
 						<f:facet name="header">
-							<h:outputText value="Data" />
+							<h:outputText value="Data" styleClass="bodyDate" />
 						</f:facet>
+						<h:outputText value="#{AtvMB.datacAtv}" />
 					</p:column>
 
 					<p:column>
 						<f:facet name="header">
 							<h:outputText value="Alunos" />
 						</f:facet>
+						<h:outputText value="João Pedro" styleClass="bodyText" />
 					</p:column>
 
 					<p:column>
 						<f:facet name="header">
-							<h:outputText value="Descrição" styleClass="descricao" />
+							<h:outputText value="Descrição" styleClass="acoes" />
 						</f:facet>
+						<h:outputText value="#{AtvMB.descAtv}" styleClass="bodyText" />
 					</p:column>
 
 					<p:column>
 						<f:facet name="header">
-							<h:outputText value="Ações" />
+							<h:outputText value="Ações" styleClass="bodyDate" />
 						</f:facet>
-						<h:panelGroup>
-							<b:commandButton icon="glyphicon glyphicon-edit" tooltip="Editar" />
+						<h:panelGrid columns="2">
+							<b:button icon="glyphicon glyphicon-info-sign"
+								tooltip="Informações" value="" size="sm" outcome="atividadeInfo" />
 
-							<p:confirmDialog message="Deseja excluir este registro?"
-								severity="alert" showEffect="bounce" hideEffect="explode">
-								<b:commandButton icon="glyphicon glyphicon-trash"
-									tooltip="Excluir" />
-							</p:confirmDialog>
-						</h:panelGroup>
+							<b:button icon="glyphicon glyphicon-edit" tooltip="Editar"
+								value="" size="sm" outcome="atividadeEditar" />
+
+							<b:button icon="glyphicon glyphicon-pencil"
+								tooltip="Informar realizadas" value="" size="sm"
+								outcome="atividadeRealizada" />
+
+							<b:commandButton icon="glyphicon glyphicon-trash"
+								tooltip="Excluir" value="" size="sm" />
+						</h:panelGrid>
 					</p:column>
-
-
 				</h:dataTable>
+
 			</h:form>
 		</b:panel>
 	</ui:define>

@@ -97,5 +97,23 @@
 			<to-view-id>/resources/pages/cadastroFuncionario.xhtml</to-view-id>
 		</navigation-case>
 	</navigation-rule>
+	
+	<navigation-rule>
+		<display-name>*</display-name>
+		<from-view-id>*</from-view-id>
+		<navigation-case>
+			<from-outcome>atividadeInfo</from-outcome>
+			<to-view-id>/resources/pages/atividadesInfo.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	
+	<navigation-rule>
+		<display-name>*</display-name>
+		<from-view-id>*</from-view-id>
+		<navigation-case>
+			<from-outcome>atividadeRealizada</from-outcome>
+			<to-view-id>/resources/pages/informarAtividadeRealizada.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
 
 </faces-config>
