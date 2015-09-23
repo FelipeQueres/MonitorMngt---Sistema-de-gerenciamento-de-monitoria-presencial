@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:b="http://bootsfaces.net/ui" xmlns:p="http://primefaces.org/ui"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html">
+
+<ui:composition template="/resources/pages/_menu.xhtml">
+
+	<ui:define name="titulo">Informação de Atividade</ui:define>
+	<ui:define name="body">
+		<div align="center">
+			<h2>Informações</h2>
+			<hr />
+			<h:panelGrid columns="2">
+
+				<h:outputLabel value="Nome: " />
+				<h:outputText size="30" value="#{AtvMB.nomeAtv}" />
+				<h:outputLabel value="Data: " />
+				<h:outputText size="23" readonly="true" value="#{AtvMB.datacAtv}" />
+				<h:outputLabel value="Alunos: " />
+				<p:selectCheckboxMenu id="menu" filter="true" label="Alunos"
+					filterMatchMode="startsWith" panelStyle="width:250px"
+					scrollHeight="100">
+					<f:selectItems value="#{checkboxView.alunos}" />
+				</p:selectCheckboxMenu>
+				<h:outputLabel value="Local da atividade" />
+				<h:inputTextarea rows="4" cols="30" readonly="true" />
+				<h:outputLabel value="Descrição: " />
+				<h:inputTextarea rows="4" cols="30" readonly="true"
+					value="#{AtvMB.descAtv}" />
+			</h:panelGrid>
+			<b:button value="Alterar" />
+		</div>
+	</ui:define>
+</ui:composition>
+</html>
