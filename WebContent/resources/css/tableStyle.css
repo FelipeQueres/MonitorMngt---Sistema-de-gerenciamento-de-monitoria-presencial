@@ -1,7 +1,18 @@
+@import
+	url("//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css")
+	;
+
 .header {
 	text-align: center;
-	padding-left: 100px;
 	width: 30%;
+}
+
+.bodyText {
+	text-align: left;
+}
+
+.bodyDate {
+	text-align: right;
 }
 
 .nome {
@@ -18,5 +29,6 @@
 }
 
 .acoes {
-	text-align: right;
+	text-align: center;
+	with: 30%;
 }
