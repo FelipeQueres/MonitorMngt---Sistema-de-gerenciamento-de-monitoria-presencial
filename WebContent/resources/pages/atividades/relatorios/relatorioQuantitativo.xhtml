@@ -13,7 +13,7 @@
 
 		<b:panel title="Relatórios Quantitativos" collapsible="false">
 			<h:form>
-				<h:dataTable headerClass="header" columnClasses="corpo">
+				<h:dataTable headerClass="header">
 
 					<p:column>
 						<f:facet name="header">
@@ -31,18 +31,8 @@
 						<f:facet name="header">
 							<h:outputText value="Ações" />
 						</f:facet>
-						<h:panelGroup>
-							<b:commandButton icon="glyphicon glyphicon-info-sign"
-								tooltip="Detalhes" />
-
-							<b:commandButton icon="glyphicon glyphicon-edit" tooltip="Editar" />
-
-							<p:confirmDialog message="Deseja excluir este registro?"
-								severity="alert" showEffect="bounce" hideEffect="explode">
-								<b:commandButton icon="glyphicon glyphicon-trash"
-									tooltip="Excluir" />
-							</p:confirmDialog>
-						</h:panelGroup>
+						<b:button icon="glyphicon glyphicon-info-sign" tooltip="Detalhes"
+							outcome="relatorioQuantitativoDetalhe" />
 					</p:column>
 
 

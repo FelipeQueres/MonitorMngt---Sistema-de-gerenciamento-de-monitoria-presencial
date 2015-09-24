@@ -9,7 +9,7 @@
 		<from-view-id>*</from-view-id>
 		<navigation-case>
 			<from-outcome>atividadeCadastrar</from-outcome>
-			<to-view-id>/resources/pages/atividadeCadastrar.xhtml</to-view-id>
+			<to-view-id>/resources/pages/atividades/atividadeCadastrar.xhtml</to-view-id>
 		</navigation-case>
 	</navigation-rule>
 
@@ -24,7 +24,7 @@
 		<from-view-id>*</from-view-id>
 		<navigation-case>
 			<from-outcome>atividadeEditar</from-outcome>
-			<to-view-id>/resources/pages/atividadeEditar.xhtml</to-view-id>
+			<to-view-id>/resources/pages/atividades/atividadeEditar.xhtml</to-view-id>
 		</navigation-case>
 	</navigation-rule>
 	<navigation-rule>
@@ -32,7 +32,7 @@
 		<from-view-id>*</from-view-id>
 		<navigation-case>
 			<from-outcome>atividade</from-outcome>
-			<to-view-id>/resources/pages/atividades.xhtml</to-view-id>
+			<to-view-id>/resources/pages/atividades/atividades.xhtml</to-view-id>
 		</navigation-case>
 	</navigation-rule>
 	<navigation-rule>
@@ -40,7 +40,7 @@
 		<from-view-id>*</from-view-id>
 		<navigation-case>
 			<from-outcome>edital</from-outcome>
-			<to-view-id>/resources/pages/editais.xhtml</to-view-id>
+			<to-view-id>/resources/pages/editais/editais.xhtml</to-view-id>
 		</navigation-case>
 	</navigation-rule>
 
@@ -49,7 +49,7 @@
 		<from-view-id>*</from-view-id>
 		<navigation-case>
 			<from-outcome>editalCadastrar</from-outcome>
-			<to-view-id>/resources/pages/editalCadastrar.xhtml</to-view-id>
+			<to-view-id>/resources/pages/editais/editalCadastrar.xhtml</to-view-id>
 		</navigation-case>
 	</navigation-rule>
 
@@ -58,7 +58,7 @@
 		<from-view-id>*</from-view-id>
 		<navigation-case>
 			<from-outcome>relatorioQuantitativo</from-outcome>
-			<to-view-id>/resources/pages/relatorioQuantitativo.xhtml</to-view-id>
+			<to-view-id>/resources/pages/atividades/relatorios/relatorioQuantitativo.xhtml</to-view-id>
 		</navigation-case>
 	</navigation-rule>
 
@@ -67,7 +67,7 @@
 		<from-view-id>*</from-view-id>
 		<navigation-case>
 			<from-outcome>relatorioAtividade</from-outcome>
-			<to-view-id>/resources/pages/relatorioAtividade.xhtml</to-view-id>
+			<to-view-id>/resources/pages/atividades/relatorios/relatorioAtividade.xhtml</to-view-id>
 		</navigation-case>
 	</navigation-rule>
 
@@ -76,7 +76,7 @@
 		<from-view-id>*</from-view-id>
 		<navigation-case>
 			<from-outcome>cadastroProfessor</from-outcome>
-			<to-view-id>/resources/pages/cadastroProfessor.xhtml</to-view-id>
+			<to-view-id>/resources/pages/cadastros/cadastroProfessor.xhtml</to-view-id>
 		</navigation-case>
 	</navigation-rule>
 
@@ -85,7 +85,7 @@
 		<from-view-id>*</from-view-id>
 		<navigation-case>
 			<from-outcome>cadastroAluno</from-outcome>
-			<to-view-id>/resources/pages/cadastroAluno.xhtml</to-view-id>
+			<to-view-id>/resources/pages/cadastros/cadastroAluno.xhtml</to-view-id>
 		</navigation-case>
 	</navigation-rule>
 
@@ -94,7 +94,7 @@
 		<from-view-id>*</from-view-id>
 		<navigation-case>
 			<from-outcome>cadastroFuncionario</from-outcome>
-			<to-view-id>/resources/pages/cadastroFuncionario.xhtml</to-view-id>
+			<to-view-id>/resources/pages/cadastros/cadastroFuncionario.xhtml</to-view-id>
 		</navigation-case>
 	</navigation-rule>
 	
@@ -103,7 +103,7 @@
 		<from-view-id>*</from-view-id>
 		<navigation-case>
 			<from-outcome>atividadeInfo</from-outcome>
-			<to-view-id>/resources/pages/atividadesInfo.xhtml</to-view-id>
+			<to-view-id>/resources/pages/atividades/atividadesInfo.xhtml</to-view-id>
 		</navigation-case>
 	</navigation-rule>
 	
@@ -112,7 +112,26 @@
 		<from-view-id>*</from-view-id>
 		<navigation-case>
 			<from-outcome>atividadeRealizada</from-outcome>
-			<to-view-id>/resources/pages/informarAtividadeRealizada.xhtml</to-view-id>
+			<to-view-id>/resources/pages/atividades/informarAtividadeRealizada.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	
+	<navigation-rule>
+		<display-name>*</display-name>
+		<from-view-id>*</from-view-id>
+		<navigation-case>
+			<from-outcome>relatorioQuantitativoDetalhe</from-outcome>
+			<to-view-id>/resources/pages/atividades/relatorios/relatorioQuantitativoDetalhe.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
+	
+	<navigation-rule>
+		<display-name>*</display-name>
+		<from-view-id>*</from-view-id>
+		<navigation-case>
+			<from-outcome>editalInfo</from-outcome>
+			<to-view-id>/resources/pages/editais/editalInfo.xhtml</to-view-id>
 		</navigation-case>
 	</navigation-rule>
 

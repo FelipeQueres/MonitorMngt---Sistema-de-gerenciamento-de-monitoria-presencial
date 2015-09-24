@@ -1,50 +1,51 @@
 package controle;
 
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
 
 import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
 
+import dominio.Atividade;
 
-@ManagedBean
+@ManagedBean(name = "AtvMB")
 public class AtividadesMB {
-	private String nome;
-	private String[] alunos;
-	private String descricao;
-	
+
+	private List<Atividade> atividades;
+
 	@PostConstruct
-	public void iniciar(){
-		this.nome = "Atividade 1";
-//		this.data = new Date();
-//		this.alunos[0] = "Amanda";
-		this.descricao = "Aprender a cortar um cadÃ¡ver";
+	public void iniciar() {
+		atividades = new ArrayList<Atividade>();
+
+		Atividade atividade = new Atividade();
+		atividade.setNome("Oficina de Programação");
+		atividade.setDescricao("Desenvolver softwares");
+
+		Date data = new Date();
 		
+		atividade.setData(data);
+
+		this.atividades.add(atividade);
 	}
-	
-	public String getNome() {
-		return nome;
+
+	public List<Atividade> getAtividades() {
+		return atividades;
 	}
-	public void setNome(String nome) {
-		this.nome = nome;
+
+	public String getNomeAtv() {
+		return atividades.get(0).getNome();
 	}
-//	public Date getData() {
-//		return data;
-//	}
-//	public void setData(Date data) {
-//		this.data = data;
-//	}
-	public String[] getAlunos() {
-		return alunos;
+
+	public String getDescAtv() {
+		return atividades.get(0).getDescricao();
 	}
-	public void setAlunos(String[] alunos) {
-		this.alunos = alunos;
+
+	public void setAtividades(List<Atividade> atividades) {
+		this.atividades = atividades;
 	}
-	public String getDescricao() {
-		return descricao;
+
+	public String getDatacAtv() {
+		return atividades.get(0).getData();
 	}
-	public void setDescricao(String descricao) {
-		this.descricao = descricao;
-	}
-	
-	
-	
 }

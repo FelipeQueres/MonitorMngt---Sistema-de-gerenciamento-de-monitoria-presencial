@@ -26,17 +26,28 @@
 				<h:inputText />
 				<h:outputLabel value="Período Letivo" />
 				<h:inputText />
+
 				<h:outputLabel value="Período de Inscrição" />
-				<h:inputText />
+				<h:column>
+					<b:datepicker />
+					<b:datepicker />
+				</h:column>
+				<h:outputLabel value="Período de Atividade" />
+				<h:column>
+					<b:datepicker />
+					<b:datepicker />
+				</h:column>
 				<h:outputLabel value="Número de Vagas" />
-				<h:inputText />
+				<h:inputText >
+				</h:inputText>
 				<h:outputLabel value="Contúdo Programático " />
 				<h:inputTextarea />
 				<h:outputLabel value="Bibliografia" />
 				<h:inputTextarea />
-				<b:button value="Cadastrar" />
-			</h:panelGrid>
+			</h:panelGrid><br />
+			<b:button value="Cadastrar" />
 		</div>
+		<!-- disciplinas vs vagas -->
 	</ui:define>
 </ui:composition>
 </html>
