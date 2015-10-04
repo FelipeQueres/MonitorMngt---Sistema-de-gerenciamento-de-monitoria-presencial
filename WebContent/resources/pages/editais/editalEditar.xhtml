@@ -1,0 +1,54 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:b="http://bootsfaces.net/ui" xmlns:p="http://primefaces.org/ui"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html">
+
+<ui:composition template="/resources/pages/_menu.xhtml">
+
+	<ui:define name="titulo">Alteração de Edital</ui:define>
+
+
+	<ui:define name="body">
+		<div align="center">
+			<h2>Alterar Edital</h2>
+			<BR /> <BR />
+			<h:panelGrid columns="2">
+				<h:outputLabel value="Número" />
+				<h:inputText value="#{editalMB.edital.numero}" />
+				<h:outputLabel value="Escola" />
+				<h:inputText value="#{editalMB.edital.escola}" />
+				<h:outputLabel value="Disciplinas" />
+				<h:inputText />
+				<h:outputLabel value="Curso" />
+				<h:inputText value="#{editalMB.edital.curso}" />
+				<h:outputLabel value="Período Letivo" />
+				<h:inputText value="#{editalMB.edital.periodoLetivo}" />
+
+				<h:outputLabel value="Período de Inscrição" />
+				<h:column>
+					<b:datepicker value="#{editalMB.edital.inicioInscricao}"/>
+					<b:datepicker value="#{editalMB.edital.fimInscricao}"/>
+				</h:column>
+				<h:outputLabel value="Período de Atividade" />
+				<h:column>
+					<b:datepicker value="#{editalMB.edital.inicioAtividade}"/>
+					<b:datepicker value="#{editalMB.edital.fimAtividade}"/>
+				</h:column>
+				<h:outputLabel value="Número de Vagas" />
+				<h:inputText>
+				</h:inputText>
+				<h:outputLabel value="Conteúdo Programático " />
+				<h:inputTextarea value="#{editalMB.edital.conteudo}"/>
+				<h:outputLabel value="Bibliografia" />
+				<h:inputTextarea value="#{editalMB.edital.bibliografia}"/>
+			</h:panelGrid>
+			<br />
+			<b:button value="Cadastrar" />
+		</div>
+		<!-- disciplinas vs vagas -->
+	</ui:define>
+</ui:composition>
+</html>
