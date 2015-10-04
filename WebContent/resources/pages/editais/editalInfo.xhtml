@@ -10,80 +10,138 @@
 
 	<ui:define name="titulo">Detalhes Edital</ui:define>
 	<ui:define name="body">
-		<div align="center">
+		<div style="text-align: center;">
 			<p:graphicImage value="/resources/images/header_edital.png" />
-			<br /><br />
-			
-			<h:outputText value="Edital de Monitoria No _____
-
-O Diretor da Escola de ________________ da Unigranrio, no uso de suas atribuições, torna pública a realização do Concurso Interno de seleção de monitores das disciplinas _____________________ do curso de _____________para o período letivo de _______.
-As inscrições poderão ser efetuadas no período de ________ a ______, na _________. Podendo cada estudante se inscrever em  apenas uma disciplina.
-
-
-1-  Este Edital é regido pela Regulamentação de Monitoria Vigente na UNIGRANRIO (Esta regulamentação poderá ser retirada no ato da inscrição).
-
-2 - A monitoria visa aprimorar os conhecimentos teóricos e práticos do estudante na disciplina, bem como permitir a vivência de práticas de ensino e produção de conhecimento.
-
-3-	São atribuições do monitor:
-•	 Auxiliar os professores em suas atividades práticas;
-•	Assistir ao docente no atendimento de grupos de estudos;
-•	Acompanhar e auxiliar o docente em atividades relacionadas com a disciplina;
-•	Realizar  leituras suplementares para o auxílio às atividades desenvolvidas;
-•	Elaborar relatórios mensais das atividades desenvolvidas.
-
-4 – É vedado ao aluno monitor:
-•	Substituir o professor na regência de aulas;
-•	Executar funções administrativas;
-•	Elaborar ou corrigir exames e provas;
-•	Atribuir nota ou freqüência.
-
-
-5 – O período previsto para as atividades da monitoria será de _____________ a ____________ 
-
-6 – Quadro de Vagas:
-
-DISCIPLINAS	VAGAS
-	
-	
-
-
-7 – São requisitos para o processo seletivo:
-•	Ser aluno regularmente matriculado;
-•	Estar cumprindo regularmente o contrato de prestações de serviços educacionais;
-•	Ter cursado e ter sido aprovado na disciplina a que se candidata com média igual ou superior a 7,0 (sete).
-•	Não poderá haver choque de horário entre as atividades curriculares e as atividades de monitoria.
-
-8 – A seleção será feita mediante realização de uma prova e entrevista. Serão classificados os candidatos que obtiverem, no processo seletivo, média igual ou superior a 7,0 (sete).
-
-
-
-
-
-
-
-
-9 – Para seleção serão considerados:
-•	Análise do histórico escolar – observando-se a média de aprovação na disciplina a que se candidata igual ou superior a 7,0 (sete);
-•	O resultado da prova escrita envolvendo conhecimentos gerais da disciplina será utilizado como critério de desempate. 
-
-10 – O estudante selecionado terá que cumprir, no mínimo, 04 (quatro) horas semanais em atividades definidas pelo professor- coordenador.
-
-11 – A monitoria não garante ao aluno qualquer tipo de bolsa ou remuneração.
-
-12 – Os alunos selecionados deverão assinar o termo de monitoria em três vias, tomando ciência das normas em vigor.
-
-13 – Conteúdo Programático:
-
-
-
-
-
-
-14 – Bibliografia:
-
-
-			"/>
 		</div>
+		<br />
+		<br />
+		<p style="text-align: center;">
+			Edital de Monitoria No
+			<h:outputText value="#{editalMB.edital.numero}"
+				style="text-decoration:underline;text-align: center;" />
+		</p>
+
+		<div style="text-align: justify; padding-left: 30%;">
+
+			<p>
+				O Diretor da Escola de
+				<h:outputText value="#{editalMB.edital.escola}"
+					style="text-decoration:underline;" />
+				da Unigranrio, no uso de suas atribuições, torna
+			</p>
+			<p>pública a realização do Concurso Interno de seleção de
+				monitores das disciplinas</p>
+			<p>
+				<h:outputText value=" " style="text-decoration:underline;" />
+				do curso de
+				<h:outputText value="#{editalMB.edital.curso}"
+					style="text-decoration:underline;" />
+				para o período letivo de
+				<h:outputText value=" " style="text-decoration:underline;" />
+				.
+			</p>
+			<p>
+				As inscrições poderão ser efetuadas no período de
+				<h:outputText value=" " style="text-decoration:underline;" />
+				a
+				<h:outputText value=" " style="text-decoration:underline;" />
+				, na
+				<h:outputText value=" " style="text-decoration:underline;" />
+				.
+			</p>
+			<p>Podendo cada estudante se inscrever em apenas uma disciplina.</p>
+
+
+			<p>1- Este Edital é regido pela Regulamentação de Monitoria
+				Vigente na UNIGRANRIO (Esta</p>
+			<p>regulamentação poderá ser retirada no ato da inscrição).</p>
+			<p>2 - A monitoria visa aprimorar os conhecimentos teóricos e
+				práticos do estudante na disciplina,</p>
+			<p>bem como permitir a vivência de práticas de ensino e produção
+				de conhecimento.</p>
+			<p>3- São atribuições do monitor:</p>
+			<p style="padding-left: 3%;">• Auxiliar os professores em suas
+				atividades práticas;</p>
+			<p style="padding-left: 3%;">• Assistir ao docente no atendimento
+				de grupos de estudos;</p>
+			<p style="padding-left: 3%;">• Acompanhar e auxiliar o docente em
+				atividades relacionadas com a disciplina;</p>
+			<p style="padding-left: 3%;">• Realizar leituras suplementares
+				para o auxílio às atividades desenvolvidas;</p>
+			<p style="padding-left: 3%;">• Elaborar relatórios mensais das
+				atividades desenvolvidas.</p>
+			<p>4 – É vedado ao aluno monitor:</p>
+			<p style="padding-left: 3%;">• Substituir o professor na regência
+				de aulas;</p>
+			<p style="padding-left: 3%;">• Executar funções administrativas;</p>
+			<p style="padding-left: 3%;">• Elaborar ou corrigir exames e
+				provas;</p>
+			<p style="padding-left: 3%;">• Atribuir nota ou freqüência.</p>
+			<p>
+				5 – O período previsto para as atividades da monitoria será de
+				<h:outputText value=" " style="text-decoration:underline;" />
+				a
+			</p>
+			<p>
+				<h:outputText value=" " style="text-decoration:underline;" />
+				6 – Quadro de Vagas:
+			</p>
+
+			<h:form>
+				<!-- trocar MB -->
+				<h:dataTable value="#{disciplinaMB.disciplinas}" var="item"
+					headerClass="bodyText" border="1">
+					<p:column>
+						<f:facet name="header">
+							<h:outputText value="DISCIPLINAS" />
+						</f:facet>
+						<h:outputText value="#{item.nome}" />
+					</p:column>
+					<p:column>
+						<f:facet name="header">
+							<h:outputText value="VAGAS" />
+						</f:facet>
+						<h:outputText value="#{item.numVagas}" />
+					</p:column>
+				</h:dataTable>
+			</h:form>
+			<br />
+			<p>7 – São requisitos para o processo seletivo:</p>
+			<p style="padding-left: 3%;">• Ser aluno regularmente matriculado;</p>
+			<p style="padding-left: 3%;">• Estar cumprindo regularmente o contrato de prestações de
+				serviços educacionais;</p>
+			<p style="padding-left: 3%;">• Ter cursado e ter sido aprovado na disciplina a que se
+				candidata com média igual ou superior a 7,0 (sete).</p>
+			<p style="padding-left: 3%;">• Não poderá haver choque de horário entre as atividades
+				curriculares e as atividades de monitoria.</p>
+			<p>8 – A seleção será feita mediante realização de uma prova e
+				entrevista. Serão classificados os</p>
+			<p>candidatos que obtiverem, no processo seletivo, média igual ou
+				superior a 7,0 (sete).</p>
+			<p>9 – Para seleção serão considerados:</p>
+			<p style="padding-left: 3%;">• Análise do histórico escolar – observando-se a média de
+				aprovação na disciplina a que</p>
+			<p style="padding-left: 3%;">se candidata igual ou superior a 7,0 (sete);</p>
+			<p style="padding-left: 3%;">• O resultado da prova escrita envolvendo conhecimentos gerais
+				da disciplina será utilizado como critério de desempate.</p>
+			<p>10 – O estudante selecionado terá que cumprir, no mínimo, 04
+				(quatro) horas semanais em</p>
+			<p>atividades definidas pelo professor- coordenador.</p>
+			<p>11 – A monitoria não garante ao aluno qualquer tipo de bolsa
+				ou remuneração.</p>
+			<p>12 – Os alunos selecionados deverão assinar o termo de
+				monitoria em três vias, tomando ciência das normas em vigor.</p>
+			<p>13 – Conteúdo Programático:</p>
+
+		</div>
+			<h:panelGrid columns="1" border="1" style="padding-left:10%;text-align:center;width: 30%;">
+				<h:outputText 
+					value="a~gbsbhsahgdkgjnhkbghdwkbsgdwkdslsdbgdsgjvdhgsipjsobgjogsbghsopgdigjdogkbgpvdjgbgl\jsldhgjjgjshgva~gbsbhsahgdkgjnhkbghdwkbsgdwkdslsdbgdsgjvdhgsipjsobgjogsbghsopgdigjdogkbgpvdjgbgl\jsldhgjjgjshgva~gbsbhsahgdkgjnhkbghdwkbsgdwkdslsdbgdsgjvdhgsipjsobgjogsbghsopgdigjdogkbgpvdjgbgl\jsldhgjjgjshgva~gbsbhsahgdkgjnhkbghdwkbsgdwkdslsdbgdsgjvdhgsipjsobgjogsbghsopgdigjdogkbgpvdjgbgl\jsldhgjjgjshgv" />
+			</h:panelGrid>
+
+			<p style="padding-left: 30%;">14 – Bibliografia:</p>
+			<h:outputText />
+
 	</ui:define>
 </ui:composition>
 </html>

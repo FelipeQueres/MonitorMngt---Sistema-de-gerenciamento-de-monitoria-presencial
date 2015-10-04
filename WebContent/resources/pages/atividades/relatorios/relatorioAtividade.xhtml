@@ -13,29 +13,35 @@
 
 		<b:panel title="Relatórios de Atividades" collapsible="false">
 			<h:form>
-				<h:dataTable headerClass="header" columnClasses="corpo">
+				<h:dataTable headerClass="headerRel" 
+					value="#{AtvMB.atividades}" var="item">
 
 					<p:column>
 						<f:facet name="header">
-							<h:outputText value="Nome" styleClass="nome" />
+							<h:outputText value="Nome" />
 						</f:facet>
+						<h:outputText value="#{item.nome}" />
+					</p:column>
+
+
+					<p:column>
+						<f:facet name="header">
+							<h:outputText value="Descrição"/>
+						</f:facet>
+						<h:outputText value="#{item.descricao}" />
 					</p:column>
 
 					<p:column styleClass="acoes">
 						<f:facet name="header">
 							<h:outputText value="Ações" />
-						</f:facet>						<h:panelGroup>
-							<b:commandButton icon="glyphicon glyphicon-info-sign"
-								tooltip="Detalhes" />
+						</f:facet>
+						<h:panelGrid columns="2">
+							<b:button icon="glyphicon glyphicon-info-sign"
+								tooltip="Detalhes" value="" />
 
-							<b:commandButton icon="glyphicon glyphicon-edit" tooltip="Editar" />
-
-							<p:confirmDialog message="Deseja excluir este registro?"
-								severity="alert" showEffect="bounce" hideEffect="explode">
-								<b:commandButton icon="glyphicon glyphicon-trash"
-									tooltip="Excluir" />
-							</p:confirmDialog>
-						</h:panelGroup>
+							<b:button icon="glyphicon glyphicon-trash"
+								tooltip="Excluir" value="" />
+						</h:panelGrid>
 					</p:column>
 
 

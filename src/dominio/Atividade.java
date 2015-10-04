@@ -1,5 +1,6 @@
 package dominio;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class Atividade {
@@ -7,9 +8,23 @@ public class Atividade {
 	private String[] alunos;
 	private String descricao;
 	private Date data;
+	private String local;
+
+	public String getLocal() {
+		return local;
+	}
+
+	public void setLocal(String local) {
+		this.local = local;
+	}
 
 	public String getData() {
-		return data.toString();
+		SimpleDateFormat sdt = new SimpleDateFormat("dd/MM/yyyy");
+		return sdt.format(this.data);
+	}
+
+	public Date getDate() {
+		return this.data;
 	}
 
 	public void setData(Date data) {
@@ -17,7 +32,7 @@ public class Atividade {
 	}
 
 	public String getNome() {
-		return nome;
+		return this.nome;
 	}
 
 	public void setNome(String nome) {

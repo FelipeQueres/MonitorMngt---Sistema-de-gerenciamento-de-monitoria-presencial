@@ -16,30 +16,34 @@
 					<b:button value="Novo" outcome="editalCadastrar" />
 				</div>
 				<hr />
-				<h:dataTable headerClass="header">
+				<h:dataTable headerClass="header" value="#{editalMB.editais}"
+					var="item">
 					<p:column>
 						<f:facet name="header">
 							<h:outputText value="Número" />
 						</f:facet>
+						<h:outputText value="#{item.numero}" />
 					</p:column>
-
+					<!-- listdatamodel ou passar por parametro no EL do datatable  -->
 					<p:column>
 						<f:facet name="header">
 							<h:outputText value="Escola" />
 						</f:facet>
+						<h:outputText value="#{item.escola}" />
 					</p:column>
 
 					<p:column>
 						<f:facet name="header">
 							<h:outputText value="Curso" />
 						</f:facet>
+						<h:outputText value="#{item.curso}" />
 					</p:column>
-
 
 					<p:column>
 						<f:facet name="header">
 							<h:outputText value="Período letivo" />
 						</f:facet>
+						<h:outputText value="#{item.periodoLetivo}" />
 					</p:column>
 
 					<p:column>
@@ -47,14 +51,33 @@
 							<h:outputText value="Ações" />
 						</f:facet>
 						<h:panelGrid columns="3">
-							<b:button icon="glyphicon glyphicon-info-sign"
-								tooltip="Detalhes" value="" size="sm" />
+							<b:commandButton icon="glyphicon glyphicon-info-sign"
+								tooltip="Detalhes" value=""
+								action="#{editalMB.acaoAbrirInfo(item)}" size="sm">
+							</b:commandButton>
 
-							<b:button icon="glyphicon glyphicon-edit" tooltip="Editar"
-								value="" size="sm" />
+
+
+							<b:commandButton icon="glyphicon glyphicon-edit" tooltip="Editar"
+								value="" size="sm" action="#{editalMB.acaoAbrirAlterar(item)}">
+
+							</b:commandButton>
 
 							<b:button icon="glyphicon glyphicon-trash" tooltip="Excluir"
-								value="" size="sm" />
+								value="" size="sm"
+								onclick="$('.modalPseudoClass').modal();return false;">
+
+								<b:modal id="amodal" title="Confirmação"
+									styleClass="modalPseudoClass" close-on-escape="false"
+									backdrop="false" closable="false" size="modal-sm">
+									<p>Deseja realmente excluir este edital?</p>
+									<f:facet name="footer">
+										<b:button value="Sim" dismiss="modal" />
+										<b:button value="Não" dismiss="modal" look="primary" />
+									</f:facet>
+
+								</b:modal>
+							</b:button>
 						</h:panelGrid>
 					</p:column>
 				</h:dataTable>

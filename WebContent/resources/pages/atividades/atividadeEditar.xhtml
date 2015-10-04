@@ -18,9 +18,9 @@
 
 			<h:panelGrid columns="2">
 				<h:outputLabel value="Nome: " />
-				<h:inputText size="30" value="#{AtvMB.nomeAtv}"/>
+				<h:inputText size="30" value="#{AtvMB.atividade.nome}"/>
 				<h:outputLabel value="Data: " />
-				<p:calendar></p:calendar>
+				<p:calendar value="#{AtvMB.atividade.date}"/>
 				<h:outputLabel value="Alunos: " />
 				<p:selectCheckboxMenu id="menu" filter="true" label="Alunos"
 					filterMatchMode="startsWith" panelStyle="width:250px"
@@ -30,7 +30,7 @@
 				<h:outputLabel value="Local da atividade" />
 				<h:inputTextarea rows="4" cols="30" />
 				<h:outputLabel value="Descrição: " />
-				<h:inputTextarea rows="4" cols="30" value="#{AtvMB.descAtv}" />
+				<h:inputTextarea rows="4" cols="30" value="#{AtvMB.atividade.descricao}" />
 			</h:panelGrid>
 			<b:button value="Alterar" />
 		</div>

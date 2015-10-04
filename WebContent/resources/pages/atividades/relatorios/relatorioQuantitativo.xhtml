@@ -13,12 +13,13 @@
 
 		<b:panel title="Relatórios Quantitativos" collapsible="false">
 			<h:form>
-				<h:dataTable headerClass="header">
+				<h:dataTable headerClass="headerRel" value="#{editalMB.editais}" var="item"> 
 
 					<p:column>
 						<f:facet name="header">
-							<h:outputText value="Nome" styleClass="nome" />
+							<h:outputText value="Número"  />
 						</f:facet>
+						<h:outputText value="#{item.numero}" styleClass="bodyNumber"/>
 					</p:column>
 
 					<p:column>
@@ -32,7 +33,7 @@
 							<h:outputText value="Ações" />
 						</f:facet>
 						<b:button icon="glyphicon glyphicon-info-sign" tooltip="Detalhes"
-							outcome="relatorioQuantitativoDetalhe" />
+							outcome="relatorioQuantitativoDetalhe" value=""/>
 					</p:column>
 
 

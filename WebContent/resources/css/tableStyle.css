@@ -4,14 +4,28 @@
 
 .header {
 	text-align: center;
-	width: 30%;
+	width: 28%;
 }
 
+.headerRel {
+	text-align: center;
+	width: 31%;
+	padding-left: 26px;
+}
+
+
+
 .bodyText {
+	width: 30%;
 	text-align: left;
+	font-style: normal;
 }
 
 .bodyDate {
+	text-align: right;
+}
+
+.bodyNumber {
 	text-align: right;
 }
 
@@ -31,4 +45,15 @@
 .acoes {
 	text-align: center;
 	with: 30%;
+	padding: 50px;
+}
+
+.tabelaCadastro {
+	padding-left: 15px;
+}
+
+.editalInfo {
+	text-align: justify;
+	padding-left: 30%;
+	
 }
