@@ -46,6 +46,10 @@ public class Atividade {
 	public void setAlunos(String[] alunos) {
 		this.alunos = alunos;
 	}
+	
+	public String getAlunosToString(){
+		return this.alunos.toString();
+	}
 
 	public String getDescricao() {
 		return descricao;

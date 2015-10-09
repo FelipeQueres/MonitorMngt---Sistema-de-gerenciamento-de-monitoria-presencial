@@ -13,7 +13,17 @@
 	padding-left: 26px;
 }
 
+.headerAtv {
+	text-align: center;
+	width: 35%;
+	padding-left: 35px;
+}
 
+.headerRelAtv {
+	text-align: center;
+	width: 60%;
+	padding-left: 60px;
+}
 
 .bodyText {
 	width: 30%;
@@ -55,5 +65,4 @@
 .editalInfo {
 	text-align: justify;
 	padding-left: 30%;
-	
 }

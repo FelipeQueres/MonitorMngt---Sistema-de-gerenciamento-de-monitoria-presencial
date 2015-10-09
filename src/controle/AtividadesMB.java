@@ -27,11 +27,13 @@ public class AtividadesMB {
 		atividade.setNome("Oficina de Programação");
 		atividade.setDescricao("Desenvolver softwares");
 		atividade.setData(data);
+		atividade.setLocal("Lab B103");
 		
 		atividade1.setNome("Oficina de UML");
 		atividade1.setDescricao("Aprender UML");
 		atividade1.setData(data);
-
+		atividade1.setLocal("Lab G103");
+		
 		this.atividades.add(atividade);
 		this.atividades.add(atividade1);
 	}
@@ -61,5 +63,10 @@ public class AtividadesMB {
 	public String acaoEditar(Atividade atividade){
 		this.atividade=atividade;
 		return "atividadeEditar";
+	}
+	
+	public String acaoInfAtividade(Atividade atividade){
+		this.atividade = atividade;
+		return "informarAtividadeRealizada";
 	}
 }

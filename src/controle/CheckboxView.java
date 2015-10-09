@@ -40,6 +40,10 @@ public class CheckboxView {
 	public List<String> getAlunos() {
 		return alunos;
 	}
+	
+	public String getAlunosToString(){
+		return this.alunos.toString();
+	}
 
 	public void setAlunos(List<String> alunos) {
 		this.alunos = alunos;

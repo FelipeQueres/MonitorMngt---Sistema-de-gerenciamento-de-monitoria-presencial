@@ -29,7 +29,7 @@
 					<b:button value="Nova" outcome="atividadeCadastrar" />
 				</div>
 				<hr />
-				<h:dataTable headerClass="headerRel" value="#{AtvMB.atividades}"
+				<h:dataTable headerClass="headerAtv" value="#{AtvMB.atividades}"
 					var="item">
 
 					<p:column>
@@ -67,7 +67,7 @@
 
 							<b:commandButton icon="glyphicon glyphicon-pencil"
 								tooltip="Informar realizadas" value="" size="sm"
-								outcome="atividadeRealizada" />
+								action="#{AtvMB.acaoInfAtividade(item)}" />
 
 
 

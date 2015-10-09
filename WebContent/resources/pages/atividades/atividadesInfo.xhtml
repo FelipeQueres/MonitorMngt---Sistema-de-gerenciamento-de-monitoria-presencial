@@ -14,17 +14,12 @@
 			<h2>Informações</h2>
 			<hr />
 			<h:panelGrid columns="2">
-
 				<h:outputLabel value="Nome: " />
 				<h:outputText size="30" value="#{AtvMB.atividade.nome}" />
 				<h:outputLabel value="Data: " />
 				<h:outputText size="23" readonly="true" value="#{AtvMB.atividade.data}" />
 				<h:outputLabel value="Alunos: " />
-				<p:selectCheckboxMenu id="menu" filter="true" label="Alunos"
-					filterMatchMode="startsWith" panelStyle="width:250px"
-					scrollHeight="100">
-					<f:selectItems value="#{checkboxView.alunos}" />
-				</p:selectCheckboxMenu>
+				<h:outputText value="#{checkboxView.alunosToString}" />
 				<h:outputLabel value="Local da atividade" />
 				<h:inputTextarea rows="4" cols="30" readonly="true" value="#{AtvMB.atividade.local}"/>
 				<h:outputLabel value="Descrição: " />

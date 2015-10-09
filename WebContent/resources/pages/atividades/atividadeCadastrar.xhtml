@@ -1,4 +1,4 @@
-<?xml version='1.0' encoding='UTF-8' ?>
+	<?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:b="http://bootsfaces.net/ui" xmlns:p="http://primefaces.org/ui"
@@ -15,20 +15,56 @@
 		<div align="center">
 			<h2>Cadastro de Atividade</h2>
 			<hr />
-
-			<h:panelGrid cellspacing="50" cellpadding="50" columns="2" styleClass="tabelaCadastro">
+			<script type="text/javascript">
+			<!--
+				PrimeFaces.locales['pt'] = {
+					closeText : 'Fechar',
+					prevText : 'Anterior',
+					nextText : 'Próximo',
+					currentText : 'Começo',
+					monthNames : [ 'Janeiro', 'Fevereiro', 'Março', 'Abril',
+							'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro',
+							'Outubro', 'Novembro', 'Dezembro' ],
+					monthNamesShort : [ 'Jan', 'Fev', 'Mar', 'Abr', 'Mai',
+							'Jun', 'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez' ],
+					dayNames : [ 'Domingo', 'Segunda', 'Terça', 'Quarta',
+							'Quinta', 'Sexta', 'Sábado' ],
+					dayNamesShort : [ 'Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex',
+							'Sáb' ],
+					dayNamesMin : [ 'D', 'S', 'T', 'Q', 'Q', 'S', 'S' ],
+					weekHeader : 'Semana',
+					firstDay : 0,
+					isRTL : false,
+					showMonthAfterYear : false,
+					yearSuffix : '',
+					timeOnlyTitle : 'Só Horas',
+					timeText : 'Tempo',
+					hourText : 'Hora',
+					minuteText : 'Minuto',
+					secondText : 'Segundo',
+					ampm : false,
+					month : 'Mês',
+					week : 'Semana',
+					day : 'Dia',
+					allDayText : 'Todo o Dia'
+				};
+			//-->
+			</script>
+			<h:panelGrid cellspacing="50" cellpadding="50" columns="2"
+				styleClass="tabelaCadastro">
+				<h:outputLabel value="Edital" />
+				<b:selectOneMenu placeholder="Escolha um edital" />
 				<h:outputLabel value="Nome: " />
-				<h:inputText size="30" />
+				<b:inputText size="30" />
 				<h:outputLabel value="Data: " />
-				<p:calendar></p:calendar>
+				<p:calendar locale="pt" />
 				<h:outputLabel value="Alunos: " />
 				<p:selectCheckboxMenu id="menu" filter="true" label="Alunos"
 					filterMatchMode="startsWith" panelStyle="width:250px"
 					scrollHeight="100">
 					<f:selectItems value="#{checkboxView.alunos}" />
 				</p:selectCheckboxMenu>
-
-				<h:outputLabel value="Local da atividade" />
+				<h:outputLabel value="Local da atividade " />
 				<h:inputTextarea rows="2" cols="30" />
 				<h:outputLabel value="Descrição: " />
 				<h:inputTextarea rows="4" cols="30" />

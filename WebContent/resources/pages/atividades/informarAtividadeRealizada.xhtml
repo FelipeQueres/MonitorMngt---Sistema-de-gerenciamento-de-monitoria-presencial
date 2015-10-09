@@ -13,10 +13,23 @@
 		<div align="center">
 			<h2>Informar Atividade Realizada</h2>
 			<hr />
-			<h:outputLabel value="#{AtvMB.nomeAtv}" />
-			<br />
-			<h:inputTextarea rows="6" cols="60" />
+			<h:panelGrid columns="2">
+				<h:outputLabel value="Nome: " />
+				<h:inputText size="30" value="#{AtvMB.atividade.nome}"
+					readonly="true" />
+				<h:outputLabel value="Data: " />
+				<p:calendar value="#{AtvMB.atividade.date}" readonly="true" />
+				<h:outputLabel value="Local da atividade" />
+				<h:inputTextarea rows="4" cols="30" readonly="true" value="#{AtvMB.atividade.local}" />
+				<h:outputLabel value="Descrição: " />
+				<h:inputTextarea rows="4" cols="30"
+					value="#{AtvMB.atividade.descricao}" readonly="true" />
+				<h:outputLabel value="Atividades Realizadas" />
+				<h:inputTextarea rows="4" cols="30"/>
+			</h:panelGrid>
+			<b:button value="Alterar" />
 		</div>
+
 	</ui:define>
 </ui:composition>
 </html>
