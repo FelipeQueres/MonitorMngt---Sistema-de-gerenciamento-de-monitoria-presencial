@@ -1,0 +1,85 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:b="http://bootsfaces.net/ui" xmlns:p="http://primefaces.org/ui"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html">
+
+<ui:composition template="/resources/pages/_menu.xhtml">
+
+	<ui:define name="titulo">Alunos</ui:define>
+	<ui:define name="body">
+		<b:panel title="Alunos" collapsible="false">
+			<h:form>
+				<div align="right">
+					<b:button value="Novo" outcome="cadastroAluno" />
+				</div>
+				<hr />
+				<h:dataTable headerClass="header" value="#{alunoMB.alunos}"
+					var="item">
+					<p:column>
+						<f:facet name="header">
+							<h:outputText value="Nome" />
+						</f:facet>
+						<h:outputText value="#{item.nome}" />
+					</p:column>
+
+					<p:column>
+						<f:facet name="header">
+							<h:outputText value="Matrícula" />
+						</f:facet>
+						<h:outputText value="#{item.matricula}" />
+					</p:column>
+
+					<p:column>
+						<f:facet name="header">
+							<h:outputText value="Curso" />
+						</f:facet>
+						<h:outputText value="#{item.curso}" />
+					</p:column>
+
+					<p:column>
+						<f:facet name="header">
+							<h:outputText value="Edital" />
+						</f:facet>
+					</p:column>
+
+					<p:column>
+						<f:facet name="header">
+							<h:outputText value="Ações" />
+						</f:facet>
+						<h:panelGrid columns="3">
+							<b:commandButton icon="glyphicon glyphicon-info-sign"
+								tooltip="Detalhes" value=""
+								action="#{alunoMB.acaoInfo(item)}" size="sm">
+							</b:commandButton>
+
+							<b:commandButton icon="glyphicon glyphicon-edit"
+								tooltip="Editar" value=""
+								action="#{alunoMB.acaoEditar(item)}" size="sm">
+							</b:commandButton>
+
+
+							<b:commandButton icon="glyphicon glyphicon-trash"
+								tooltip="Excluir" value="" size="sm"
+								onclick="$('.modalPseudoClass').modal();return false;">
+
+								<b:modal id="amodal" title="Confirmação"
+									styleClass="modalPseudoClass" close-on-escape="false"
+									backdrop="false" closable="false" size="modal-sm">
+									<p>Deseja realmente excluir este aluno?</p>
+									<f:facet name="footer">
+										<b:button value="Sim" dismiss="modal" />
+										<b:button value="Não" dismiss="modal" look="primary" />
+									</f:facet>
+								</b:modal>
+							</b:commandButton>
+						</h:panelGrid>
+					</p:column>
+				</h:dataTable>
+			</h:form>
+		</b:panel>
+	</ui:define>
+</ui:composition>
+</html>

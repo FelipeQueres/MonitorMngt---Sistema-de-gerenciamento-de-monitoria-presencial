@@ -8,30 +8,26 @@
 
 <ui:composition template="/resources/pages/_menu.xhtml">
 
-	<ui:define name="titulo">Cadastro de Aluno</ui:define>
+	<ui:define name="titulo">Dados de Professor</ui:define>
 
 
 	<ui:define name="body">
 		<div align="center">
 
-			<H2>Cadastro de Aluno</H2>
+			<H2>Editar dados Pessoais</H2>
 			<HR />
 			<h:form>
 				<h:panelGrid columns="2" cellspacing="20" cellpadding="20">
 					<h:outputLabel value="Nome" />
-					<b:inputText />
+					<b:inputText value="#{professorMB.professor.nome}" readonly="true" />
 					<h:outputLabel value="Matrícula" />
-					<b:inputText />
-					<h:outputLabel value="Curso" />
-					<b:inputText />
-					<h:outputLabel value="Disciplina" />
-					<b:inputText />
-					<h:outputLabel value="RG" />
-					<b:inputText />
+					<b:inputText value="#{professorMB.professor.matricula}" readonly="true" />
+					<h:outputLabel value="Escola" />
+					<b:inputText value="#{professorMB.professor.escola}" readonly="true" />
 					<h:outputLabel value="E-mail" />
-					<b:inputText />
+					<b:inputText value="#{professorMB.professor.email}" readonly="true" />
 				</h:panelGrid>
-				<b:commandButton value="Cadastrar" />
+				<b:button value="Editar" />
 			</h:form>
 		</div>
 	</ui:define>

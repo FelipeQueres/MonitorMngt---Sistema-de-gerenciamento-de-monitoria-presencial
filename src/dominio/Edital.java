@@ -104,5 +104,9 @@ public class Edital {
 	public void setBibliografia(String bibliografia) {
 		this.bibliografia = bibliografia;
 	}
+	
+	public boolean getDisciplinasEmpity(){
+		return !this.disciplinas.isEmpty();
+	}
 
 }

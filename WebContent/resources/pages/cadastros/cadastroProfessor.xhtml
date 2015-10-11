@@ -16,13 +16,15 @@
 			<h:form>
 				<h:panelGrid columns="2" cellspacing="20" cellpadding="20">
 					<h:outputLabel value="Nome" />
-					<h:inputText />
+					<b:inputText />
 					<h:outputLabel value="Matrícula" />
-					<h:inputText />
+					<b:inputText />
 					<h:outputLabel value="Escola" />
-					<p:selectCheckboxMenu />
+					<p:selectCheckboxMenu label="Escolas">
+					<f:selectItems value="#{check.escolas}"/>
+					</p:selectCheckboxMenu>
 					<h:outputLabel value="E-mail" />
-					<h:inputText />
+					<b:inputText />
 				</h:panelGrid>
 				<b:commandButton value="Cadastrar" />
 			</h:form>

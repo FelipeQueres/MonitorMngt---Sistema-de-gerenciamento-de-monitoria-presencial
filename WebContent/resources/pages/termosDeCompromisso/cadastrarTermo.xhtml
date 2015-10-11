@@ -1,0 +1,61 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:b="http://bootsfaces.net/ui" xmlns:p="http://primefaces.org/ui"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html">
+
+<ui:composition template="/resources/pages/_menu.xhtml">
+
+	<ui:define name="titulo">Cadastrar Termo</ui:define>
+
+
+	<ui:define name="body">
+		<div align="center">
+
+			<H2>Cadastrar Termo de Compromisso</H2>
+			<HR />
+			<h:form>
+				<h:panelGrid columns="2" cellspacing="20" cellpadding="20">
+					<h:panelGrid columns="2" cellspacing="20" cellpadding="20">
+						<h:outputLabel value="Nome do aluno" />
+						<b:inputText />
+						<h:outputLabel value="Matrícula" />
+						<b:inputText />
+						<h:outputLabel value="Curso" />
+						<b:inputText />
+						<h:outputLabel value="Disciplina" />
+						<b:inputText />
+						<h:outputLabel value="E-mail" />
+						<b:inputText />
+						<h:outputLabel value="Campus/Unidade" />
+						<b:inputText />
+						<h:outputLabel value="CR" />
+						<b:inputText />
+						<h:outputLabel value="Fase" />
+						<b:inputText />
+						<h:outputLabel value="Local da monitoria" />
+						<b:inputText />
+						<h:outputLabel value="Semestre" />
+						<b:inputText />
+						<h:outputLabel value="Período de duração" />
+						<b:inputText />
+						<h:outputLabel value="Responsável" />
+						<b:inputText />
+						<h:outputLabel value="Atividades a serem desenvolvidas" />
+						<h:inputTextarea cols="42" rows="5" />
+						<h:outputLabel value="Informações Adicionais" />
+						<h:inputTextarea cols="42" rows="5" />
+						<h:outputLabel value="Data de entrega" />
+						<b:datepicker />
+					</h:panelGrid>
+				</h:panelGrid>
+				<br />
+				<b:button value="Cadastrar" />
+				<br />
+			</h:form>
+		</div>
+	</ui:define>
+</ui:composition>
+</html>

@@ -52,20 +52,21 @@
 						</f:facet>
 						<h:panelGrid columns="3">
 							<b:commandButton icon="glyphicon glyphicon-info-sign"
-								tooltip="Detalhes" value=""
+								tooltip="Detalhes" value="" rendered="#{item.disciplinasEmpity}"
 								action="#{editalMB.acaoAbrirInfo(item)}" size="sm">
 							</b:commandButton>
 
 
-
 							<b:commandButton icon="glyphicon glyphicon-edit" tooltip="Editar"
-								value="" size="sm" action="#{editalMB.acaoAbrirAlterar(item)}">
+								value="" size="sm" action="#{editalMB.acaoAbrirAlterar(item)}"
+								rendered="#{item.disciplinasEmpity}">
 
 							</b:commandButton>
 
-							<b:button icon="glyphicon glyphicon-trash" tooltip="Excluir"
-								value="" size="sm"
-								onclick="$('.modalPseudoClass').modal();return false;">
+							<b:commandButton icon="glyphicon glyphicon-trash"
+								tooltip="Excluir" value="" size="sm"
+								onclick="$('.modalPseudoClass').modal();return false;"
+								rendered="#{item.disciplinasEmpity}">
 
 								<b:modal id="amodal" title="Confirmação"
 									styleClass="modalPseudoClass" close-on-escape="false"
@@ -75,9 +76,8 @@
 										<b:button value="Sim" dismiss="modal" />
 										<b:button value="Não" dismiss="modal" look="primary" />
 									</f:facet>
-
 								</b:modal>
-							</b:button>
+							</b:commandButton>
 						</h:panelGrid>
 					</p:column>
 				</h:dataTable>

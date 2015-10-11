@@ -5,7 +5,6 @@ import java.util.List;
 
 import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
-import javax.faces.model.ListDataModel;
 
 import dominio.Edital;
 
@@ -13,7 +12,6 @@ import dominio.Edital;
 public class EditaisMB {
 	private List<Edital> editais;
 	private Edital edital;
-	ListDataModel<Edital> ldm;
 
 	@PostConstruct
 	public void iniciar() {

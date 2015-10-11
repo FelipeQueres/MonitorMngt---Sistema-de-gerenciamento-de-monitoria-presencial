@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <pageflow:Pageflow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf14414088248142" configfile="/Monitoria/WebContent/WEB-INF/faces-config.xml">
-  <nodes xsi:type="pageflow:PFPage" name="*" x="122" y="2866" id="pf14414089013153" referenceLink="//@navigationRule.14/@fromViewId|" outlinks="pf14414089013155 pf14430517357450 pf14430517825612 pf14430517825613 pf14430517825614 pf14430517825615 pf14430517825616 pf14430517825617 pf14430517825618 pf144305179822716 pf144305179822717 pf144305179822718 pf144305180437422 pf144305352250024 pf14432257598400" path="*"/>
-  <nodes xsi:type="pageflow:PFPage" name="atividadeCadastrar.xhtml" x="122" y="3376" id="pf14414089013159" referenceLink="//@navigationRule.0/@navigationCase.0/@toViewId|" path="/atividadeCadastrar.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="*" x="122" y="3634" id="pf14414089013153" referenceLink="//@navigationRule.19/@fromViewId|" outlinks="pf14414089013155 pf14430517357450 pf14430517825612 pf14430517825613 pf14430517825614 pf14430517825615 pf14430517825616 pf14430517825617 pf14430517825618 pf144305179822716 pf144305179822717 pf144305179822718 pf144305180437422 pf144305352250024 pf14432257598400 pf14445939890740 pf14445939890751 pf14445939890752 pf14445939890753 pf14445939890754" path="*"/>
+  <nodes xsi:type="pageflow:PFPage" name="atividadeCadastrar.xhtml" x="122" y="4272" id="pf14414089013159" referenceLink="//@navigationRule.0/@navigationCase.0/@toViewId|" path="/atividadeCadastrar.xhtml"/>
   <nodes xsi:type="pageflow:PFPage" name="index.xhtml" x="338" y="178" id="pf144140890131510" referenceLink="//@navigationRule.1/@navigationCase.0/@toViewId|" inlinks="pf14414089013155" path="/index.xhtml"/>
-  <nodes xsi:type="pageflow:PFPage" name="atividadeEditar.xhtml" x="122" y="3887" id="pf144140890131511" referenceLink="//@navigationRule.2/@navigationCase.0/@toViewId|" path="/atividadeEditar.xhtml"/>
-  <nodes xsi:type="pageflow:PFPage" name="atividades.xhtml" x="122" y="4399" id="pf144140890131512" referenceLink="//@navigationRule.3/@navigationCase.0/@toViewId|" path="/atividades.xhtml"/>
-  <nodes xsi:type="pageflow:PFPage" name="cadastros.xhtml" x="122" y="4911" id="pf144140890131513" path="/cadastros.xhtml"/>
-  <nodes xsi:type="pageflow:PFPage" name="relatorios.xhtml" x="122" y="5424" id="pf144140913571215" path="/relatorios.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="atividadeEditar.xhtml" x="122" y="4911" id="pf144140890131511" referenceLink="//@navigationRule.2/@navigationCase.0/@toViewId|" path="/atividadeEditar.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="atividades.xhtml" x="122" y="5551" id="pf144140890131512" referenceLink="//@navigationRule.3/@navigationCase.0/@toViewId|" path="/atividades.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="cadastros.xhtml" x="122" y="6191" id="pf144140890131513" path="/cadastros.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="relatorios.xhtml" x="122" y="6832" id="pf144140913571215" path="/relatorios.xhtml"/>
   <nodes xsi:type="pageflow:PFPage" name="resources/pages/atividades/atividadeCadastrar.xhtml" x="338" y="562" id="pf14430517357461" referenceLink="//@navigationRule.0/@navigationCase.0/@toViewId|" inlinks="pf14430517357450" path="/resources/pages/atividades/atividadeCadastrar.xhtml"/>
   <nodes xsi:type="pageflow:PFPage" name="resources/pages/atividades/atividadeEditar.xhtml" x="338" y="946" id="pf14430517825619" referenceLink="//@navigationRule.2/@navigationCase.0/@toViewId|" inlinks="pf14430517825612" path="/resources/pages/atividades/atividadeEditar.xhtml"/>
   <nodes xsi:type="pageflow:PFPage" name="resources/pages/atividades/atividades.xhtml" x="338" y="1330" id="pf144305178256110" referenceLink="//@navigationRule.3/@navigationCase.0/@toViewId|" inlinks="pf14430517825613" path="/resources/pages/atividades/atividades.xhtml"/>
@@ -21,6 +21,11 @@
   <nodes xsi:type="pageflow:PFPage" name="resources/pages/atividades/informarAtividadeRealizada.xhtml" x="338" y="4786" id="pf144305180437523" referenceLink="//@navigationRule.12/@navigationCase.0/@toViewId|" inlinks="pf144305180437422" path="/resources/pages/atividades/informarAtividadeRealizada.xhtml"/>
   <nodes xsi:type="pageflow:PFPage" name="resources/pages/atividades/relatorios/relatorioQuantitativoDetalhe.xhtml" x="338" y="5170" id="pf144305352250125" referenceLink="//@navigationRule.13/@navigationCase.0/@toViewId|" inlinks="pf144305352250024" path="/resources/pages/atividades/relatorios/relatorioQuantitativoDetalhe.xhtml"/>
   <nodes xsi:type="pageflow:PFPage" name="resources/pages/editais/editalInfo.xhtml" x="338" y="5554" id="pf14432257598401" referenceLink="//@navigationRule.14/@navigationCase.0/@toViewId|" inlinks="pf14432257598400" path="/resources/pages/editais/editalInfo.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="resources/pages/cadastros/manterAluno.xhtml" x="338" y="5938" id="pf14445939890755" referenceLink="//@navigationRule.15/@navigationCase.0/@toViewId|" inlinks="pf14445939890740" path="/resources/pages/cadastros/manterAluno.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="resources/pages/cadastros/alunos.xhtml" x="338" y="6322" id="pf14445939890756" referenceLink="//@navigationRule.16/@navigationCase.0/@toViewId|" inlinks="pf14445939890751" path="/resources/pages/cadastros/alunos.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="resources/pages/termosDeCompromisso/cadastrarTermo.xhtml" x="338" y="6706" id="pf14445939890767" referenceLink="//@navigationRule.17/@navigationCase.0/@toViewId|" inlinks="pf14445939890752" path="/resources/pages/termosDeCompromisso/cadastrarTermo.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="resources/pages/cadastros/professores.xhtml" x="338" y="7090" id="pf14445939890768" referenceLink="//@navigationRule.19/@navigationCase.0/@toViewId|" inlinks="pf14445939890753" path="/resources/pages/cadastros/professores.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="resources/pages/cadastros/funcionarios.xhtml" id="pf14445939890769" referenceLink="//@navigationRule.19/@navigationCase.0/@toViewId|" inlinks="pf14445939890754" path="/resources/pages/cadastros/funcionarios.xhtml"/>
   <links id="pf14414089013155" target="pf144140890131510" source="pf14414089013153" outcome="home"/>
   <links id="pf14430517357450" target="pf14430517357461" source="pf14414089013153" outcome="atividadeCadastrar"/>
   <links id="pf14430517825612" target="pf14430517825619" source="pf14414089013153" outcome="atividadeEditar"/>
@@ -36,4 +41,9 @@
   <links id="pf144305180437422" target="pf144305180437523" source="pf14414089013153" outcome="atividadeRealizada"/>
   <links id="pf144305352250024" target="pf144305352250125" source="pf14414089013153" outcome="relatorioQuantitativoDetalhe"/>
   <links id="pf14432257598400" target="pf14432257598401" source="pf14414089013153" outcome="editalInfo"/>
+  <links id="pf14445939890740" target="pf14445939890755" source="pf14414089013153" outcome="manterAluno"/>
+  <links id="pf14445939890751" target="pf14445939890756" source="pf14414089013153" outcome="alunos"/>
+  <links id="pf14445939890752" target="pf14445939890767" source="pf14414089013153" outcome="termos"/>
+  <links id="pf14445939890753" target="pf14445939890768" source="pf14414089013153" outcome="professores"/>
+  <links id="pf14445939890754" target="pf14445939890769" source="pf14414089013153" outcome="funcionarios"/>
 </pageflow:Pageflow>
