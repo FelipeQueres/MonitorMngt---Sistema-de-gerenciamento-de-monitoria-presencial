@@ -50,23 +50,26 @@
 						<f:facet name="header">
 							<h:outputText value="Ações" />
 						</f:facet>
-						<h:panelGrid columns="3">
+						<h:panelGrid columns="4">
+							<b:commandButton value="" tooltip="Adicionar diciplina"
+								icon="glyphicon glyphicon-plus" size="sm" action="#{editalMB.acaoAddDisciplina(item)}">
+							</b:commandButton>
+
 							<b:commandButton icon="glyphicon glyphicon-info-sign"
-								tooltip="Detalhes" value="" rendered="#{item.disciplinasEmpity}"
+								tooltip="Detalhes" value=""
+								rendered="#{editalMB.isNotDisciplinaEmpity(item)}"
 								action="#{editalMB.acaoAbrirInfo(item)}" size="sm">
 							</b:commandButton>
 
-
 							<b:commandButton icon="glyphicon glyphicon-edit" tooltip="Editar"
 								value="" size="sm" action="#{editalMB.acaoAbrirAlterar(item)}"
-								rendered="#{item.disciplinasEmpity}">
-
+								rendered="#{editalMB.isNotDisciplinaEmpity(item)}">
 							</b:commandButton>
 
 							<b:commandButton icon="glyphicon glyphicon-trash"
 								tooltip="Excluir" value="" size="sm"
 								onclick="$('.modalPseudoClass').modal();return false;"
-								rendered="#{item.disciplinasEmpity}">
+								rendered="#{editalMB.isNotDisciplinaEmpity(item)}">
 
 								<b:modal id="amodal" title="Confirmação"
 									styleClass="modalPseudoClass" close-on-escape="false"

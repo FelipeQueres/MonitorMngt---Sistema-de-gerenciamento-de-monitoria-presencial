@@ -1,0 +1,97 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:b="http://bootsfaces.net/ui" xmlns:p="http://primefaces.org/ui"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html">
+
+<ui:composition template="/resources/pages/_menu.xhtml">
+
+	<ui:define name="titulo">Cadastro de Edital</ui:define>
+
+	<script type="text/javascript">
+	<!--
+		PrimeFaces.locales['pt'] = {
+			closeText : 'Fechar',
+			prevText : 'Anterior',
+			nextText : 'Próximo',
+			currentText : 'Começo',
+			monthNames : [ 'Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio',
+					'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro',
+					'Novembro', 'Dezembro' ],
+			monthNamesShort : [ 'Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun',
+					'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez' ],
+			dayNames : [ 'Domingo', 'Segunda', 'Terça', 'Quarta', 'Quinta',
+					'Sexta', 'Sábado' ],
+			dayNamesShort : [ 'Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb' ],
+			dayNamesMin : [ 'D', 'S', 'T', 'Q', 'Q', 'S', 'S' ],
+			weekHeader : 'Semana',
+			firstDay : 0,
+			isRTL : false,
+			showMonthAfterYear : false,
+			yearSuffix : '',
+			timeOnlyTitle : 'Só Horas',
+			timeText : 'Tempo',
+			hourText : 'Hora',
+			minuteText : 'Minuto',
+			secondText : 'Segundo',
+			ampm : false,
+			month : 'Mês',
+			week : 'Semana',
+			day : 'Dia',
+			allDayText : 'Todo o Dia'
+		};
+	//-->
+	</script>
+
+
+
+	<ui:define name="body">
+		<div align="center">
+			<h2>Adicionar Disciplinas</h2>
+			<BR /> <BR />
+			<h:panelGrid columns="2">
+				<h:outputLabel value="Número" />
+				<b:inputText readonly="true" value="#{editalMB.edital.numero}" />
+				<h:outputLabel value="Escola" />
+				<b:inputText readonly="true" value="#{editalMB.edital.escola}" />
+				<h:outputLabel value="Disciplinas" />
+				<h:dataTable value="#{editalMB.edital.disciplinas}" var="item"
+					headerClass="bodyText" border="1">
+					<p:column>
+						<f:facet name="header">
+							<h:outputText value="DISCIPLINAS" />
+						</f:facet>
+						<h:outputText value="#{item.nome}" />
+					</p:column>
+					<p:column>
+						<f:facet name="header">
+							<h:outputText value="VAGAS" />
+						</f:facet>
+						<h:outputText value="#{item.numVagas}" />
+					</p:column>
+				</h:dataTable>
+				<h:outputLabel value="Curso" />
+				<b:inputText readonly="true" value="#{editalMB.edital.curso}" />
+				<h:outputLabel value="Período Letivo" />
+				<b:inputText readonly="true"
+					value="#{editalMB.edital.periodoLetivo}" />
+
+				<h:outputLabel value="Período de Inscrição" />
+				<b:inputText value="#{editalMB.edital.periodoInscricao}"
+					readonly="true" />
+				<h:outputLabel value="Período de Atividade" />
+				<b:inputText value="#{editalMB.edital.periodoAtividade}"
+					readonly="true" />
+				<h:outputLabel value="Conteúdo Programático " />
+				<h:inputTextarea cols="42" />
+				<h:outputLabel value="Bibliografia" />
+				<h:inputTextarea cols="42" />
+			</h:panelGrid>
+			<br />
+			<b:button value="Adicionar" />
+		</div>
+	</ui:define>
+</ui:composition>
+</html>

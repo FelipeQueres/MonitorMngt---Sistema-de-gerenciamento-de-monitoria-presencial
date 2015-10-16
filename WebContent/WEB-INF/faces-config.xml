@@ -180,6 +180,15 @@
 		</navigation-case>
 	</navigation-rule>
 	
+	<navigation-rule>
+		<display-name>*</display-name>
+		<from-view-id>*</from-view-id>
+		<navigation-case>
+			<from-outcome>disciplinas</from-outcome>
+			<to-view-id>/resources/pages/editais/adicionarDisciplina.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	
 	
 
 </faces-config>

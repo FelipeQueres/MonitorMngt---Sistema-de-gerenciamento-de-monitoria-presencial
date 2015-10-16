@@ -1,11 +1,13 @@
 package controle;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
 
+import dominio.Disciplina;
 import dominio.Edital;
 
 @ManagedBean(name = "editalMB")
@@ -22,14 +24,19 @@ public class EditaisMB {
 		edital1.setEscola("Saúde");
 		edital1.setCurso("Medicina");
 		edital1.setPeriodoLetivo("1º semestre");
-
+		edital1.setDisciplinas("Biologia Marinha", 13);
+		edital1.setInicioInscricao(new Date());
+		edital1.setFimInscricao(new Date());
+		edital1.setInicioAtividade(new Date());
+		edital1.setFimAtividade(new Date());
+		
 		edital2.setNumero(3513);
 		edital2.setEscola("Ciência e Tecnologia");
 		edital2.setCurso("Engenharia de Petróleo e Gás");
 		edital2.setPeriodoLetivo("2º semestre");
 
 		edital = new Edital();
-		
+
 		this.editais.add(edital1);
 		this.editais.add(edital2);
 	}
@@ -41,7 +48,6 @@ public class EditaisMB {
 	public void setEditais(List<Edital> editais) {
 		this.editais = editais;
 	}
-	
 
 	public Edital getEdital() {
 		return edital;
@@ -50,12 +56,24 @@ public class EditaisMB {
 	public void setEdital(Edital edital) {
 		this.edital = edital;
 	}
-	public String acaoAbrirInfo(Edital edital){
+
+	public String acaoAbrirInfo(Edital edital) {
 		this.edital = edital;
 		return "editalInfo";
 	}
-	public String acaoAbrirAlterar(Edital edital){
+
+	public String acaoAbrirAlterar(Edital edital) {
 		this.edital = edital;
 		return "editalEditar";
 	}
+
+	public String acaoAddDisciplina(Edital edital) {
+		this.edital = edital;
+		return "adicionarDisciplina";
+	}
+
+	public boolean isNotDisciplinaEmpity(Edital edital) {
+		return !edital.getDisciplinas().isEmpty();
+	}
+
 }

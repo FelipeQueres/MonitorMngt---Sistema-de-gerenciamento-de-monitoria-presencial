@@ -1,5 +1,7 @@
 package dominio;
 
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -15,6 +17,10 @@ public class Edital {
 	private Date fimAtividade;
 	private String conteudo;
 	private String bibliografia;
+
+	public Edital() {
+		this.disciplinas = new ArrayList<Disciplina>();
+	}
 
 	public int getNumero() {
 		return numero;
@@ -45,8 +51,7 @@ public class Edital {
 	}
 
 	public void setDisciplinas(String nome, int numVagas) {
-		Disciplina disciplina = new Disciplina(nome, numVagas);
-		this.disciplinas.add(disciplina);
+		this.disciplinas.add(new Disciplina(nome, numVagas));
 	}
 
 	public String getPeriodoLetivo() {
@@ -104,9 +109,18 @@ public class Edital {
 	public void setBibliografia(String bibliografia) {
 		this.bibliografia = bibliografia;
 	}
-	
-	public boolean getDisciplinasEmpity(){
-		return !this.disciplinas.isEmpty();
+
+	public String getPeriodoInscricao() {
+		SimpleDateFormat sdt = new SimpleDateFormat("dd/MM/yyyy");
+
+		return sdt.format(this.inicioInscricao).toString() + " até "
+				+ sdt.format(this.fimInscricao).toString();
 	}
 
+	public String getPeriodoAtividade() {
+		SimpleDateFormat sdt = new SimpleDateFormat("dd/MM/yyyy");
+
+		return sdt.format(this.inicioAtividade) + " até "
+				+ sdt.format(this.fimAtividade);
+	}
 }
