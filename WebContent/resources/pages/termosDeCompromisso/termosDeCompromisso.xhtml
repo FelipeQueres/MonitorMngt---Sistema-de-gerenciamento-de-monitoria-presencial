@@ -1,0 +1,92 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:b="http://bootsfaces.net/ui" xmlns:p="http://primefaces.org/ui"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html">
+
+<ui:composition template="/resources/pages/_menu.xhtml">
+
+	<ui:define name="titulo">Termos de Compromisso</ui:define>
+	<ui:define name="body">
+		<b:panel title="Termos de Compromisso" collapsible="false">
+			<h:form>
+				<!-- <b:panelGrid >
+					<h:outputLabel value="Nome" />
+					<b:inputText size="20" />
+					<h:outputLabel value="Data" />
+					<p:calendar />
+					<p:selectCheckboxMenu label="Alunos"></p:selectCheckboxMenu>
+					<b:button value="Filtrar" outcome="atividadeCadastrar" />
+					<b:button value="Nova" outcome="atividadeCadastrar" />
+				</b:panelGrid> 
+				<hr />-->
+				<div align="right">
+					<b:button value="Novo" outcome="cadastrarTermo" />
+				</div>
+				<hr />
+				<h:dataTable headerClass="headerAtv" value="#{termoMB.termos}"
+					var="item">
+
+					<p:column>
+						<f:facet name="header">
+							<h:outputText value="Nome do Aluno" />
+						</f:facet>
+						<h:outputText value="#{item.nomeAluno}" styleClass="bodyText" />
+					</p:column>
+
+					<p:column>
+						<f:facet name="header">
+							<h:outputText value="Matrícula" />
+						</f:facet>
+						<h:outputText value="#{item.matricula}" styleClass="bodyDate" />
+					</p:column>
+
+					<p:column>
+						<f:facet name="header">
+							<h:outputText value="Descrição" styleClass="acoes" />
+						</f:facet>
+						<h:outputText value="#{item.descricao}" styleClass="bodyText" />
+					</p:column>
+
+					<p:column>
+						<f:facet name="header">
+							<h:outputText value="Ações" styleClass="bodyDate" />
+						</f:facet>
+						<h:panelGrid columns="2">
+							<b:commandButton icon="glyphicon glyphicon-info-sign"
+								tooltip="Informações" value=""
+								action="#{AtvMB.acaoAbrirInfo(item)}" size="sm" />
+
+							<b:commandButton icon="glyphicon glyphicon-edit" tooltip="Editar"
+								value="" size="sm" action="#{AtvMB.acaoEditar(item)}" />
+
+							<b:commandButton icon="glyphicon glyphicon-pencil"
+								tooltip="Informar realizadas" value="" size="sm"
+								action="#{AtvMB.acaoInfAtividade(item)}" />
+
+
+
+							<b:button icon="glyphicon glyphicon-trash" tooltip="Excluir"
+								value="" size="sm"
+								onclick="$('.modalPseudoClass').modal();return false;">
+
+								<b:modal id="amodal" title="Confirmação"
+									styleClass="modalPseudoClass" close-on-escape="false"
+									backdrop="false" closable="false" size="modal-sm">
+									<p>Deseja realmente excluir esta atividade?</p>
+									<f:facet name="footer">
+										<b:button value="Sim" dismiss="modal" />
+										<b:button value="Não" dismiss="modal" look="primary" />
+									</f:facet>
+								</b:modal>
+							</b:button>
+						</h:panelGrid>
+					</p:column>
+				</h:dataTable>
+			</h:form>
+		</b:panel>
+	</ui:define>
+</ui:composition>
+</html>

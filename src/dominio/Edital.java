@@ -111,6 +111,9 @@ public class Edital {
 	}
 
 	public String getPeriodoInscricao() {
+		if( this.inicioInscricao == null )
+			return "";
+		
 		SimpleDateFormat sdt = new SimpleDateFormat("dd/MM/yyyy");
 
 		return sdt.format(this.inicioInscricao).toString() + " até "
@@ -118,9 +121,16 @@ public class Edital {
 	}
 
 	public String getPeriodoAtividade() {
+		if( this.inicioAtividade == null )
+			return "";
+		
 		SimpleDateFormat sdt = new SimpleDateFormat("dd/MM/yyyy");
 
 		return sdt.format(this.inicioAtividade) + " até "
 				+ sdt.format(this.fimAtividade);
+	}
+	
+	public String toString(){
+		return this.numero+" - " + this.curso;
 	}
 }

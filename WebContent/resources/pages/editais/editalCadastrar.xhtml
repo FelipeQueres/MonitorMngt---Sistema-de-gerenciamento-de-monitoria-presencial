@@ -56,13 +56,21 @@
 				<b:inputText>
 				</b:inputText>
 				<h:outputLabel value="Escola" />
-				<b:inputText />
+				<b:selectOneMenu>
+				<f:selectItem itemLabel="Escolha uma escola" itemValue=""/>
+				<f:selectItems value="#{check.escolas}" var="item" itemLabel="#{item}" itemValue="#{item}" />
+				</b:selectOneMenu>
 				<h:outputLabel value="Disciplinas" />
 				<b:inputText />
 				<h:outputLabel value="Curso" />
 				<b:inputText />
 				<h:outputLabel value="Período Letivo" />
-				<b:inputText />
+
+				<b:selectOneMenu required="true">
+					<f:selectItem itemLabel="Escolha um período" value="" />
+					<f:selectItem itemLabel="1º semestre" value="1" />
+					<f:selectItem itemLabel="2º semestre" value="2" />
+				</b:selectOneMenu>
 
 				<h:outputLabel value="Período de Inscrição" />
 				<h:column>

@@ -157,6 +157,15 @@
 		<display-name>*</display-name>
 		<from-view-id>*</from-view-id>
 		<navigation-case>
+			<from-outcome>cadastrarTermo</from-outcome>
+			<to-view-id>/resources/pages/termosDeCompromisso/cadastrarTermo.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	
+	<navigation-rule>
+		<display-name>*</display-name>
+		<from-view-id>*</from-view-id>
+		<navigation-case>
 			<from-outcome>termos</from-outcome>
 			<to-view-id>/resources/pages/termosDeCompromisso/cadastrarTermo.xhtml</to-view-id>
 		</navigation-case>

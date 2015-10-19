@@ -29,6 +29,8 @@ public class EditaisMB {
 		edital1.setFimInscricao(new Date());
 		edital1.setInicioAtividade(new Date());
 		edital1.setFimAtividade(new Date());
+		edital1.setConteudo("blaalksnfrklasfsnanlak");
+		edital1.setBibliografia("A lot of books!");
 		
 		edital2.setNumero(3513);
 		edital2.setEscola("Ciência e Tecnologia");
@@ -74,6 +76,10 @@ public class EditaisMB {
 
 	public boolean isNotDisciplinaEmpity(Edital edital) {
 		return !edital.getDisciplinas().isEmpty();
+	}
+	
+	public boolean isNotDisciplinaEmpity() {
+		return !this.edital.getDisciplinas().isEmpty();
 	}
 
 }

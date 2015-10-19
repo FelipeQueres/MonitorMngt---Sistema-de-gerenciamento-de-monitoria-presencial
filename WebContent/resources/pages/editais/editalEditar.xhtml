@@ -17,38 +17,78 @@
 			<BR /> <BR />
 			<h:panelGrid columns="2">
 				<h:outputLabel value="Número" />
-				<h:inputText value="#{editalMB.edital.numero}" />
+				<b:inputText value="#{editalMB.edital.numero}" />
 				<h:outputLabel value="Escola" />
-				<h:inputText value="#{editalMB.edital.escola}" />
-				<h:outputLabel value="Disciplinas" />
-				<h:inputText />
+				<b:inputText value="#{editalMB.edital.escola}" />
 				<h:outputLabel value="Curso" />
-				<h:inputText value="#{editalMB.edital.curso}" />
+				<b:inputText value="#{editalMB.edital.curso}" />
 				<h:outputLabel value="Período Letivo" />
-				<h:inputText value="#{editalMB.edital.periodoLetivo}" />
+				<b:inputText value="#{editalMB.edital.periodoLetivo}" />
 
 				<h:outputLabel value="Período de Inscrição" />
 				<h:column>
-					<b:datepicker value="#{editalMB.edital.inicioInscricao}"/>
-					<b:datepicker value="#{editalMB.edital.fimInscricao}"/>
+					<b:datepicker value="#{editalMB.edital.inicioInscricao}" />
+					<b:datepicker value="#{editalMB.edital.fimInscricao}" />
 				</h:column>
 				<h:outputLabel value="Período de Atividade" />
 				<h:column>
-					<b:datepicker value="#{editalMB.edital.inicioAtividade}"/>
-					<b:datepicker value="#{editalMB.edital.fimAtividade}"/>
+					<b:datepicker value="#{editalMB.edital.inicioAtividade}" />
+					<b:datepicker value="#{editalMB.edital.fimAtividade}" />
 				</h:column>
-				<h:outputLabel value="Número de Vagas" />
-				<h:inputText>
-				</h:inputText>
 				<h:outputLabel value="Conteúdo Programático " />
-				<h:inputTextarea value="#{editalMB.edital.conteudo}"/>
+				<h:inputTextarea value="#{editalMB.edital.conteudo}" />
 				<h:outputLabel value="Bibliografia" />
-				<h:inputTextarea value="#{editalMB.edital.bibliografia}"/>
+				<h:inputTextarea value="#{editalMB.edital.bibliografia}" />
+				<br />
 			</h:panelGrid>
+			<div align="center">
+				<h:dataTable value="#{editalMB.edital.disciplinas}" var="item"
+					headerClass="bodyText">
+					<p:column>
+						<f:facet name="header">
+							<h:outputLabel value="Disciplinas" />
+						</f:facet>
+						<h:outputText value="#{item.nome}" />
+					</p:column>
+
+					<p:column>
+						<f:facet name="header">
+							<h:outputLabel value="Vagas" />
+						</f:facet>
+						<h:outputText value="#{item.numVagas}" />
+					</p:column>
+					<p:column>
+						<f:facet name="header">
+							<h:outputLabel value="Ações" />
+						</f:facet>
+						<h:panelGrid columns="2">
+
+							<b:button icon="glyphicon glyphicon-edit" tooltip="Editar"
+								value="" size="sm" />
+
+							<b:button icon="glyphicon glyphicon-trash" tooltip="Excluir"
+								value="" size="sm"
+								onclick="$('.modalPseudoClass').modal();return false;">
+
+								<b:modal id="amodal" title="Confirmação"
+									styleClass="modalPseudoClass" close-on-escape="false"
+									backdrop="false" closable="false" size="modal-sm">
+									<p>Deseja realmente excluir esta disciplina?</p>
+									<f:facet name="footer">
+										<b:button value="Sim" dismiss="modal" />
+										<b:button value="Não" dismiss="modal" look="primary" />
+									</f:facet>
+								</b:modal>
+							</b:button>
+						</h:panelGrid>
+					</p:column>
+				</h:dataTable>
+			</div>
 			<br />
-			<b:button value="Cadastrar" />
+			<b:button value="Editar" outcome="edital" />
+			<b:button value="Voltar" outcome="edital" />
+			<br />
 		</div>
-		<!-- disciplinas vs vagas -->
 	</ui:define>
 </ui:composition>
 </html>

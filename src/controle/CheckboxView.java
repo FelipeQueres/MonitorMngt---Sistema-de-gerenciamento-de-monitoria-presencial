@@ -7,7 +7,7 @@ import java.util.List;
 import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
 
-@ManagedBean(name="check")
+@ManagedBean(name = "check")
 public class CheckboxView {
 
 	private String[] alunosSelecionados;
@@ -19,11 +19,14 @@ public class CheckboxView {
 		this.alunos = new ArrayList<String>();
 		this.escolas = new ArrayList<String>();
 
+		this.escolas.add("Ciências da Saúde");
+		this.escolas.add("Ciências Sociais e Aplicadas");
+		this.escolas.add("Educação");
+		this.escolas.add("Ciências");
+		this.escolas.add("Letras");
+		this.escolas.add("Artes e Humanidades");
 		this.escolas.add("Ciência e Tecnologia");
-		this.escolas.add("Humanas");
-		this.escolas.add("Saúde");
-		this.escolas.add("Ciência e Tecnologia");
-		
+
 		alunos.add("Rodrigo");
 		alunos.add("Cheila");
 		alunos.add("Penha");
@@ -34,7 +37,6 @@ public class CheckboxView {
 		alunos.add("Samuel");
 
 		Collections.sort(this.alunos);
-		Collections.sort(this.escolas);
 	}
 
 	public ArrayList<String> getEscolas() {
