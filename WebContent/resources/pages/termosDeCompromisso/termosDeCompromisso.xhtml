@@ -26,7 +26,7 @@
 					<b:button value="Novo" outcome="cadastrarTermo" />
 				</div>
 				<hr />
-				<h:dataTable headerClass="headerAtv" value="#{termoMB.termos}"
+				<h:dataTable headerClass="header" value="#{termoMB.termos}"
 					var="item">
 
 					<p:column>
@@ -45,9 +45,16 @@
 
 					<p:column>
 						<f:facet name="header">
-							<h:outputText value="Descrição" styleClass="acoes" />
+							<h:outputText value="Disciplina" styleClass="acoes" />
 						</f:facet>
-						<h:outputText value="#{item.descricao}" styleClass="bodyText" />
+						<h:outputText value="#{item.disciplina}" styleClass="bodyText" />
+					</p:column>
+
+					<p:column>
+						<f:facet name="header">
+							<h:outputText value="Responsável" />
+						</f:facet>
+						<h:outputText value="#{item.responsavel}" />
 					</p:column>
 
 					<p:column>
@@ -56,15 +63,13 @@
 						</f:facet>
 						<h:panelGrid columns="2">
 							<b:commandButton icon="glyphicon glyphicon-info-sign"
-								tooltip="Informações" value=""
-								action="#{AtvMB.acaoAbrirInfo(item)}" size="sm" />
+								tooltip="Informações" value="" size="sm" />
 
 							<b:commandButton icon="glyphicon glyphicon-edit" tooltip="Editar"
-								value="" size="sm" action="#{AtvMB.acaoEditar(item)}" />
+								value="" size="sm" />
 
 							<b:commandButton icon="glyphicon glyphicon-pencil"
-								tooltip="Informar realizadas" value="" size="sm"
-								action="#{AtvMB.acaoInfAtividade(item)}" />
+								tooltip="Informar realizadas" value="" size="sm" />
 
 
 
@@ -75,7 +80,7 @@
 								<b:modal id="amodal" title="Confirmação"
 									styleClass="modalPseudoClass" close-on-escape="false"
 									backdrop="false" closable="false" size="modal-sm">
-									<p>Deseja realmente excluir esta atividade?</p>
+									<p>Deseja realmente excluir este termo?</p>
 									<f:facet name="footer">
 										<b:button value="Sim" dismiss="modal" />
 										<b:button value="Não" dismiss="modal" look="primary" />
