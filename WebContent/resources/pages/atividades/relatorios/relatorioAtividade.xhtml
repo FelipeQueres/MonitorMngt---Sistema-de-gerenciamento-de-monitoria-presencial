@@ -13,8 +13,8 @@
 
 		<b:panel title="Relatórios de Atividades" collapsible="false">
 			<h:form>
-				<h:dataTable headerClass="headerRelAtv" 
-					value="#{AtvMB.atividades}" var="item">
+				<h:dataTable headerClass="headerRelAtv" value="#{AtvMB.atividades}"
+					var="item">
 
 					<p:column>
 						<f:facet name="header">
@@ -26,7 +26,7 @@
 
 					<p:column>
 						<f:facet name="header">
-							<h:outputText value="Descrição"/>
+							<h:outputText value="Descrição" />
 						</f:facet>
 						<h:outputText value="#{item.descricao}" />
 					</p:column>
@@ -35,13 +35,9 @@
 						<f:facet name="header">
 							<h:outputText value="Ações" />
 						</f:facet>
-						<h:panelGrid columns="2">
-							<b:button icon="glyphicon glyphicon-info-sign"
-								tooltip="Detalhes" value="" />
+						<b:button icon="glyphicon glyphicon-info-sign" tooltip="Detalhes"
+							value="" />
 
-							<b:button icon="glyphicon glyphicon-trash"
-								tooltip="Excluir" value="" />
-						</h:panelGrid>
 					</p:column>
 
 

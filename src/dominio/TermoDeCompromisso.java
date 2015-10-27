@@ -1,5 +1,7 @@
 package dominio;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class TermoDeCompromisso {
@@ -154,8 +156,13 @@ public class TermoDeCompromisso {
 		this.infoAdicional = infoAdicional;
 	}
 
-	public Date getDataEntrega() {
+	public Date getDateEntrega() {
 		return dataEntrega;
+	}
+	
+	public String getDataEntrega(){
+		SimpleDateFormat sdt = new SimpleDateFormat("dd/MM/yyyy");
+		return sdt.format(this.dataEntrega);
 	}
 
 	public void setDataEntrega(Date dataEntrega) {

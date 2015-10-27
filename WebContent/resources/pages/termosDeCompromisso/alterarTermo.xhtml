@@ -8,44 +8,46 @@
 
 <ui:composition template="/resources/pages/_menu.xhtml">
 
-	<ui:define name="titulo">Cadastrar Termo</ui:define>
+	<ui:define name="titulo">Alterar Termo</ui:define>
 	<ui:define name="body">
 		<div align="center">
-			<H2>Cadastrar Termo de Compromisso</H2>
+			<H2>Alterar Termo de Compromisso</H2>
 			<HR />
 			<h:form>
 				<h:panelGrid columns="2" cellspacing="20" cellpadding="20">
 					<h:panelGrid columns="2" cellspacing="20" cellpadding="20">
 						<h:outputLabel value="Nome do aluno" />
-						<b:inputText />
+						<b:inputText value="#{termoMB.termo.nomeAluno}" />
 						<h:outputLabel value="Matrícula" />
-						<b:inputText />
+						<b:inputText value="#{termoMB.termo.matricula}" />
 						<h:outputLabel value="Curso" />
-						<b:inputText />
+						<b:inputText value="#{termoMB.termo.curso}" />
 						<h:outputLabel value="Disciplina" />
-						<b:inputText />
+						<b:inputText value="#{termoMB.termo.disciplina}" />
 						<h:outputLabel value="E-mail" />
-						<b:inputText />
+						<b:inputText value="#{termoMB.termo.email}" />
 						<h:outputLabel value="Campus/Unidade" />
-						<b:inputText />
+						<b:inputText value="#{termoMB.termo.campus}" />
 						<h:outputLabel value="CR" />
-						<b:inputText />
+						<b:inputText value="#{termoMB.termo.cr}" />
 						<h:outputLabel value="Fase" />
-						<b:inputText />
+						<b:inputText value="#{termoMB.termo.fase}" />
 						<h:outputLabel value="Local da monitoria" />
-						<b:inputText />
+						<b:inputText value="#{termoMB.termo.localMonitoria}" />
 						<h:outputLabel value="Semestre" />
-						<b:inputText />
+						<b:inputText value="#{termoMB.termo.semestre}" />
 						<h:outputLabel value="Período de duração" />
-						<b:inputText />
+						<b:inputText value="#{termoMB.termo.períodoDuracao}" />
 						<h:outputLabel value="Responsável" />
-						<b:inputText />
+						<b:inputText value="#{termoMB.termo.responsavel}" />
 						<h:outputLabel value="Atividades a serem desenvolvidas" />
-						<h:inputTextarea cols="42" rows="5" />
+						<h:inputTextarea cols="42" rows="5"
+							value="#{termoMB.termo.atividades}" />
 						<h:outputLabel value="Informações Adicionais" />
-						<h:inputTextarea cols="42" rows="5" />
+						<h:inputTextarea cols="42" rows="5"
+							value="#{termoMB.termo.infoAdicional}" />
 						<h:outputLabel value="Data de entrega" />
-						<b:datepicker />
+						<b:datepicker value="#{termoMB.termo.dateEntrega}" />
 					</h:panelGrid>
 				</h:panelGrid>
 				<br />

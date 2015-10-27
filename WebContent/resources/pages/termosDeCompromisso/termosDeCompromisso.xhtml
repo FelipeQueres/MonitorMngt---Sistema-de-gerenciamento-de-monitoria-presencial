@@ -46,7 +46,7 @@
 					<p:column>
 						<f:facet name="header">
 							<h:outputText value="Disciplina" styleClass="acoes" />
-						</f:facet>
+						</f:facet> 
 						<h:outputText value="#{item.disciplina}" styleClass="bodyText" />
 					</p:column>
 
@@ -62,14 +62,14 @@
 							<h:outputText value="Ações" styleClass="bodyDate" />
 						</f:facet>
 						<h:panelGrid columns="2">
-							<b:commandButton icon="glyphicon glyphicon-info-sign"
-								tooltip="Informações" value="" size="sm" />
+							<b:commandButton icon="glyphicon glyphicon-print"
+								tooltip="Imprimir" value="" size="sm" />
 
 							<b:commandButton icon="glyphicon glyphicon-edit" tooltip="Editar"
-								value="" size="sm" />
+								value="" size="sm" action="#{termoMB.acaoAlterarTermo(item)}"/>
 
-							<b:commandButton icon="glyphicon glyphicon-pencil"
-								tooltip="Informar realizadas" value="" size="sm" />
+							<b:commandButton icon="glyphicon glyphicon-file"
+								tooltip="?" value="" size="sm" />
 
 
 

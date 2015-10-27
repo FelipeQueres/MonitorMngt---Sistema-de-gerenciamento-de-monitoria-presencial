@@ -4,14 +4,13 @@
 	xmlns:b="http://bootsfaces.net/ui" xmlns:p="http://primefaces.org/ui"
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
-	xmlns:h="http://java.sun.com/jsf/html">
+	xmlns:h="http://java.sun.com/jsf/html" >
 
 <ui:composition template="/resources/pages/_menu.xhtml">
 
 	<ui:define name="titulo">Cadastro de Edital</ui:define>
 
 	<script type="text/javascript">
-	<!--
 		PrimeFaces.locales['pt'] = {
 			closeText : 'Fechar',
 			prevText : 'Anterior',
@@ -42,9 +41,7 @@
 			day : 'Dia',
 			allDayText : 'Todo o Dia'
 		};
-	//-->
 	</script>
-
 
 
 	<ui:define name="body">
@@ -57,8 +54,9 @@
 				</b:inputText>
 				<h:outputLabel value="Escola" />
 				<b:selectOneMenu>
-				<f:selectItem itemLabel="Escolha uma escola" itemValue=""/>
-				<f:selectItems value="#{check.escolas}" var="item" itemLabel="#{item}" itemValue="#{item}" />
+					<f:selectItem itemLabel="Escolha uma escola" itemValue="" />
+					<f:selectItems value="#{check.escolas}" var="item"
+						itemLabel="#{item}" itemValue="#{item}" />
 				</b:selectOneMenu>
 				<h:outputLabel value="Disciplinas" />
 				<b:inputText />
@@ -74,13 +72,13 @@
 
 				<h:outputLabel value="Período de Inscrição" />
 				<h:column>
-					<p:calendar locale="pt" />
-					<p:calendar locale="pt" />
+					<p:calendar locale="pt" pattern="dd/mm/yyyy"/>
+					<p:calendar locale="pt" pattern="dd/mm/yyyy"/>
 				</h:column>
 				<h:outputLabel value="Período de Atividade" />
 				<h:column>
-					<p:calendar locale="pt" />
-					<p:calendar locale="pt" />
+					<p:calendar locale="pt" pattern="dd/mm/yyyy"/>
+					<p:calendar locale="pt" pattern="dd/mm/yyyy"/>
 				</h:column>
 				<h:outputLabel value="Conteúdo Programático " />
 				<h:inputTextarea cols="42" />

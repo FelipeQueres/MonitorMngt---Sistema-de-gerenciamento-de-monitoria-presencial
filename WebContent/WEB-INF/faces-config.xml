@@ -5,6 +5,14 @@
 	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-facesconfig_2_0.xsd"
 	version="2.0">
 
+	<application>
+		<locale-config>
+			<default-locale>pt_BR</default-locale>
+			<supported-locale>pt</supported-locale>
+			<supported-locale>en_US</supported-locale>
+		</locale-config>
+	</application>
+
 	<navigation-rule>
 		<from-view-id>*</from-view-id>
 		<navigation-case>
@@ -97,7 +105,7 @@
 			<to-view-id>/resources/pages/cadastros/cadastroFuncionario.xhtml</to-view-id>
 		</navigation-case>
 	</navigation-rule>
-	
+
 	<navigation-rule>
 		<display-name>*</display-name>
 		<from-view-id>*</from-view-id>
@@ -106,7 +114,7 @@
 			<to-view-id>/resources/pages/atividades/atividadesInfo.xhtml</to-view-id>
 		</navigation-case>
 	</navigation-rule>
-	
+
 	<navigation-rule>
 		<display-name>*</display-name>
 		<from-view-id>*</from-view-id>
@@ -115,7 +123,7 @@
 			<to-view-id>/resources/pages/atividades/informarAtividadeRealizada.xhtml</to-view-id>
 		</navigation-case>
 	</navigation-rule>
-	
+
 	<navigation-rule>
 		<display-name>*</display-name>
 		<from-view-id>*</from-view-id>
@@ -125,7 +133,7 @@
 		</navigation-case>
 	</navigation-rule>
 
-	
+
 	<navigation-rule>
 		<display-name>*</display-name>
 		<from-view-id>*</from-view-id>
@@ -134,7 +142,7 @@
 			<to-view-id>/resources/pages/editais/editalInfo.xhtml</to-view-id>
 		</navigation-case>
 	</navigation-rule>
-	
+
 	<navigation-rule>
 		<display-name>*</display-name>
 		<from-view-id>*</from-view-id>
@@ -143,7 +151,7 @@
 			<to-view-id>/resources/pages/cadastros/manterAluno.xhtml</to-view-id>
 		</navigation-case>
 	</navigation-rule>
-	
+
 	<navigation-rule>
 		<display-name>*</display-name>
 		<from-view-id>*</from-view-id>
@@ -152,7 +160,7 @@
 			<to-view-id>/resources/pages/cadastros/alunos.xhtml</to-view-id>
 		</navigation-case>
 	</navigation-rule>
-	
+
 	<navigation-rule>
 		<display-name>*</display-name>
 		<from-view-id>*</from-view-id>
@@ -161,7 +169,7 @@
 			<to-view-id>/resources/pages/termosDeCompromisso/cadastrarTermo.xhtml</to-view-id>
 		</navigation-case>
 	</navigation-rule>
-	
+
 	<navigation-rule>
 		<display-name>*</display-name>
 		<from-view-id>*</from-view-id>
@@ -170,7 +178,7 @@
 			<to-view-id>/resources/pages/termosDeCompromisso/termosDeCompromisso.xhtml.xhtml</to-view-id>
 		</navigation-case>
 	</navigation-rule>
-	
+
 	<navigation-rule>
 		<display-name>*</display-name>
 		<from-view-id>*</from-view-id>
@@ -179,7 +187,7 @@
 			<to-view-id>/resources/pages/cadastros/professores.xhtml</to-view-id>
 		</navigation-case>
 	</navigation-rule>
-	
+
 	<navigation-rule>
 		<display-name>*</display-name>
 		<from-view-id>*</from-view-id>
@@ -188,7 +196,7 @@
 			<to-view-id>/resources/pages/cadastros/funcionarios.xhtml</to-view-id>
 		</navigation-case>
 	</navigation-rule>
-	
+
 	<navigation-rule>
 		<display-name>*</display-name>
 		<from-view-id>*</from-view-id>
@@ -197,7 +205,7 @@
 			<to-view-id>/resources/pages/editais/adicionarDisciplina.xhtml</to-view-id>
 		</navigation-case>
 	</navigation-rule>
-	
-	
+
+
 
 </faces-config>

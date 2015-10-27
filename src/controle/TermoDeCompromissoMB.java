@@ -38,4 +38,10 @@ public class TermoDeCompromissoMB {
 	public void setTermo(TermoDeCompromisso termo) {
 		this.termo = termo;
 	}
+
+	public String acaoAlterarTermo(TermoDeCompromisso termo) {
+		this.termo = termo;
+
+		return "alterarTermo";
+	}
 }

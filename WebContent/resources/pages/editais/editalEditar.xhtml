@@ -23,7 +23,10 @@
 				<h:outputLabel value="Curso" />
 				<b:inputText value="#{editalMB.edital.curso}" />
 				<h:outputLabel value="Período Letivo" />
-				<b:inputText value="#{editalMB.edital.periodoLetivo}" />
+				<b:selectOneMenu required="true" value="#{editalMB.edital.periodoLetivo}">
+					<f:selectItem itemLabel="1º semestre" value="1" />
+					<f:selectItem itemLabel="2º semestre" value="2" />
+				</b:selectOneMenu>
 
 				<h:outputLabel value="Período de Inscrição" />
 				<h:column>
