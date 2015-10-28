@@ -7,22 +7,22 @@ import java.util.List;
 import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
 
-import dominio.Atividade;
+import dominio.AtividadePlanejada;
 
-@ManagedBean(name = "AtvMB")
-public class AtividadesMB {
+@ManagedBean(name = "AtvPlMB")
+public class AtividadesPlanejadasMB {
 
-	private List<Atividade> atividades;
-	private Atividade atividade;
+	private List<AtividadePlanejada> atividades;
+	private AtividadePlanejada atividade;
 
 	@PostConstruct
 	public void iniciar() {
-		this.atividades = new ArrayList<Atividade>();
-		this.atividade = new Atividade();
+		this.atividades = new ArrayList<AtividadePlanejada>();
+		this.atividade = new AtividadePlanejada();
 		Date data = new Date();
 
-		Atividade atividade = new Atividade(),
-		          atividade1 = new Atividade();
+		AtividadePlanejada atividade = new AtividadePlanejada(),
+		          atividade1 = new AtividadePlanejada();
 		
 		atividade.setNome("Oficina de Programação");
 		atividade.setDescricao("Desenvolver softwares");
@@ -38,34 +38,34 @@ public class AtividadesMB {
 		this.atividades.add(atividade1);
 	}
 
-	public List<Atividade> getAtividades() {
+	public List<AtividadePlanejada> getAtividades() {
 		return this.atividades;
 	}
 
-	public void setAtividades(List<Atividade> atividades) {
+	public void setAtividades(List<AtividadePlanejada> atividades) {
 		this.atividades = atividades;
 	}
 	
 
-	public Atividade getAtividade() {
+	public AtividadePlanejada getAtividade() {
 		return atividade;
 	}
 
-	public void setAtividade(Atividade atividade) {
+	public void setAtividade(AtividadePlanejada atividade) {
 		this.atividade = atividade;
 	}
-	public String acaoAbrirInfo(Atividade atividade){
+	public String acaoAbrirInfo(AtividadePlanejada atividade){
 		this.atividade = atividade;
 
 		return "atividadesInfo";
 	}
 	
-	public String acaoEditar(Atividade atividade){
+	public String acaoEditar(AtividadePlanejada atividade){
 		this.atividade=atividade;
 		return "atividadeEditar";
 	}
 	
-	public String acaoInfAtividade(Atividade atividade){
+	public String acaoInfAtividade(AtividadePlanejada atividade){
 		this.atividade = atividade;
 		return "informarAtividadeRealizada";
 	}

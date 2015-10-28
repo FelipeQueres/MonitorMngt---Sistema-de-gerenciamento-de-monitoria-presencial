@@ -3,7 +3,7 @@ package dominio;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class Atividade {
+public class AtividadePlanejada {
 	private String nome;
 	private String[] alunos;
 	private String descricao;
