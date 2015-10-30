@@ -21,19 +21,18 @@ public class AtividadesPlanejadasMB {
 		this.atividade = new AtividadePlanejada();
 		Date data = new Date();
 
-		AtividadePlanejada atividade = new AtividadePlanejada(),
-		          atividade1 = new AtividadePlanejada();
-		
+		AtividadePlanejada atividade = new AtividadePlanejada(), atividade1 = new AtividadePlanejada();
+
 		atividade.setNome("Oficina de Programação");
 		atividade.setDescricao("Desenvolver softwares");
 		atividade.setData(data);
 		atividade.setLocal("Lab B103");
-		
+
 		atividade1.setNome("Oficina de UML");
 		atividade1.setDescricao("Aprender UML");
 		atividade1.setData(data);
 		atividade1.setLocal("Lab G103");
-		
+
 		this.atividades.add(atividade);
 		this.atividades.add(atividade1);
 	}
@@ -45,7 +44,6 @@ public class AtividadesPlanejadasMB {
 	public void setAtividades(List<AtividadePlanejada> atividades) {
 		this.atividades = atividades;
 	}
-	
 
 	public AtividadePlanejada getAtividade() {
 		return atividade;
@@ -54,18 +52,19 @@ public class AtividadesPlanejadasMB {
 	public void setAtividade(AtividadePlanejada atividade) {
 		this.atividade = atividade;
 	}
-	public String acaoAbrirInfo(AtividadePlanejada atividade){
+
+	public String acaoAbrirInfo(AtividadePlanejada atividade) {
 		this.atividade = atividade;
 
 		return "atividadesInfo";
 	}
-	
-	public String acaoEditar(AtividadePlanejada atividade){
-		this.atividade=atividade;
+
+	public String acaoEditar(AtividadePlanejada atividade) {
+		this.atividade = atividade;
 		return "atividadeEditar";
 	}
-	
-	public String acaoInfAtividade(AtividadePlanejada atividade){
+
+	public String acaoInfAtividade(AtividadePlanejada atividade) {
 		this.atividade = atividade;
 		return "informarAtividadeRealizada";
 	}

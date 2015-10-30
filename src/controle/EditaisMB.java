@@ -7,7 +7,6 @@ import java.util.List;
 import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
 
-import dominio.Disciplina;
 import dominio.Edital;
 
 @ManagedBean(name = "editalMB")
@@ -18,7 +17,8 @@ public class EditaisMB {
 	@PostConstruct
 	public void iniciar() {
 		this.editais = new ArrayList<Edital>();
-		Edital edital1 = new Edital(), edital2 = new Edital();
+		Edital edital1 = new Edital(), 
+			   edital2 = new Edital();
 
 		edital1.setNumero(332);
 		edital1.setEscola("Saúde");
@@ -31,7 +31,7 @@ public class EditaisMB {
 		edital1.setFimAtividade(new Date());
 		edital1.setConteudo("blaalksnfrklasfsnanlak");
 		edital1.setBibliografia("A lot of books!");
-		
+
 		edital2.setNumero(3513);
 		edital2.setEscola("Ciência e Tecnologia");
 		edital2.setCurso("Engenharia de Petróleo e Gás");
@@ -77,9 +77,14 @@ public class EditaisMB {
 	public boolean isNotDisciplinaEmpity(Edital edital) {
 		return !edital.getDisciplinas().isEmpty();
 	}
-	
+
 	public boolean isNotDisciplinaEmpity() {
 		return !this.edital.getDisciplinas().isEmpty();
+	}
+
+	public void acaoGerarPdf(Edital edital) {
+//		this.edital = edital;
+		edital.gerarPdf();
 	}
 
 }

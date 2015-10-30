@@ -3,6 +3,8 @@ package dominio;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+import javax.faces.bean.ManagedBean;
+
 public class AtividadePlanejada {
 	private String nome;
 	private String[] alunos;

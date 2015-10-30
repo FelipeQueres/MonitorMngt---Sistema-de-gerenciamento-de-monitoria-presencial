@@ -24,7 +24,7 @@
 						</f:facet>
 						<h:outputText value="#{item.numero}" />
 					</p:column>
-					<!-- listdatamodel ou passar por parametro no EL do datatable  -->
+
 					<p:column>
 						<f:facet name="header">
 							<h:outputText value="Escola" />
@@ -52,13 +52,14 @@
 						</f:facet>
 						<h:panelGrid columns="4">
 							<b:commandButton value="" tooltip="Adicionar diciplina"
-								icon="glyphicon glyphicon-plus" size="sm" action="#{editalMB.acaoAddDisciplina(item)}">
+								icon="glyphicon glyphicon-plus" size="sm"
+								action="#{editalMB.acaoAddDisciplina(item)}">
 							</b:commandButton>
 
 							<b:commandButton icon="glyphicon glyphicon-info-sign"
 								tooltip="Detalhes" value=""
-								rendered="#{editalMB.isNotDisciplinaEmpity(item)}"
-								action="#{editalMB.acaoAbrirInfo(item)}" size="sm">
+								rendered="#{editalMB.isNotDisciplinaEmpity(item)}" size="sm"
+								action="#{editalMB.acaoGerarPdf(item)}">
 							</b:commandButton>
 
 							<b:commandButton icon="glyphicon glyphicon-edit" tooltip="Editar"
@@ -68,8 +69,7 @@
 
 							<b:commandButton icon="glyphicon glyphicon-trash"
 								tooltip="Excluir" value="" size="sm"
-								onclick="$('.modalPseudoClass').modal();return false;"
-								rendered="#{editalMB.isNotDisciplinaEmpity(item)}">
+								onclick="$('.modalPseudoClass').modal();return false;">
 
 								<b:modal id="amodal" title="Confirmação"
 									styleClass="modalPseudoClass" close-on-escape="false"

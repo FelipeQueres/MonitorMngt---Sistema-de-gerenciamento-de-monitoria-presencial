@@ -1,9 +1,16 @@
 package dominio;
 
+import java.io.FileOutputStream;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+
+import com.itextpdf.text.Document;
+import com.itextpdf.text.FontFactory;
+import com.itextpdf.text.PageSize;
+import com.itextpdf.text.Paragraph;
+import com.itextpdf.text.pdf.PdfWriter;
 
 public class Edital {
 	private int numero;
@@ -111,9 +118,9 @@ public class Edital {
 	}
 
 	public String getPeriodoInscricao() {
-		if( this.inicioInscricao == null )
+		if (this.inicioInscricao == null)
 			return "";
-		
+
 		SimpleDateFormat sdt = new SimpleDateFormat("dd/MM/yyyy");
 
 		return sdt.format(this.inicioInscricao).toString() + " até "
@@ -121,16 +128,34 @@ public class Edital {
 	}
 
 	public String getPeriodoAtividade() {
-		if( this.inicioAtividade == null )
+		if (this.inicioAtividade == null)
 			return "";
-		
+
 		SimpleDateFormat sdt = new SimpleDateFormat("dd/MM/yyyy");
 
 		return sdt.format(this.inicioAtividade) + " até "
 				+ sdt.format(this.fimAtividade);
 	}
-	
-	public String toString(){
-		return this.numero+" - " + this.curso;
+
+	public String toString() {
+		return this.numero + " - " + this.curso;
+	}
+
+	public void gerarPdf() {
+		Document doc = new Document(PageSize.A4, 50, 50, 50, 50);
+		try {
+			PdfWriter writer = PdfWriter.getInstance(doc, new FileOutputStream(
+					"C:\\Users\\Aluno\\Desktop\\Edital"+this.numero+".pdf"));
+			doc.open();
+
+			doc.add(new Paragraph("Edital de Monitoria No" + numero + ".",
+					FontFactory.getFont(FontFactory.HELVETICA, 10)));
+			
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} finally {
+			doc.close();
+		}
 	}
 }
