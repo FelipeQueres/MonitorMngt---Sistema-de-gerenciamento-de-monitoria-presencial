@@ -1,13 +1,20 @@
 package dominio;
 
+import java.io.ByteArrayOutputStream;
 import java.io.FileOutputStream;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import javax.faces.context.FacesContext;
+import javax.servlet.ServletOutputStream;
+import javax.servlet.http.HttpServletResponse;
+
 import com.itextpdf.text.Document;
+import com.itextpdf.text.Font;
 import com.itextpdf.text.FontFactory;
+import com.itextpdf.text.ListItem;
 import com.itextpdf.text.PageSize;
 import com.itextpdf.text.Paragraph;
 import com.itextpdf.text.pdf.PdfWriter;
@@ -145,17 +152,105 @@ public class Edital {
 		Document doc = new Document(PageSize.A4, 50, 50, 50, 50);
 		try {
 			PdfWriter writer = PdfWriter.getInstance(doc, new FileOutputStream(
-					"C:\\Users\\Aluno\\Desktop\\Edital"+this.numero+".pdf"));
-			doc.open();
+					"C:\\Users\\JAVA\\Desktop\\Edital" + this.numero + ".pdf"));
 
-			doc.add(new Paragraph("Edital de Monitoria No" + numero + ".",
-					FontFactory.getFont(FontFactory.HELVETICA, 10)));
-			
+			FacesContext context = FacesContext.getCurrentInstance();
+			HttpServletResponse response = (HttpServletResponse) context
+					.getExternalContext().getResponse();
+
+			response.setContentType("application/pdf");
+
+			ByteArrayOutputStream baos = new ByteArrayOutputStream();
+			writer.getInstance(doc, baos);
+
+			doc.open();
+			montarArquivo(doc);
+			doc.close();
+
+			response.setContentLength(baos.size());
+			ServletOutputStream os = response.getOutputStream();
+			baos.writeTo(os);
+			os.flush();
+			os.close();
+
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} finally {
-			doc.close();
+			// doc.close();
+		}
+	}
+
+	// TODO configurar toString da classe Disciplinas
+	public void montarArquivo(Document doc) {
+		try {
+
+			Font font = FontFactory.getFont(FontFactory.HELVETICA, 10);
+
+			doc.add(new Paragraph("Edital de Monitoria No" + numero + ".\n",
+					FontFactory.getFont(FontFactory.HELVETICA, 10)));
+
+			doc.add(new Paragraph(" "));
+
+			doc.add(new Paragraph("O Diretor da Escola de " + this.escola
+					+ " da Unigranrio, no uso de suas atribuições, torna",
+					FontFactory.getFont(FontFactory.HELVETICA, 10)));
+
+			doc.add(new Paragraph(
+					"pública a realização do Concurso Interno de seleção de monitores das disciplinas ",
+					font));
+
+			doc.add(new Paragraph(this.disciplinas.toString() + " o curso de "
+					+ this.curso + " para o período letivo de "
+					+ this.periodoLetivo + ".", font));
+
+			doc.add(new Paragraph(
+					"As inscrições poderão ser efetuadas no período de "
+							+ this.inicioInscricao + " a " + this.fimInscricao
+							+ ", na .", font));// TODO conferir com a Suelen o
+												// que entra nesse campo
+
+			doc.add(new Paragraph(
+					"Podendo cada estudante se inscrever em apenas uma disciplina.",
+					font));
+			doc.add(new Paragraph(" "));
+			com.itextpdf.text.List list = new com.itextpdf.text.List(true,
+					false);
+			list.add(new ListItem(
+					"Este Edital é regido pela Regulamentação de Monitoria Vigente na UNIGRANRIO(Esta regulamentação"
+							+ " poderá ser retirada no ato da inscrição).",
+					font));
+
+			list.add(new ListItem(
+					"A monitoria visa aprimorar os conhecimentos teóricos e práticos do estudante na disciplina, bem como permitir a vivência de práticas de ensino e produção de conhecimento.",
+					font));
+
+			list.add(new ListItem("São atribuições do monitor:", font));
+
+			list.add(new ListItem("É vedado ao aluno monitor:", font));
+			list.add(new ListItem(
+					"O período previsto para as atividades da monitoria será de",
+					font));
+			list.add(new ListItem("Quadro de vagas:", font));
+			list.add(new ListItem("São requisitos para o processo seletivo:",
+					font));
+			list.add(new ListItem(
+					"A seleção será feita mediante realização de uma prova e entrevista. Serão classificados os candidatos que obtiverem, no processo seletivo, média igual ou superior a 7,0 (sete).",
+					font));
+			list.add(new ListItem("Para seleção serão considerados:", font));
+			list.add(new ListItem(
+					"O estudante selecionado terá que cumprir, no mínimo, 04 (quatro) horas semanais em atividades definidas pelo professor- coordenador.",
+					font));
+			list.add(new ListItem(
+					"A monitoria não garante ao aluno qualquer tipo de bolsa ou remuneração.",
+					font));
+			list.add(new ListItem(
+					"Os alunos selecionados deverão assinar o termo de monitoria em três vias, tomando ciência das normas em vigor.",
+					font));
+			list.add(new ListItem("Conteúdo Programático:", font));
+			doc.add(list);
+
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
 	}
 }

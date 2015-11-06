@@ -59,7 +59,8 @@
 							<b:commandButton icon="glyphicon glyphicon-info-sign"
 								tooltip="Detalhes" value=""
 								rendered="#{editalMB.isNotDisciplinaEmpity(item)}" size="sm"
-								action="#{editalMB.acaoGerarPdf(item)}">
+								ajax="false" >
+								<p:fileDownload value="#{editalMB.acaoGerarPdf(item)}" />
 							</b:commandButton>
 
 							<b:commandButton icon="glyphicon glyphicon-edit" tooltip="Editar"
