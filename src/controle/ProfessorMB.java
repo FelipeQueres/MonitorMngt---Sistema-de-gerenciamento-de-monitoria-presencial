@@ -14,6 +14,8 @@ public class ProfessorMB {
 
 	@PostConstruct
 	public void iniciar() {
+		this.professor = new Professor();
+		
 		this.professores = new ArrayList<Professor>();
 
 		Professor p = new Professor();

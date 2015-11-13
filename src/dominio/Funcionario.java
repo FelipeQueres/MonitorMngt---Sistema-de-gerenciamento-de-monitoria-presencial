@@ -6,6 +6,8 @@ public class Funcionario {
 	private String cpf;
 	private String email;
 	private String funcao;
+	private String adm;
+	private String senha;
 
 	public String getNome() {
 		return nome;
@@ -45,6 +47,22 @@ public class Funcionario {
 
 	public void setFuncao(String funcao) {
 		this.funcao = funcao;
+	}
+
+	public String getAdm() {
+		return adm;
+	}
+
+	public void setAdm(String adm) {
+		this.adm = adm;
+	}
+
+	public String getSenha() {
+		return senha;
+	}
+
+	public void setSenha(String senha) {
+		this.senha = senha;
 	}
 
 }

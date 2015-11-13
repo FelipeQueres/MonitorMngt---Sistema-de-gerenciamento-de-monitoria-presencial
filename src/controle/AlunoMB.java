@@ -8,7 +8,7 @@ import javax.faces.bean.ManagedBean;
 
 import dominio.Aluno;
 
-@ManagedBean(name="alunoMB")
+@ManagedBean(name = "alunoMB")
 public class AlunoMB {
 	private Aluno aluno;
 	private ArrayList<Aluno> alunos;
@@ -19,24 +19,23 @@ public class AlunoMB {
 
 		Aluno a = new Aluno(), b = new Aluno();
 
-		a.setNome("Pablo GonÁalves");
+		a.setNome("Pablo Gon√ßalves");
 		a.setCurso("Biologia");
 		a.setEmail("p.j@hotmail.com");
 		a.setMatricula(326545);
 		a.setRg("24659457-5");
 		a.setDisciplina("Fisiopatia");
-		
 
 		b.setNome("Joana Pacheco");
 		b.setCurso("Arquitetura e urbanismo");
 		b.setEmail("jp_@gmail.com");
 		b.setMatricula(64321231);
 		b.setRg("1321321-5");
-		b.setDisciplina("ProjeÁ„o de sei l·");
+		b.setDisciplina("Proje√ß√£o de sei l√°");
 
 		this.alunos.add(a);
 		this.alunos.add(b);
-		
+
 		this.aluno = new Aluno();
 
 	}
@@ -57,14 +56,23 @@ public class AlunoMB {
 		this.alunos = alunos;
 	}
 
-	public String acaoEditar(Aluno aluno){
+	public String acaoEditar(Aluno aluno) {
 		this.aluno = aluno;
 		return "manterAluno";
 	}
-	
-	public String acaoInfo(Aluno aluno){
+
+	public String acaoInfo(Aluno aluno) {
 		this.aluno = aluno;
 		return "infoAluno";
 	}
-	
+
+	@Override
+	public String toString() {
+		StringBuilder sbAluno = new StringBuilder();
+		for (Aluno aluno : this.alunos) {
+			sbAluno.append(aluno.getNome() + " - " + aluno.getMatricula()
+					+ ". ");
+		}
+		return sbAluno.toString();
+	}
 }

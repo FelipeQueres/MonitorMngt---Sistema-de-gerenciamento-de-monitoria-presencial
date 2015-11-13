@@ -16,6 +16,7 @@ public class FuncionarioMB {
 	@PostConstruct
 	public void iniciar() {
 		this.funcionarios = new ArrayList<Funcionario>();
+		this.funcionario = new Funcionario();
 
 		Funcionario f = new Funcionario();
 		f.setNome("Suellen");

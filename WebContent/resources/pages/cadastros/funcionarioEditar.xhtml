@@ -14,22 +14,55 @@
 	<ui:define name="body">
 		<div align="center">
 
-			<H2>Dados Pessoais</H2>
+			<H2>Alterar Dados Pessoais</H2>
 			<HR />
 			<h:form>
 				<h:panelGrid columns="2" cellspacing="20" cellpadding="20">
 					<h:outputLabel value="Nome" />
-					<b:inputText value="#{funcionarioMB.funcionario.nome}" />
+					<b:inputText value="#{funcionarioMB.funcionario.nome}"
+						required="true" requiredMessage="Obrigatório" id="nome">
+						<h:message style="color:red;" for="nome" />
+					</b:inputText>
 					<h:outputLabel value="CPF" />
-					<b:inputText value="#{funcionarioMB.funcionario.cpf}" />
+					<b:inputText value="#{funcionarioMB.funcionario.cpf}"
+						required="true" requiredMessage="Obrigatório" id="cpf">
+						<h:message style="color:red;" for="cpf" />
+					</b:inputText>
 					<h:outputLabel value="E-mail" />
-					<b:inputText value="#{funcionarioMB.funcionario.email}" />
+					<b:inputText value="#{funcionarioMB.funcionario.email}"
+						required="true" requiredMessage="Obrigatório" id="mail">
+						<h:message style="color:red;" for="mail" />
+					</b:inputText>
 					<h:outputLabel value="Telefone" />
-					<b:inputText value="#{funcionarioMB.funcionario.telefone}" />
+					<b:inputText value="#{funcionarioMB.funcionario.telefone}"
+						required="true" requiredMessage="Obrigatório" id="tel">
+						<h:message style="color:red;" for="tel" />
+					</b:inputText>
 					<h:outputLabel value="Função" />
-					<b:inputText value="#{funcionarioMB.funcionario.funcao}" />
+					<b:inputText value="#{funcionarioMB.funcionario.funcao}"
+						required="true" requiredMessage="Obrigatório" id="func">
+						<h:message style="color:red;" for="func" />
+					</b:inputText>
+					<h:outputLabel value="Administrador" />
+					<h:selectOneRadio value="#{funcionarioMB.funcionario.adm}"
+						required="true" requiredMessage="Obrigatório" id="adm">
+						<f:selectItem itemValue="true" itemLabel="Sim" />
+						<f:selectItem itemValue="false" itemLabel="Não" />
+						<h:message for="adm" style="color:red;" />
+					</h:selectOneRadio>
+					<h:outputLabel value="Senha" />
+					<p:password id="pw1" required="true" feedback="true" match="pw2"
+						promptLabel="Insira a senha" weakLabel="Fraca" goodLabel="Boa"
+						strongLabel="Forte" validatorMessage="As senhas não são iguais"
+						value="#{funcionarioMB.funcionario.senha}" />
+					<h:outputLabel value="Confirme a senha" />
+					<p:password id="pw2" required="true" feedback="true"
+						promptLabel="Insira a senha" weakLabel="Fraca" goodLabel="Boa"
+						strongLabel="Forte" />
 				</h:panelGrid>
-				<b:button value="Voltar" outcome="funcionarios" />
+				<h:message for="pw1" style="color:red;" />
+				<br />
+				<b:commandButton value="Cadastrar" update="grid" />
 			</h:form>
 		</div>
 	</ui:define>

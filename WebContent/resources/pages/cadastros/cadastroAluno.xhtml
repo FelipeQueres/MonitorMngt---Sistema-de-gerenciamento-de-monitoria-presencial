@@ -19,19 +19,72 @@
 			<h:form>
 				<h:panelGrid columns="2" cellspacing="20" cellpadding="20">
 					<h:outputLabel value="Nome" />
-					<b:inputText />
+					<b:inputText id="nome" required="true"
+						requiredMessage="Obrigatório" value="#{alunoMB.aluno.nome}">
+						<h:message for="nome" style="color:red" />
+					</b:inputText>
 					<h:outputLabel value="Matrícula" />
-					<b:inputText />
+					<b:inputText id="matricula" required="true"
+						value="#{alunoMB.aluno.matricula}" type="number"
+						requiredMessage="Obrigatório">
+						<h:message for="matricula" style="color:red" />
+					</b:inputText>
+
+					<h:outputLabel value="Edital" for="edital" />
+					<b:selectOneMenu required="true" id="edital"
+						value="#{editalMB.listaEdital}" >
+						<f:selectItem itemLabel="Selecione um edital" value="" />
+						<f:selectItems value="#{editalMB.editais}"
+							itemValue="#{editalMB.editais}" />
+					</b:selectOneMenu>
+
 					<h:outputLabel value="Curso" />
-					<b:inputText />
+					<b:inputText id="curso" required="true"
+						value="#{alunoMB.aluno.curso}" requiredMessage="Obrigatório">
+						<h:message for="curso" style="color:red" />
+					</b:inputText>
+
+					<h:outputLabel value="Campus" />
+					<b:inputText id="campus" required="true"
+						value="#{alunoMB.aluno.campus}" requiredMessage="Obrigatório">
+						<h:message for="campus" style="color:red" />
+					</b:inputText>
+
+					<h:outputLabel value="CR" />
+					<b:inputText id="cr" required="true" requiredMessage="Obrigatório"
+						value="#{alunoMB.aluno.cr}" type="number">
+						<h:message for="cr" style="color:red" />
+					</b:inputText>
 					<h:outputLabel value="Disciplina" />
-					<b:inputText />
+					<b:inputText id="disciplina" required="true"
+						value="#{alunoMB.aluno.disciplina}" requiredMessage="Obrigatório">
+						<h:message for="disciplina" style="color:red" />
+					</b:inputText>
 					<h:outputLabel value="RG" />
-					<b:inputText />
+					<b:inputText id="rg" required="true" requiredMessage="Obrigatório"
+						value="#{alunoMB.aluno.rg}">
+						<h:message for="rg" style="color:red" />
+					</b:inputText>
 					<h:outputLabel value="E-mail" />
-					<b:inputText />
+					<b:inputText id="mail" required="true"
+						value="#{alunoMB.aluno.email}" requiredMessage="Obrigatório">
+						<h:message for="mail" style="color:red" />
+					</b:inputText>
+
+					<h:outputLabel value="Senha" />
+					<p:password id="pw1" required="true" feedback="true" match="pw2"
+						promptLabel="Insira a senha" weakLabel="Fraca" goodLabel="Boa"
+						strongLabel="Forte" validatorMessage="As senhas não são iguais"
+						value="#{funcionarioMB.funcionario.senha}" size="67"
+						requiredMessage="Obrigatório" />
+					<h:outputLabel value="Confirme a senha" />
+					<p:password id="pw2" feedback="true" promptLabel="Insira a senha"
+						weakLabel="Fraca" goodLabel="Boa" strongLabel="Forte" size="67" />
+
 				</h:panelGrid>
-				<b:commandButton value="Cadastrar" />
+				<h:message for="pw1" style="color:red;" />
+				<br />
+				<b:commandButton value="Cadastrar" update="grid" />
 			</h:form>
 		</div>
 	</ui:define>

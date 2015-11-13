@@ -15,18 +15,20 @@
 			<hr />
 			<h:panelGrid columns="2">
 				<h:outputLabel value="Nome: " />
-				<h:outputText size="30" value="#{AtvMB.atividade.nome}" />
+				<b:inputText readonly="true" size="30"
+					value="#{AtvMB.atividade.nome}" />
 				<h:outputLabel value="Data: " />
-				<h:outputText size="23" readonly="true" value="#{AtvMB.atividade.data}" />
+				<b:inputText readonly="true" value="#{AtvMB.atividade.data}" />
 				<h:outputLabel value="Alunos: " />
-				<h:outputText value="#{checkboxView.alunosToString}" />
+				<h:inputTextarea readonly="true" rows="2" cols="35" value="#{AtvPlMB.atividade}" />
 				<h:outputLabel value="Local da atividade" />
-				<h:inputTextarea rows="4" cols="30" readonly="true" value="#{AtvMB.atividade.local}"/>
+				<h:inputTextarea rows="4" cols="35" readonly="true"
+					value="#{AtvMB.atividade.local}" />
 				<h:outputLabel value="Descrição: " />
-				<h:inputTextarea rows="4" cols="30" readonly="true"
+				<h:inputTextarea rows="4" cols="35" readonly="true"
 					value="#{AtvMB.atividade.descricao}" />
 			</h:panelGrid>
-			<b:button value="Votlar" outcome="atividade"/>
+			<b:button value="Voltar" outcome="atividade" />
 		</div>
 	</ui:define>
 </ui:composition>

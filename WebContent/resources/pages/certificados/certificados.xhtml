@@ -1,0 +1,55 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:b="http://bootsfaces.net/ui" xmlns:p="http://primefaces.org/ui"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html">
+
+<ui:composition template="/resources/pages/_menu.xhtml">
+
+	<ui:define name="titulo">Solicitar Certificados</ui:define>
+	<ui:define name="body">
+		<b:panel title="Alunos" collapsible="false">
+			<h:form>
+				<div align="center">
+					<h1>Solicitar Certificados</h1>
+					<hr />
+					<h:panelGrid columns="2">
+
+						<h:outputLabel value="Campus" />
+						<b:inputText />
+
+						<h:outputLabel value="Semestre da atividade" />
+						<h:panelGroup>
+							<b:inputText type="number" placeholder="Ano" />
+							<b:selectOneMenu>
+								<f:selectItem itemLabel="1º Semestre" itemValue="1" />
+								<f:selectItem itemLabel="2º Semestre" itemValue="2" />
+							</b:selectOneMenu>
+						</h:panelGroup>
+
+						<h:outputLabel value="Curso" />
+						<b:inputText />
+
+						<h:outputLabel value="Disciplina" />
+						<b:selectOneMenu>
+							<f:selectItems />
+						</b:selectOneMenu>
+
+						<h:outputLabel value="Alunos" />
+						<b:selectMultiMenu nonSelectedText="Selecione um aluno"
+							allSelectedText="Todos" nSelectedText="Selecionados"
+							numberDisplayed="1">
+							<f:selectItems value="#{alunoMB.alunos}" var="item"
+								itemLabel="#{item}" itemValue="#{item}" />
+						</b:selectMultiMenu>
+
+
+					</h:panelGrid>
+				</div>
+			</h:form>
+		</b:panel>
+	</ui:define>
+</ui:composition>
+</html>

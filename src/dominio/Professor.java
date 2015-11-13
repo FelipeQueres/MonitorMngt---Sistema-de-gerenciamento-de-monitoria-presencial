@@ -6,6 +6,7 @@ public class Professor {
 	private int matricula;
 	private String escola;
 	private String email;
+	private String senha;
 
 	public String getNome() {
 		return nome;
@@ -37,6 +38,14 @@ public class Professor {
 
 	public void setEmail(String email) {
 		this.email = email;
+	}
+
+	public String getSenha() {
+		return senha;
+	}
+
+	public void setSenha(String senha) {
+		this.senha = senha;
 	}
 
 }

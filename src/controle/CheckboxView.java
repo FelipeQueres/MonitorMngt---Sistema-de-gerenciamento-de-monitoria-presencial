@@ -19,13 +19,13 @@ public class CheckboxView {
 		this.alunos = new ArrayList<String>();
 		this.escolas = new ArrayList<String>();
 
-		this.escolas.add("Ciências da Saúde");
-		this.escolas.add("Ciências Sociais e Aplicadas");
-		this.escolas.add("Educação");
-		this.escolas.add("Ciências");
+		this.escolas.add("CiÃªncias da SaÃºde");
+		this.escolas.add("CiÃªncias Sociais e Aplicadas");
+		this.escolas.add("EducaÃ§Ã£o");
+		this.escolas.add("CiÃªncias");
 		this.escolas.add("Letras");
 		this.escolas.add("Artes e Humanidades");
-		this.escolas.add("Ciência e Tecnologia");
+		this.escolas.add("CiÃªncia e Tecnologia");
 
 		alunos.add("Rodrigo");
 		alunos.add("Cheila");

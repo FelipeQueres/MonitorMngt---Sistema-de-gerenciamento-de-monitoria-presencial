@@ -2,11 +2,11 @@ package dominio;
 
 public class Disciplina {
 	private String nome;
-	private int numVagas;
+	private int quantidadeVagas;
 
 	public Disciplina(String nome, int numVagas) {
 		this.nome = nome;
-		this.numVagas = numVagas;
+		this.quantidadeVagas = numVagas;
 	}
 
 	public String getNome() {
@@ -18,11 +18,11 @@ public class Disciplina {
 	}
 
 	public int getNumVagas() {
-		return numVagas;
+		return quantidadeVagas;
 	}
 
 	public void setNumVagas(int numVagas) {
-		this.numVagas = numVagas;
+		this.quantidadeVagas = numVagas;
 	}
 
 }

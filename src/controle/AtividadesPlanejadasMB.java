@@ -7,6 +7,7 @@ import java.util.List;
 import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
 
+import dominio.Aluno;
 import dominio.AtividadePlanejada;
 
 @ManagedBean(name = "AtvPlMB")
@@ -22,8 +23,12 @@ public class AtividadesPlanejadasMB {
 		Date data = new Date();
 
 		AtividadePlanejada atividade = new AtividadePlanejada(), atividade1 = new AtividadePlanejada();
-
-		atividade.setNome("Oficina de Programa��o");
+		String[] alunos = {"Joselito","Rogéria","Leda"};
+		
+		atividade.setAlunos(alunos);
+		
+		
+		atividade.setNome("Oficina de Programação");
 		atividade.setDescricao("Desenvolver softwares");
 		atividade.setData(data);
 		atividade.setLocal("Lab B103");
@@ -65,7 +70,8 @@ public class AtividadesPlanejadasMB {
 	}
 
 	public String acaoInfAtividade(AtividadePlanejada atividade) {
-		this.atividade = atividade;
+		this.atividade = atividade; 
+		//TODO buscar no banco todos os dados através das informações recebidas por parâmetro
 		return "informarAtividadeRealizada";
 	}
 }

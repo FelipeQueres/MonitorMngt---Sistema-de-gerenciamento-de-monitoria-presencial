@@ -3,8 +3,6 @@ package dominio;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-import javax.faces.bean.ManagedBean;
-
 public class AtividadePlanejada {
 	private String nome;
 	private String[] alunos;
@@ -41,15 +39,15 @@ public class AtividadePlanejada {
 		this.nome = nome;
 	}
 
-	public String[] getAlunos() {
-		return alunos;
+	public String getAlunos() {
+		return alunos.toString();
 	}
 
 	public void setAlunos(String[] alunos) {
 		this.alunos = alunos;
 	}
-	
-	public String getAlunosToString(){
+
+	public String getAlunosToString() {
 		return this.alunos.toString();
 	}
 
@@ -59,5 +57,21 @@ public class AtividadePlanejada {
 
 	public void setDescricao(String descricao) {
 		this.descricao = descricao;
+	}
+
+	
+	
+	public String toString() {
+		if (this.alunos == null || this.alunos.length == 0)
+			return "";
+		StringBuilder sbAluno = new StringBuilder();
+		for (String aluno : this.alunos) {
+			sbAluno.append(aluno + ", ");
+		}
+		sbAluno.reverse();
+		sbAluno.replace(0, 2, ".");
+		sbAluno.reverse();
+		String retorno = sbAluno.toString();
+		return retorno;
 	}
 }

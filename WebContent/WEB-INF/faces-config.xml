@@ -206,6 +206,15 @@
 		</navigation-case>
 	</navigation-rule>
 
+	<navigation-rule>
+		<display-name>*</display-name>
+		<from-view-id>*</from-view-id>
+		<navigation-case>
+			<from-outcome>certificados</from-outcome>
+			<to-view-id>/resources/pages/certificados/certificados.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
 
 
 </faces-config>

@@ -12,11 +12,11 @@
 <h:body>
 	<h:panelGrid columns="2" width="98%">
 		<p:graphicImage value="/resources/images/header_uni.png" />
-		<h:form styleClass="navbar-form navbar-right">
+		<!-- <h:form styleClass="navbar-form navbar-right">
 			<div class="form-group">
 				<b:inputText placeholder="Email" fieldSize="sm" required="true"
 					requiredMessage="Preencha um e-mail" />
-				<!--input type="text" class="form-control" placeholder="Search"/-->
+				<input type="text" class="form-control" placeholder="Search"/>
 			</div>
 			<div class="form-group">
 				<b:inputSecret placeholder="Senha" fieldSize="sm" required="true"
@@ -25,11 +25,10 @@
                 #{' '}
                 <b:commandButton action="a" value="Entrar"
 				look="success" icon="chevron-right" iconAlign="right" />
-		</h:form>
+		</h:form> -->
 	</h:panelGrid>
 	<b:navBar static="true" >
 		<b:navbarLinks>
-			<b:navLink value="Início" outcome="home" />
 			<b:navLink value="Atividades" outcome="atividade" />
 			<b:navLink value="Editais" outcome="edital" />
 			<b:dropMenu value="Relatórios">
@@ -38,15 +37,17 @@
 				<b:navLink value="Relatórios de Atividades"
 					outcome="relatorioAtividade" />
 			</b:dropMenu>
-			<b:navLink value="Processos Seletivos" />
 			<b:dropMenu value="Cadastro">
 				<b:navLink value="Alunos" outcome="alunos" />
 				<b:navLink value="Professores" outcome="professores" />
 				<b:navLink value="Funcionário" outcome="funcionarios" />
 			</b:dropMenu>
-			<b:navLink value="Termos de Compromisso" outcome="termos" />
-			<b:navLink value="Documentos" />
-			<b:navLink value="Contato" />
+			<b:navLink value="Termos de Compromisso" outcome="cadastrarTermo" />
+			<b:dropMenu value="Alterar Dados">
+			<b:navLink value="Aluno" outcome="manterAluno"/>
+			<b:navLink value="Professor" outcome="professorEditar"/>
+			<b:navLink value="Funcionário" outcome="funcionarioEditar"/>
+			</b:dropMenu>
 		</b:navbarLinks>
 	</b:navBar>
 

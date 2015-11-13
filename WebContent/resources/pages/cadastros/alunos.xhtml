@@ -14,6 +14,7 @@
 			<h:form>
 				<div align="right">
 					<b:button value="Novo" outcome="cadastroAluno" />
+					<b:button value="Solicitar Certificados" outcome="certificados" />
 				</div>
 				<hr />
 				<h:dataTable headerClass="header" value="#{alunoMB.alunos}"
@@ -51,21 +52,19 @@
 						</f:facet>
 						<h:panelGrid columns="3">
 							<b:commandButton icon="glyphicon glyphicon-info-sign"
-								tooltip="Detalhes" value=""
-								action="#{alunoMB.acaoInfo(item)}" size="sm">
+								tooltip="Detalhes" value="" action="#{alunoMB.acaoInfo(item)}"
+								size="sm">
 							</b:commandButton>
 
-							<b:commandButton icon="glyphicon glyphicon-edit"
-								tooltip="Editar" value=""
-								action="#{alunoMB.acaoEditar(item)}" size="sm">
+							<b:commandButton icon="glyphicon glyphicon-edit" tooltip="Editar"
+								value="" action="#{alunoMB.acaoEditar(item)}" size="sm">
 							</b:commandButton>
-
 
 							<b:commandButton icon="glyphicon glyphicon-trash"
 								tooltip="Excluir" value="" size="sm"
 								onclick="$('.modalPseudoClass').modal();return false;">
 
-								<b:modal id="amodal" title="Confirmação"
+								<b:modal id="modalExcl" title="Confirmação"
 									styleClass="modalPseudoClass" close-on-escape="false"
 									backdrop="false" closable="false" size="modal-sm">
 									<p>Deseja realmente excluir este aluno?</p>

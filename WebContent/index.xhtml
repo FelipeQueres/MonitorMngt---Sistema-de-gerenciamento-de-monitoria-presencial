@@ -5,8 +5,48 @@
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:h="http://java.sun.com/jsf/html">
-
-<ui:composition template="/resources/pages/_menu.xhtml">
+<!-- <ui:composition template="/resources/pages/_menu.xhtml">
 	<ui:define name="titulo">Inicio</ui:define>
-</ui:composition>
+</ui:composition> -->
+
+
+
+
+<div align="center">
+	<h:form id="form">
+		<p:panel header="Digite seu usuário e senha" style="width: 400px">
+			<h:panelGrid columns="2">
+				<h:outputLabel value="e-Mail:" for="login"></h:outputLabel>
+				<b:inputText id="login" value="" required="true"
+					requiredMessage="O Campo e-Mail: é obrigatório." />
+
+				<h:outputLabel value="Senha:" for="senha"></h:outputLabel>
+				<p:password feedback="false" id="senha" value="" required="true"
+					requiredMessage="O Campo Senha é obrigatório.">
+				</p:password>
+
+				<f:facet name="footer">
+					<h:panelGroup layout="block" style="text-align: center">
+						<p:captcha id="codigoImg" label="Captcha" language="pt-BR"
+							theme="white"
+							requiredMessage="O código da imagem não foi digitado."
+							validatorMessage="O código da imagem está incorreto.">
+						</p:captcha>
+						<h:message for="login" style="color:red;" />
+						<br />
+						<h:message for="senha" style="color:red;" />
+						<br />
+						<h:message for="codigoImg" style="color:red;" />
+						<br />
+
+
+						<br />
+						<b:commandButton ajax="false" id="btnEnviar" value="Enviar"/>
+
+					</h:panelGroup>
+				</f:facet>
+			</h:panelGrid>
+		</p:panel>
+	</h:form>
+</div>
 </html>

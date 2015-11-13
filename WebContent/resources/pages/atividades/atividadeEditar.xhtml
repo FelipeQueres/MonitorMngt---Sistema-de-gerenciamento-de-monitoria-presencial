@@ -20,13 +20,9 @@
 				<h:outputLabel value="Nome: " />
 				<b:inputText size="30" value="#{AtvMB.atividade.nome}"/>
 				<h:outputLabel value="Data: " />
-				<p:calendar value="#{AtvMB.atividade.date}"/>
+				<b:datepicker value="#{AtvMB.atividade.date}"/>
 				<h:outputLabel value="Alunos: " />
-				<p:selectCheckboxMenu id="menu" filter="true" label="Alunos"
-					filterMatchMode="startsWith" panelStyle="width:250px"
-					scrollHeight="100">
-					<f:selectItems value="#{checkboxView.alunos}" />
-				</p:selectCheckboxMenu>
+				<h:inputTextarea readonly="true" rows="2" cols="35" value="#{AtvPlMB.atividade}" />
 				<h:outputLabel value="Local da atividade" />
 				<h:inputTextarea rows="4" cols="30" value="#{AtvMB.atividade.local}"/>
 				<h:outputLabel value="Descrição: " />

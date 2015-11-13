@@ -21,7 +21,7 @@ public class AtividadesRealizadasMB {
 		atividade.setNome("Coleta de margaridas");
 		atividade.setData(new Date());
 		atividade.setObjetivo("Colher margaridas");
-		atividade.setLocal("Jardins Suspensos da Babilônia");
+		atividade.setLocal("Jardins Suspensos da BabilÃ´nia");
 		atividade
 				.setAtividadesRealizadas("Colhemos flores.\nComemos frutas\n e registramos dados.");
 		this.atividades.add(atividade);

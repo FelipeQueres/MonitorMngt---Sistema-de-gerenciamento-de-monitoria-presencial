@@ -3,12 +3,15 @@ package dominio;
 public class Aluno {
 
 	private String nome;
-	private int    matricula;
+	private String email;
+	private int matricula;
 	private String curso;
 	private String disciplina;
 	private String rg;
-	private String email;
-//	private Edital edital;
+	private int cr;
+	private String campus;
+	private Edital edital;
+	private String senha;
 
 	public String getNome() {
 		return nome;
@@ -58,11 +61,45 @@ public class Aluno {
 		this.email = email;
 	}
 
-//	public int getEdital() {
-//		return edital.getNumero();
-//	}
-//
-//	public void setEdital(int numero) {
-//		this.edital.setNumero(numero);
-//	}
+	public int getEdital() {
+		return edital.getNumero();
+	}
+
+	public void setEdital(int numero) {
+		this.edital.setNumero(numero);
+	}
+
+	public int getCr() {
+		return cr;
+	}
+
+	public void setCr(int cr) {
+		this.cr = cr;
+	}
+
+	public String getCampus() {
+		return campus;
+	}
+
+	public void setCampus(String campus) {
+		this.campus = campus;
+	}
+
+	public String getSenha() {
+		return senha;
+	}
+
+	public void setSenha(String senha) {
+		this.senha = senha;
+	}
+
+	public void setEdital(Edital edital) {
+		this.edital = edital;
+	}
+	
+	@Override
+	public String toString() {
+		return this.nome + " - " + this.matricula;
+	}
+
 }

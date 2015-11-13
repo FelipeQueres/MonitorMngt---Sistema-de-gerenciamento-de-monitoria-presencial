@@ -24,7 +24,7 @@
 				<h:outputLabel value="Nome: " />
 				<b:inputText size="30" />
 				<h:outputLabel value="Data: " />
-				<p:calendar />
+				<b:datepicker />
 				<h:outputLabel value="Alunos: " />
 				<p:selectCheckboxMenu id="menu" filter="true" label="Alunos"
 					filterMatchMode="startsWith" panelStyle="width:250px"
@@ -32,12 +32,13 @@
 					<f:selectItems value="#{checkboxView.alunos}" />
 				</p:selectCheckboxMenu>
 				<h:outputLabel value="Local da atividade " />
-				<h:inputTextarea rows="2" cols="30" />
+				<h:inputTextarea rows="2" cols="40" />
 				<h:outputLabel value="Descrição: " />
-				<h:inputTextarea rows="4" cols="30" />
+				<h:inputTextarea rows="4" cols="40" />
 			</h:panelGrid>
 			<br />
 			<b:button value="Cadastrar" />
+			<b:button value="Cancelar" outcome="atividade"/>
 		</div>
 	</ui:define>
 </ui:composition>
