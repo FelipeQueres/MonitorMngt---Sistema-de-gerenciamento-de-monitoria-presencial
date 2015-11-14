@@ -7,7 +7,6 @@ import java.util.List;
 import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
 
-import dominio.Aluno;
 import dominio.AtividadePlanejada;
 
 @ManagedBean(name = "AtvPlMB")

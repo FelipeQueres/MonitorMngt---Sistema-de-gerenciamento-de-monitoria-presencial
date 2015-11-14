@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:b="http://bootsfaces.net/ui" xmlns:p="http://primefaces.org/ui"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html">
+
+<ui:composition template="/resources/pages/_menu.xhtml">
+
+	<ui:define name="titulo">Informar Atividade Realizada</ui:define>
+	<ui:define name="body">
+		<div align="center">
+			<h2>Informar Atividade Realizada</h2>
+			<hr />
+			<h:panelGrid columns="2">
+				<h:outputLabel value="Nome: " />
+				<b:inputText size="30" value="#{AtvReMB.atividade.nome}" />
+
+				<h:outputLabel value="Data: " />
+				<b:inputText value="#{AtvReMB.atividade.date}" />
+
+				<h:outputLabel value="Local da atividade:" />
+				<h:inputTextarea rows="4" cols="35"
+					value="#{AtvReMB.atividade.local}" />
+
+				<h:outputLabel value="Objetivo: " />
+				<h:inputTextarea rows="4" cols="35"
+					value="#{AtvReMB.atividade.objetivo}" />
+
+				<h:outputLabel value="Atividades Realizadas:" />
+				<h:inputTextarea rows="4" cols="35"
+					value="#{AtvReMB.atividade.atividadesRealizadas}" />
+			</h:panelGrid>
+			<br />
+			<b:button value="Cadastrar" />
+		</div>
+	</ui:define>
+</ui:composition>
+</html>

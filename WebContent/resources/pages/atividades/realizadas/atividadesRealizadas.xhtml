@@ -23,8 +23,8 @@
 				</b:panelGrid> 
 				<hr />-->
 				<hr />
-				<h:dataTable headerClass="headerAtv" value="#{AtvReMB.atividades}"
-					var="item">
+				<h:dataTable headerClass="headerRelAtv"
+					value="#{AtvReMB.atividades}" var="item">
 
 					<p:column>
 						<f:facet name="header">
@@ -47,14 +47,32 @@
 						<h:panelGrid columns="2">
 							<b:commandButton icon="glyphicon glyphicon-info-sign"
 								tooltip="Informações" value=""
-								action="#{AtvMB.acaoAbrirInfo(item)}" size="sm" />
+								action="#{AtvReMB.acaoAbrirInfo(item)}" size="sm" />
 
 							<b:commandButton icon="glyphicon glyphicon-edit" tooltip="Editar"
 								value="" size="sm" action="#{AtvMB.acaoEditar(item)}" />
 
-							<b:commandButton icon="glyphicon glyphicon-pencil"
-								tooltip="Informar realizadas" value="" size="sm"
+							<b:commandButton icon="glyphicon glyphicon-check"
+								tooltip="Validar atividade" value="" size="sm"
 								action="#{AtvMB.acaoInfAtividade(item)}" />
+
+
+
+							<b:modal id="valida" title="Validação"
+								styleClass="modalPseudoClass" close-on-escape="false"
+								backdrop="false" closable="false" size="modal-sm">
+								<p>Validar esta atividade?</p>
+								
+								<h:selectOneRadio>
+								<f:selectItem itemLabel="teste"/><f:selectItem itemLabel="mais um"/>
+								</h:selectOneRadio>
+								<f:facet name="footer">
+									<b:button value="Sim" dismiss="modal" />
+									<b:button value="Não" dismiss="modal" look="primary" />
+								</f:facet>
+							</b:modal>
+
+
 
 
 

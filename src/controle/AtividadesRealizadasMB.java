@@ -10,7 +10,7 @@ import dominio.AtividadeRealizada;
 
 @ManagedBean(name = "AtvReMB")
 public class AtividadesRealizadasMB {
-	private AtividadeRealizada atividade;
+	private AtividadeRealizada            atividade;
 	private ArrayList<AtividadeRealizada> atividades;
 
 	@PostConstruct
@@ -43,4 +43,8 @@ public class AtividadesRealizadasMB {
 		this.atividades = atividades;
 	}
 
+	public String acaoAbrirInfo(AtividadeRealizada atividade) {
+		this.atividade = atividade;
+		return "atividadeRealizadaInfo";
+	}
 }

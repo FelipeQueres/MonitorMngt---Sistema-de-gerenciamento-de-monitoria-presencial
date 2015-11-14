@@ -1,5 +1,6 @@
 package dominio;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class AtividadeRealizada {
@@ -18,8 +19,13 @@ public class AtividadeRealizada {
 		this.nome = nome;
 	}
 
-	public Date getData() {
+	public Date getDate() {
 		return data;
+	}
+
+	public String getData() {
+		SimpleDateFormat sdt = new SimpleDateFormat("dd/MM/yyyy");
+		return sdt.format(this.data);
 	}
 
 	public void setData(Date data) {
