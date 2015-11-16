@@ -50,31 +50,10 @@
 								action="#{AtvReMB.acaoAbrirInfo(item)}" size="sm" />
 
 							<b:commandButton icon="glyphicon glyphicon-edit" tooltip="Editar"
-								value="" size="sm" action="#{AtvMB.acaoEditar(item)}" />
+								value="" size="sm" action="#{AtvReMB.acaoEditar(item)}" />
 
-							<b:commandButton icon="glyphicon glyphicon-check"
-								tooltip="Validar atividade" value="" size="sm"
-								action="#{AtvMB.acaoInfAtividade(item)}" />
-
-
-
-							<b:modal id="valida" title="Validação"
-								styleClass="modalPseudoClass" close-on-escape="false"
-								backdrop="false" closable="false" size="modal-sm">
-								<p>Validar esta atividade?</p>
-								
-								<h:selectOneRadio>
-								<f:selectItem itemLabel="teste"/><f:selectItem itemLabel="mais um"/>
-								</h:selectOneRadio>
-								<f:facet name="footer">
-									<b:button value="Sim" dismiss="modal" />
-									<b:button value="Não" dismiss="modal" look="primary" />
-								</f:facet>
-							</b:modal>
-
-
-
-
+							<b:commandButton icon="glyphicon glyphicon-check" tooltip="Validar"
+								value="" size="sm" action="#{AtvReMB.acaoEditar(item)}" />
 
 							<b:button icon="glyphicon glyphicon-trash" tooltip="Excluir"
 								value="" size="sm"

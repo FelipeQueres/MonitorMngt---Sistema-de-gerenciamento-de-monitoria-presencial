@@ -3,7 +3,19 @@ package dominio;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="AtvPLanejada")
 public class AtividadePlanejada {
+	
+	@Id
+	@GeneratedValue
+	private Long id;
+	
 	private String nome;
 	private String[] alunos;
 	private String descricao;
@@ -73,5 +85,13 @@ public class AtividadePlanejada {
 		sbAluno.reverse();
 		String retorno = sbAluno.toString();
 		return retorno;
+	}
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
 	}
 }

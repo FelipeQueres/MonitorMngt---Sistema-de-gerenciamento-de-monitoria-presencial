@@ -47,4 +47,9 @@ public class AtividadesRealizadasMB {
 		this.atividade = atividade;
 		return "atividadeRealizadaInfo";
 	}
+
+	public String acaoEditar(AtividadeRealizada atividade) {
+		this.atividade = atividade;
+		return "atividadeRealizadaEditar";
+	}
 }

@@ -1,12 +1,31 @@
 package dominio;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "Professor")
 public class Professor {
+
+	@Id
+	@GeneratedValue
+	private Long id;
 
 	private String nome;
 	private int matricula;
 	private String escola;
 	private String email;
 	private String senha;
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
 
 	public String getNome() {
 		return nome;

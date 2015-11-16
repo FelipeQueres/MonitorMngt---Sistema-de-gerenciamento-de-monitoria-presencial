@@ -1,6 +1,17 @@
 package dominio;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "Aluno")
 public class Aluno {
+
+	@Id
+	@GeneratedValue
+	private Long id;
 
 	private String nome;
 	private String email;
@@ -96,7 +107,15 @@ public class Aluno {
 	public void setEdital(Edital edital) {
 		this.edital = edital;
 	}
-	
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
 	@Override
 	public String toString() {
 		return this.nome + " - " + this.matricula;

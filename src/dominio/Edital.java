@@ -5,7 +5,19 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "Edital")
 public class Edital {
+
+	@Id
+	@GeneratedValue
+	private Long id;
+
 	private int numero;
 	private String escola;
 	private String curso;
@@ -21,6 +33,14 @@ public class Edital {
 
 	public Edital() {
 		this.disciplinas = new ArrayList<Disciplina>();
+	}
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
 	}
 
 	public int getNumero() {

@@ -54,10 +54,12 @@
 							<b:commandButton icon="glyphicon glyphicon-info-sign"
 								tooltip="Detalhes" value="" action="#{alunoMB.acaoInfo(item)}"
 								size="sm">
+								<f:param value="item.id" name="itemId" />
 							</b:commandButton>
 
 							<b:commandButton icon="glyphicon glyphicon-edit" tooltip="Editar"
-								value="" action="#{alunoMB.acaoEditar(item)}" size="sm">
+								value="" action="#{alunoMB.acaoEditar}" size="sm">
+								<f:param value="item.id" name="id" />
 							</b:commandButton>
 
 							<b:commandButton icon="glyphicon glyphicon-trash"

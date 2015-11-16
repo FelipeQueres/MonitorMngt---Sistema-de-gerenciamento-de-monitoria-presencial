@@ -31,8 +31,7 @@
 					</b:inputText>
 
 					<h:outputLabel value="Edital" for="edital" />
-					<b:selectOneMenu required="true" id="edital"
-						value="#{editalMB.listaEdital}" >
+					<b:selectOneMenu required="true" id="edital">
 						<f:selectItem itemLabel="Selecione um edital" value="" />
 						<f:selectItems value="#{editalMB.editais}"
 							itemValue="#{editalMB.editais}" />
@@ -84,7 +83,8 @@
 				</h:panelGrid>
 				<h:message for="pw1" style="color:red;" />
 				<br />
-				<b:commandButton value="Cadastrar" update="grid" />
+				<b:commandButton value="Cadastrar"
+					action="#{alunoMB.salvar(alunoMB.aluno)}" />
 			</h:form>
 		</div>
 	</ui:define>
