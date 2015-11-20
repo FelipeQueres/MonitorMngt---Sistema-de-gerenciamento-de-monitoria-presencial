@@ -4,17 +4,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.faces.bean.ManagedBean;
-import javax.persistence.EntityManager;
 
-import controle.util.JPAUtil;
 import controle.util.JSFUtil;
 import dominio.Aluno;
 import dominio.dao.AlunoDAO;
 
 @ManagedBean(name = "alunoMB")
 public class AlunoMB {
-	private Aluno aluno;
-	private List<Aluno> alunos;
+	private Aluno aluno = new Aluno();
+	private List<Aluno> alunos = null;
 	private AlunoDAO dao = new AlunoDAO();
 
 	public Aluno getAluno() {
@@ -40,7 +38,7 @@ public class AlunoMB {
 		Long id = JSFUtil.getParametroLong("id");
 		Aluno alunoBD = this.dao.lerPorId(id);
 		this.setAluno(alunoBD);
-		
+
 		return "manterAluno";
 	}
 
@@ -59,12 +57,14 @@ public class AlunoMB {
 		return sbAluno.toString();
 	}
 
-	public void salvar(Aluno aluno) {
-		EntityManager manager = JPAUtil.getEntityManager();
-		manager.getTransaction().begin();
-		manager.persist(aluno);
-		manager.getTransaction().commit();
-		manager.close();
-
+	public String salvar() {
+		// EntityManager manager = JPAUtil.getEntityManager();
+		// manager.getTransaction().begin();
+		// manager.persist(this.getAluno());
+		// manager.getTransaction().commit();
+		// manager.close();
+		this.dao.salvar(this.getAluno());
+		this.setAluno(new Aluno());
+		return "alunos";
 	}
 }

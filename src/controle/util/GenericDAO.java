@@ -4,21 +4,21 @@ import java.util.List;
 
 import javax.persistence.EntityManager;
 
-public interface GenericDAO<T> {
-	public EntityManager getEntityManager();
+public abstract class GenericDAO<T> {
+	public abstract EntityManager getEntityManager();
 
-	public T lerPorId(Object id);
+	public abstract T lerPorId(Object id);
 
-	public List<T> lerTodos();
+	public abstract List<T> lerTodos();
 
-	public T salvar(T objeto);
+	public abstract T salvar(T objeto);
 
-	public void excluir(T objeto);
+	public abstract void excluir(T objeto);
 
-	public void abrirTransacao();
+	public abstract void abrirTransacao();
 
-	public void gravarTransacao();
+	public abstract void gravarTransacao();
 
-	public void desfazerTransacao();
+	public abstract void desfazerTransacao();
 
 }

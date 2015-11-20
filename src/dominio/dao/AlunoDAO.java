@@ -7,14 +7,13 @@ import javax.persistence.Query;
 import controle.util.JpaDAO;
 import dominio.Aluno;
 
-
 public class AlunoDAO extends JpaDAO<Aluno> {
 
 	public AlunoDAO() {
 		super();
 	}
-
-	AlunoDAO(EntityManager manager) {
+	
+	public AlunoDAO(EntityManager manager) {
 		super(manager);
 	}
 

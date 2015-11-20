@@ -52,14 +52,12 @@
 						</f:facet>
 						<h:panelGrid columns="3">
 							<b:commandButton icon="glyphicon glyphicon-info-sign"
-								tooltip="Detalhes" value="" action="#{alunoMB.acaoInfo(item)}"
-								size="sm">
-								<f:param value="item.id" name="itemId" />
+								tooltip="Detalhes" value="" size="sm" action="#{alunoMB.acaoInfo(item)}">
 							</b:commandButton>
 
 							<b:commandButton icon="glyphicon glyphicon-edit" tooltip="Editar"
 								value="" action="#{alunoMB.acaoEditar}" size="sm">
-								<f:param value="item.id" name="id" />
+								<f:param value="item.id" name="id"/>
 							</b:commandButton>
 
 							<b:commandButton icon="glyphicon glyphicon-trash"

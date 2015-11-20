@@ -8,11 +8,12 @@ import javax.persistence.EntityManager;
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 
-public abstract class JpaDAO<T> implements GenericDAO<T> {
+public abstract class JpaDAO<T> extends GenericDAO<T> {
 
 	protected Class<T> persistentClass;
 	private EntityManager manager;
 
+	@SuppressWarnings("unchecked")
 	public JpaDAO() {
 		super();
 
@@ -33,7 +34,7 @@ public abstract class JpaDAO<T> implements GenericDAO<T> {
 	@Override
 	public EntityManager getEntityManager() {
 		// caso o EntityManager tenha sido fecahdo, cria um novo
-		if ((this.manager != null) && (this.manager.isOpen()))
+		if ((this.manager != null) && (!this.manager.isOpen()))
 			this.manager = JPAUtil.getEntityManager();
 
 		return this.manager;

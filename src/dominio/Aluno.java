@@ -21,7 +21,7 @@ public class Aluno {
 	private String rg;
 	private int cr;
 	private String campus;
-	private Edital edital;
+//	private Edital edital;
 	private String senha;
 
 	public String getNome() {
@@ -72,13 +72,13 @@ public class Aluno {
 		this.email = email;
 	}
 
-	public int getEdital() {
-		return edital.getNumero();
-	}
+//	public int getEdital() {
+//		return edital.getNumero();
+//	}
 
-	public void setEdital(int numero) {
-		this.edital.setNumero(numero);
-	}
+//	public void setEdital(int numero) {
+//		this.edital.setNumero(numero);
+//	}
 
 	public int getCr() {
 		return cr;
@@ -104,9 +104,9 @@ public class Aluno {
 		this.senha = senha;
 	}
 
-	public void setEdital(Edital edital) {
-		this.edital = edital;
-	}
+//	public void setEdital(Edital edital) {
+//		this.edital = edital;
+//	}
 
 	public Long getId() {
 		return id;

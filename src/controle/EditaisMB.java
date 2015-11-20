@@ -27,7 +27,7 @@ public class EditaisMB {
 		edital1.setEscola("Saúde");
 		edital1.setCurso("Medicina");
 		edital1.setPeriodoLetivo("1º semestre");
-		edital1.setDisciplinas("Biologia Marinha", 13);
+//		edital1.setDisciplinas("Biologia Marinha", 13);
 		edital1.setInicioInscricao(new Date());
 		edital1.setFimInscricao(new Date());
 		edital1.setInicioAtividade(new Date());
@@ -85,11 +85,11 @@ public class EditaisMB {
 		return this.listaEdital;
 	}
 
-	public boolean isNotDisciplinaEmpity(Edital edital) {
-		return !edital.getDisciplinas().isEmpty();
-	}
+//	public boolean isNotDisciplinaEmpity(Edital edital) {
+//		return !edital.getDisciplinas().isEmpty();
+//	}
 
-	public boolean isNotDisciplinaEmpity() {
-		return !this.edital.getDisciplinas().isEmpty();
-	}
+//	public boolean isNotDisciplinaEmpity() {
+//		return !this.edital.getDisciplinas().isEmpty();
+//	}
 }

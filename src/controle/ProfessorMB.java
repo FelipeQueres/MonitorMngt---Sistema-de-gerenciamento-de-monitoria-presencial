@@ -1,31 +1,19 @@
 package controle;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
 
 import dominio.Professor;
+import dominio.dao.ProfessorDAO;
 
 @ManagedBean
 public class ProfessorMB {
-	private Professor professor;
-	private ArrayList<Professor> professores;
-
-	@PostConstruct
-	public void iniciar() {
-		this.professor = new Professor();
-		
-		this.professores = new ArrayList<Professor>();
-
-		Professor p = new Professor();
-		p.setNome("Marco Antônio");
-		p.setEscola("Ciência e Tecnologia");
-		p.setMatricula(235253);
-		p.setEmail("marco.toni@me.com");
-		
-		this.professores.add(p);
-	}
+	private Professor professor = new Professor();
+	private List<Professor> professores = null;
+	private ProfessorDAO dao = new ProfessorDAO();
 
 	public Professor getProfessor() {
 		return professor;
@@ -35,8 +23,11 @@ public class ProfessorMB {
 		this.professor = professor;
 	}
 
-	public ArrayList<Professor> getProfessores() {
-		return professores;
+	public List<Professor> getProfessores() {
+		if (this.professores == null)
+			this.professores = this.dao.lerTodos();
+
+		return this.professores;
 	}
 
 	public void setProfessores(ArrayList<Professor> professores) {
