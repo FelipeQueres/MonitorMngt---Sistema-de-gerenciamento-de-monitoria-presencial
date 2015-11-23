@@ -15,20 +15,31 @@
 		<div align="center">
 			<h2>Alterar de Atividade</h2>
 			<br /> <br />
+			<h:form>
+			<h:inputHidden value="#{AtvPlMB.atividade.id}"/>
+				<h:panelGrid columns="2">
+					<h:outputLabel value="Nome: " />
+					<b:inputText size="30" value="#{AtvMB.atividade.nome}" />
 
-			<h:panelGrid columns="2">
-				<h:outputLabel value="Nome: " />
-				<b:inputText size="30" value="#{AtvMB.atividade.nome}"/>
-				<h:outputLabel value="Data: " />
-				<b:datepicker value="#{AtvMB.atividade.date}"/>
-				<h:outputLabel value="Alunos: " />
-				<h:inputTextarea readonly="true" rows="2" cols="35" value="#{AtvPlMB.atividade}" />
-				<h:outputLabel value="Local da atividade" />
-				<h:inputTextarea rows="4" cols="30" value="#{AtvMB.atividade.local}"/>
-				<h:outputLabel value="Descrição: " />
-				<h:inputTextarea rows="4" cols="30" value="#{AtvMB.atividade.descricao}" />
-			</h:panelGrid>
-			<b:button value="Alterar" />
+					<h:outputLabel value="Data: " />
+					<b:datepicker value="#{AtvMB.atividade.date}" />
+
+					<h:outputLabel value="Alunos: " />
+					<h:inputTextarea readonly="true" rows="2" cols="35"
+						value="#{AtvPlMB.atividade}" />
+
+					<h:outputLabel value="Local da atividade" />
+					<h:inputTextarea rows="4" cols="30"
+						value="#{AtvMB.atividade.local}" />
+
+					<h:outputLabel value="Descrição: " />
+					<h:inputTextarea rows="4" cols="30"
+						value="#{AtvMB.atividade.descricao}" />
+
+				</h:panelGrid>
+				<b:commandButton value="Alterar" action="#{AtvPlMB.salvar}" />
+				<b:button value="Cancelar" outcome="atividades" />
+			</h:form>
 		</div>
 
 	</ui:define>

@@ -1,47 +1,23 @@
 package controle;
 
-import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
-import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
 
 import dominio.AtividadePlanejada;
+import dominio.dao.AtividadePlanejadaDAO;
 
 @ManagedBean(name = "AtvPlMB")
 public class AtividadesPlanejadasMB {
 
-	private List<AtividadePlanejada> atividades;
-	private AtividadePlanejada atividade;
-
-	@PostConstruct
-	public void iniciar() {
-		this.atividades = new ArrayList<AtividadePlanejada>();
-		this.atividade = new AtividadePlanejada();
-		Date data = new Date();
-
-		AtividadePlanejada atividade = new AtividadePlanejada(), atividade1 = new AtividadePlanejada();
-		String[] alunos = {"Joselito","Rogéria","Leda"};
-		
-		atividade.setAlunos(alunos);
-		
-		
-		atividade.setNome("Oficina de Programação");
-		atividade.setDescricao("Desenvolver softwares");
-		atividade.setData(data);
-		atividade.setLocal("Lab B103");
-
-		atividade1.setNome("Oficina de UML");
-		atividade1.setDescricao("Aprender UML");
-		atividade1.setData(data);
-		atividade1.setLocal("Lab G103");
-
-		this.atividades.add(atividade);
-		this.atividades.add(atividade1);
-	}
+	private List<AtividadePlanejada> atividades = null;
+	private AtividadePlanejada       atividade  = new AtividadePlanejada();
+	private AtividadePlanejadaDAO    dao        = new AtividadePlanejadaDAO();
 
 	public List<AtividadePlanejada> getAtividades() {
+		if (this.atividades == null)
+			this.atividades = dao.lerTodos();
+
 		return this.atividades;
 	}
 
@@ -69,8 +45,24 @@ public class AtividadesPlanejadasMB {
 	}
 
 	public String acaoInfAtividade(AtividadePlanejada atividade) {
-		this.atividade = atividade; 
-		//TODO buscar no banco todos os dados através das informações recebidas por parâmetro
+		this.atividade = atividade;
+
 		return "informarAtividadeRealizada";
+	}
+
+	public String salvar() {
+		if ((this.getAtividade().getId() != null) && (this.getAtividade().getId().longValue() == 0))
+			this.getAtividade().setId(null);
+
+		this.dao.salvar(this.getAtividade());
+		this.setAtividade(new AtividadePlanejada());
+		this.atividades = null;
+
+		return "atividades";
+	}
+
+	public String excluir(AtividadePlanejada atividade) {
+		this.dao.excluir(atividade);
+		return "atividades";
 	}
 }

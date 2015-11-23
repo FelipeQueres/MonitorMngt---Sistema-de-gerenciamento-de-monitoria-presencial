@@ -77,7 +77,7 @@
 									backdrop="false" closable="false" size="modal-sm">
 									<p>Deseja realmente excluir esta atividade?</p>
 									<f:facet name="footer">
-										<b:button value="Sim" dismiss="modal" />
+										<b:commandButton value="Sim" dismiss="modal" action="#{AtvPlMB.excluir}"/>
 										<b:button value="Não" dismiss="modal" look="primary" />
 									</f:facet>
 								</b:modal>

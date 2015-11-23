@@ -4,7 +4,7 @@
 	xmlns:b="http://bootsfaces.net/ui" xmlns:p="http://primefaces.org/ui"
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
-	xmlns:h="http://java.sun.com/jsf/html" >
+	xmlns:h="http://java.sun.com/jsf/html">
 
 <ui:composition template="/resources/pages/_menu.xhtml">
 
@@ -48,45 +48,59 @@
 		<div align="center">
 			<h2>Cadastrar Edital</h2>
 			<BR /> <BR />
-			<h:panelGrid columns="2">
-				<h:outputLabel value="Número" />
-				<b:inputText>
-				</b:inputText>
-				<h:outputLabel value="Escola" />
-				<b:selectOneMenu>
-					<f:selectItem itemLabel="Escolha uma escola" itemValue="" />
-					<f:selectItems value="#{check.escolas}" var="item"
-						itemLabel="#{item}" itemValue="#{item}" />
-				</b:selectOneMenu>
-				<h:outputLabel value="Curso" />
-				<b:inputText />
-				<h:outputLabel value="Período Letivo" />
+			<h:form>
+				<h:panelGrid columns="2">
 
-				<b:selectOneMenu required="true">
-					<f:selectItem itemLabel="Escolha um período" value="" />
-					<f:selectItem itemLabel="1º semestre" value="1" />
-					<f:selectItem itemLabel="2º semestre" value="2" />
-				</b:selectOneMenu>
+					<h:outputLabel value="Número" />
+					<b:inputText value="#{editalMB.edital.numero}">
 
-				<h:outputLabel value="Período de Inscrição" />
-				<h:column>
-					<p:calendar locale="pt" pattern="dd/mm/yyyy"/>
-					<p:calendar locale="pt" pattern="dd/mm/yyyy"/>
-				</h:column>
-				<h:outputLabel value="Período de Atividade" />
-				<h:column>
-					<p:calendar locale="pt" pattern="dd/mm/yyyy"/>
-					<p:calendar locale="pt" pattern="dd/mm/yyyy"/>
-				</h:column>
-				<h:outputLabel value="Conteúdo Programático " />
-				<h:inputTextarea cols="42" />
-				<h:outputLabel value="Bibliografia" />
-				<h:inputTextarea cols="42" />
-			</h:panelGrid>
-			<br />
-			<b:button value="Cadastrar" />
+					</b:inputText>
+					<h:outputLabel value="Escola" />
+<!-- 
+					<b:selectOneMenu>
+						<f:selectItem itemLabel="Escolha uma escola" itemValue="" />
+						<f:selectItems value="#{check.escolas}" var="item"
+							itemLabel="#{item}" itemValue="#{item}" />
+					</b:selectOneMenu>
+ -->
+					<h:outputLabel value="Curso" />
+					<b:inputText value="#{editalMB.edital.curso}" />
+
+					<h:outputLabel value="Período Letivo" />
+					<b:selectOneMenu required="true" value="#{editalMB.edital.semestre}">
+						<f:selectItem itemLabel="Escolha um período" value=""
+							noSelectionOption="true" />
+						<f:selectItem itemLabel="1º semestre" value="1" />
+						<f:selectItem itemLabel="2º semestre" value="2" />
+					</b:selectOneMenu>
+
+					<h:outputLabel value="Período de Inscrição" />
+					<h:column>
+						<p:calendar locale="pt" pattern="dd/mm/yyyy"
+							value="#{editalMB.edital.inicioInscricao}" />
+						<p:calendar locale="pt" pattern="dd/mm/yyyy"
+							value="#{editalMB.edital.fimInscricao}" />
+					</h:column>
+
+					<h:outputLabel value="Período de Atividade" />
+					<h:column>
+						<p:calendar locale="pt" pattern="dd/mm/yyyy"
+							value="#{editalMB.edital.inicioAtividade}" />
+						<p:calendar locale="pt" pattern="dd/mm/yyyy"
+							value="#{editalMB.edital.fimAtividade}" />
+					</h:column>
+
+					<h:outputLabel value="Conteúdo Programático " />
+					<h:inputTextarea cols="42" value="#{editalMB.edital.conteudo}" />
+
+					<h:outputLabel value="Bibliografia" />
+					<h:inputTextarea cols="42" value="#{editalMB.edital.bibliografia}" />
+				</h:panelGrid>
+				<br />
+				<b:commandButton value="Cadastrar" action="#{editalMB.salvar}" />
+				<b:button value="Cancelar" outcome="editais" />
+			</h:form>
 		</div>
-		<!-- disciplinas vs vagas -->
 	</ui:define>
 </ui:composition>
 </html>

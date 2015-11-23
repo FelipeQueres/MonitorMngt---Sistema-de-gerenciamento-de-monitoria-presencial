@@ -18,11 +18,13 @@
 			<HR />
 			<h:form>
 				<h:panelGrid columns="2" cellspacing="20" cellpadding="20">
+				
 					<h:outputLabel value="Nome" />
 					<b:inputText id="nome" required="true"
 						requiredMessage="Obrigatório" value="#{alunoMB.aluno.nome}">
 						<h:message for="nome" style="color:red" />
 					</b:inputText>
+					
 					<h:outputLabel value="Matrícula" />
 					<b:inputText id="matricula" required="true"
 						value="#{alunoMB.aluno.matricula}" type="number"
@@ -84,6 +86,7 @@
 				<h:message for="pw1" style="color:red;" />
 				<br />
 				<b:commandButton value="Cadastrar" action="#{alunoMB.salvar}" />
+				<b:button value="Cancelar" outcome="alunos" />
 			</h:form>
 		</div>
 	</ui:define>

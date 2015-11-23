@@ -2,10 +2,12 @@ package dominio;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -19,7 +21,10 @@ public class Edital {
 	private int numero;
 	private String escola;
 	private String curso;
-//	private List<Disciplina> disciplinas;//TODO anotação
+
+	@OneToMany(mappedBy = "Edital")
+	private List<Disciplina> disciplinas;// TODO anotação
+
 	private String periodoLetivo;
 	private Date inicioInscricao;
 	private Date fimInscricao;
@@ -29,9 +34,9 @@ public class Edital {
 	private String bibliografia;
 	private int semestre;
 
-//	public Edital() {
-//		this.disciplinas = new ArrayList<Disciplina>();
-//	}
+	// public Edital() {
+	// this.disciplinas = new ArrayList<Disciplina>();
+	// }
 
 	public Long getId() {
 		return id;
@@ -65,13 +70,13 @@ public class Edital {
 		this.curso = curso;
 	}
 
-//	public List<Disciplina> getDisciplinas() {
-//		return disciplinas;
-//	}
+	public List<Disciplina> getDisciplinas() {
+		return disciplinas;
+	}
 
-//	public void setDisciplinas(String nome, int numVagas) {
-//		this.disciplinas.add(new Disciplina(nome, numVagas));
-//	}
+	public void setDisciplinas(String nome, int numVagas) {
+		this.disciplinas.add(new Disciplina(nome, numVagas));
+	}
 
 	public String getPeriodoLetivo() {
 		return periodoLetivo;
@@ -157,9 +162,9 @@ public class Edital {
 		this.semestre = semestre;
 	}
 
-//	public void setDisciplinas(List<Disciplina> disciplinas) {
-//		this.disciplinas = disciplinas;
-//	}
+	public void setDisciplinas(List<Disciplina> disciplinas) {
+		this.disciplinas = disciplinas;
+	}
 
 	public String toString() {
 		return this.numero + " - " + this.curso;

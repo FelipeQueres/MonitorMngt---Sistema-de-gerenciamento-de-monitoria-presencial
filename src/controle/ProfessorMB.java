@@ -3,7 +3,6 @@ package controle;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
 
 import dominio.Professor;
@@ -44,4 +43,19 @@ public class ProfessorMB {
 		return "professorEditar";
 	}
 
+	public String salvar() {
+		if ((this.getProfessor().getId() != null) && (this.getProfessor().getId().longValue() == 0))
+			this.getProfessor().setId(null);
+
+		this.dao.salvar(this.getProfessor());
+		this.setProfessor(new Professor());
+		this.professores = null;
+
+		return "professores";
+	}
+
+	public String excluir(Professor professor) {
+		this.dao.excluir(professor);
+		return "professores";
+	}
 }

@@ -61,7 +61,9 @@
 				</h:panelGrid>
 				<h:message for="pw1" style="color:red;" />
 				<br />
-				<b:commandButton value="Cadastrar" update="grid" />
+				<b:commandButton value="Cadastrar" update="grid"
+					action="#{funcionarioMB.salvar}" />
+				<b:button value="Cancelar" outcome="funcionarios" />
 			</h:form>
 		</div>
 	</ui:define>

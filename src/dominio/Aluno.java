@@ -3,6 +3,8 @@ package dominio;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -21,8 +23,9 @@ public class Aluno {
 	private String rg;
 	private int cr;
 	private String campus;
-//	private Edital edital;
 	private String senha;
+	@ManyToOne
+	private Edital edital;
 
 	public String getNome() {
 		return nome;
@@ -72,13 +75,13 @@ public class Aluno {
 		this.email = email;
 	}
 
-//	public int getEdital() {
-//		return edital.getNumero();
-//	}
+	public int getEdital() {
+		return edital.getNumero();
+	}
 
-//	public void setEdital(int numero) {
-//		this.edital.setNumero(numero);
-//	}
+	public void setEdital(int numero) {
+		this.edital.setNumero(numero);
+	}
 
 	public int getCr() {
 		return cr;
@@ -104,10 +107,6 @@ public class Aluno {
 		this.senha = senha;
 	}
 
-//	public void setEdital(Edital edital) {
-//		this.edital = edital;
-//	}
-
 	public Long getId() {
 		return id;
 	}
@@ -120,5 +119,4 @@ public class Aluno {
 	public String toString() {
 		return this.nome + " - " + this.matricula;
 	}
-
 }

@@ -67,10 +67,10 @@
 
 								<b:modal id="amodal" title="Confirmação"
 									styleClass="modalPseudoClass" close-on-escape="false"
-									backdrop="false" closable="false" size="modal-sm">
+									backdrop="false" closable="false" size="modal-sm" >
 									<p>Deseja realmente excluir este professor?</p>
 									<f:facet name="footer">
-										<b:button value="Sim" dismiss="modal" />
+										<b:commandButton value="Sim" dismiss="modal" action="#{professorMB.excluir(item)}"/>
 										<b:button value="Não" dismiss="modal" look="primary" />
 									</f:facet>
 								</b:modal>

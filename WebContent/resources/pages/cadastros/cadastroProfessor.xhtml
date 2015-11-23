@@ -27,14 +27,14 @@
 						<h:message for="mat" style="color:red;" />
 					</b:inputText>
 					<h:outputLabel value="Escola" />
-
+<!-- 
 					<b:selectMultiMenu nonSelectedText="Selecione uma escola"
 						allSelectedText="Todas as escolas" nSelectedText="Selecionadas"
 						numberDisplayed="1">
 						<f:selectItems value="#{check.escolas}" var="item"
 							itemLabel="#{item}" itemValue="#{item}" />
 					</b:selectMultiMenu>
-
+ -->
 					<h:outputLabel value="E-mail" />
 					<b:inputText value="#{professorMB.professor.email}" required="true"
 						requiredMessage="Obrigatório" id="mail">
@@ -52,7 +52,8 @@
 				</h:panelGrid>
 				<h:message for="pw1" style="color:red;" />
 				<br />
-				<b:commandButton value="Cadastrar" update="grid" />
+				<b:commandButton value="Cadastrar" action="#{professorMB.salvar}" />
+				<b:button value="Cancelar" outcome="professores" />
 			</h:form>
 		</div>
 	</ui:define>

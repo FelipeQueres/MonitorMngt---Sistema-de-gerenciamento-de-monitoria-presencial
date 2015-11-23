@@ -16,8 +16,8 @@
 					<b:button value="Novo" outcome="cadastroFuncionario" />
 				</div>
 				<hr />
-				<h:dataTable headerClass="header" value="#{funcionarioMB.funcionarios}"
-					var="item">
+				<h:dataTable headerClass="header"
+					value="#{funcionarioMB.funcionarios}" var="item">
 					<p:column>
 						<f:facet name="header">
 							<h:outputText value="Nome" />
@@ -43,7 +43,7 @@
 						<f:facet name="header">
 							<h:outputText value="e-mail" />
 						</f:facet>
-						<h:outputText value="#{item.email}"/>
+						<h:outputText value="#{item.email}" />
 					</p:column>
 
 					<p:column>
@@ -52,8 +52,8 @@
 						</f:facet>
 						<h:panelGrid columns="3">
 							<b:commandButton icon="glyphicon glyphicon-info-sign"
-								tooltip="Detalhes" value="" action="#{funcionarioMB.acaoInfo(item)}"
-								size="sm">
+								tooltip="Detalhes" value=""
+								action="#{funcionarioMB.acaoInfo(item)}" size="sm">
 							</b:commandButton>
 
 							<b:commandButton icon="glyphicon glyphicon-edit" tooltip="Editar"
@@ -70,7 +70,8 @@
 									backdrop="false" closable="false" size="modal-sm">
 									<p>Deseja realmente excluir este funcionário?</p>
 									<f:facet name="footer">
-										<b:button value="Sim" dismiss="modal" />
+										<b:commandButton value="Sim" dismiss="modal"
+											action="#{funcionarioMB.excluir}" />
 										<b:button value="Não" dismiss="modal" look="primary" />
 									</f:facet>
 								</b:modal>

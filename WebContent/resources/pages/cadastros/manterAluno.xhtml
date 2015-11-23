@@ -17,21 +17,23 @@
 			<H2>Alterar Dados Pessoais</H2>
 			<HR />
 			<h:form>
+				<h:inputHidden id="idAluno" value="#{alunoMB.aluno.id}" />
 				<h:panelGrid columns="2" cellspacing="20" cellpadding="20">
 					<h:outputLabel value="Nome" />
-					<b:inputText value="#{alunoMB.aluno.nome}"/>
+					<b:inputText value="#{alunoMB.aluno.nome}" />
 					<h:outputLabel value="Matrícula" />
-					<b:inputText value="#{alunoMB.aluno.matricula}"/>
+					<b:inputText value="#{alunoMB.aluno.matricula}" />
 					<h:outputLabel value="Curso" />
-					<b:inputText value="#{alunoMB.aluno.curso}"/>
+					<b:inputText value="#{alunoMB.aluno.curso}" />
 					<h:outputLabel value="Disciplina" />
-					<b:inputText value="#{alunoMB.aluno.disciplina}"/>
+					<b:inputText value="#{alunoMB.aluno.disciplina}" />
 					<h:outputLabel value="RG" />
-					<b:inputText value="#{alunoMB.aluno.disciplina}"/>
+					<b:inputText value="#{alunoMB.aluno.rg}" />
 					<h:outputLabel value="E-mail" />
-					<b:inputText value="#{alunoMB.aluno.email}"/>
+					<b:inputText value="#{alunoMB.aluno.email}" />
 				</h:panelGrid>
-				<b:commandButton value="Alterar" />
+				<b:commandButton value="Alterar" action="#{alunoMB.salvar}" />
+				<b:button value="Cancelar" outcome="alunos" />
 			</h:form>
 		</div>
 	</ui:define>

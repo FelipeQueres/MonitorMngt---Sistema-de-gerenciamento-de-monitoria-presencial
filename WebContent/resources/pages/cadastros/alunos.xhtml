@@ -52,12 +52,13 @@
 						</f:facet>
 						<h:panelGrid columns="3">
 							<b:commandButton icon="glyphicon glyphicon-info-sign"
-								tooltip="Detalhes" value="" size="sm" action="#{alunoMB.acaoInfo(item)}">
+								tooltip="Detalhes" value="" size="sm"
+								action="#{alunoMB.acaoInfo(item)}">
 							</b:commandButton>
 
 							<b:commandButton icon="glyphicon glyphicon-edit" tooltip="Editar"
-								value="" action="#{alunoMB.acaoEditar}" size="sm">
-								<f:param value="item.id" name="id"/>
+								value="" action="#{alunoMB.acaoEditar(item)}" size="sm">
+								<f:param value="item.id" name="id" />
 							</b:commandButton>
 
 							<b:commandButton icon="glyphicon glyphicon-trash"
@@ -69,8 +70,9 @@
 									backdrop="false" closable="false" size="modal-sm">
 									<p>Deseja realmente excluir este aluno?</p>
 									<f:facet name="footer">
-										<b:button value="Sim" dismiss="modal" />
-										<b:button value="Não" dismiss="modal" look="primary" />
+										<b:commandButton value="Sim" dismiss="modal"
+											action="#{alunoMB.excluir(item)}" />
+										<b:commandButton value="Não" dismiss="modal" look="primary" />
 									</f:facet>
 								</b:modal>
 							</b:commandButton>

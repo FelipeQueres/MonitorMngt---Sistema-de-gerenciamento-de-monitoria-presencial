@@ -1,32 +1,18 @@
 package controle;
 
 import java.util.ArrayList;
+import java.util.List;
 
-import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
 
 import dominio.Funcionario;
-import dominio.Professor;
+import dominio.dao.FuncionarioDAO;
 
 @ManagedBean
 public class FuncionarioMB {
-	private Funcionario funcionario;
-	private ArrayList<Funcionario> funcionarios;
-
-	@PostConstruct
-	public void iniciar() {
-		this.funcionarios = new ArrayList<Funcionario>();
-		this.funcionario = new Funcionario();
-
-		Funcionario f = new Funcionario();
-		f.setNome("Suellen");
-		f.setCpf("2305972305");
-		f.setFuncao("Auxiliar Administrativo");
-		f.setTelefone("2676-983");
-		f.setEmail("su_elen@gmail.com");
-
-		this.funcionarios.add(f);
-	}
+	private Funcionario funcionario = new Funcionario();
+	private List<Funcionario> funcionarios = null;
+	private FuncionarioDAO dao = new FuncionarioDAO();
 
 	public Funcionario getFuncionario() {
 		return funcionario;
@@ -36,8 +22,10 @@ public class FuncionarioMB {
 		this.funcionario = funcionario;
 	}
 
-	public ArrayList<Funcionario> getFuncionarios() {
-		return funcionarios;
+	public List<Funcionario> getFuncionarios() {
+		if (this.funcionarios == null)
+			this.funcionarios = dao.lerTodos();
+		return this.funcionarios;
 	}
 
 	public void setFuncionarios(ArrayList<Funcionario> funcionarios) {
@@ -52,6 +40,23 @@ public class FuncionarioMB {
 	public String acaoEditar(Funcionario funcionario) {
 		this.funcionario = funcionario;
 		return "funcionarioEditar";
+	}
+
+	public String salvar() {
+		if ((this.getFuncionario().getId() != null)
+				&& (this.getFuncionario().getId().longValue() == 0))
+			this.getFuncionario().setId(null);
+
+		this.dao.salvar(this.getFuncionario());
+		this.setFuncionario(new Funcionario());
+		this.funcionarios = null;
+
+		return "funcionarios";
+	}
+
+	public String excluir(Funcionario funcionario) {
+		this.dao.excluir(funcionario);
+		return "funcionarios";
 	}
 
 }

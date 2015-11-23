@@ -17,6 +17,7 @@
 			<H2>Alterar Dados Pessoais</H2>
 			<HR />
 			<h:form>
+				<h:inputHidden value="#{professorMB.professor.id}" />
 				<h:panelGrid columns="2" cellspacing="20" cellpadding="20">
 					<h:outputLabel value="Nome" />
 					<b:inputText value="#{professorMB.professor.nome}" required="true"
@@ -55,7 +56,8 @@
 				</h:panelGrid>
 				<h:message for="pw1" style="color:red;" />
 				<br />
-				<b:commandButton value="Cadastrar" update="grid" />
+				<b:commandButton value="Cadastrar" update="grid" action="#{professorMB.salvar}"/>
+				<b:button value="Cancelar" outcome="professores" />
 			</h:form>
 		</div>
 	</ui:define>
