@@ -1,13 +1,14 @@
-<?xml version='1.0' encoding='UTF-8' ?>
-<!DOCTYPE html>
+<?xml version='1.0' encoding='ISO-8859-1' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:b="http://bootsfaces.net/ui" xmlns:p="http://primefaces.org/ui"
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:h="http://java.sun.com/jsf/html">
 <h:head>
-	<title>SGM - <ui:insert name="titulo">TÃ­tulo</ui:insert></title>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<title>SGM - <ui:insert name="titulo">Título</ui:insert></title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<h:outputStylesheet library="css" name="tableStyle.css" />
 </h:head>
 <h:body>
@@ -28,34 +29,38 @@
 				look="success" icon="chevron-right" iconAlign="right" />
 		</h:form> -->
 	</h:panelGrid>
-	<b:navBar static="true" >
+	<b:navBar static="true">
 		<b:navbarLinks>
-		<b:navLink value="Inicio" outcome="home"/>
+			<b:navLink value="Inicio"     outcome="home" />
 			<b:navLink value="Atividades" outcome="atividade" />
-			<b:navLink value="Editais" outcome="edital" />
-			<b:dropMenu value="RelatÃ³rios">
-				<b:navLink value="RelatÃ³rios Quantitativos"
+			<b:navLink value="Editais"    outcome="edital" />
+			
+			<b:dropMenu value="Relatórios">
+				<b:navLink value="Relatórios Quantitativos"
 					outcome="relatorioQuantitativo" />
-				<b:navLink value="RelatÃ³rios de Atividades"
+				<b:navLink value="Relatórios de Atividades"
 					outcome="relatorioAtividade" />
 			</b:dropMenu>
+			
 			<b:dropMenu value="Cadastro">
 				<b:navLink value="Alunos" outcome="alunos" />
 				<b:navLink value="Professores" outcome="professores" />
-				<b:navLink value="FuncionÃ¡rio" outcome="funcionarios" />
+				<b:navLink value="Funcionário" outcome="funcionarios" />
 			</b:dropMenu>
+			
 			<b:navLink value="Termos de Compromisso" outcome="cadastrarTermo" />
+			
 			<b:dropMenu value="Alterar Dados">
-			<b:navLink value="Aluno" outcome="manterAluno"/>
-			<b:navLink value="Professor" outcome="professorEditar"/>
-			<b:navLink value="FuncionÃ¡rio" outcome="funcionarioEditar"/>
+				<b:navLink value="Aluno"       outcome="manterAluno" />
+				<b:navLink value="Professor"   outcome="professorEditar" />
+				<b:navLink value="Funcionário" outcome="funcionarioEditar" />
 			</b:dropMenu>
+			
 		</b:navbarLinks>
 	</b:navBar>
 
 	<div>
 		<ui:insert name="body">
-
 		</ui:insert>
 	</div>
 

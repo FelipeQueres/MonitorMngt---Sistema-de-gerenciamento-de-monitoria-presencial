@@ -1,4 +1,4 @@
-<?xml version='1.0' encoding='UTF-8' ?>
+<?xml version='1.0' encoding='ISO-8859-1' ?>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:b="http://bootsfaces.net/ui" xmlns:p="http://primefaces.org/ui"
@@ -8,10 +8,10 @@
 
 <ui:composition template="/resources/pages/_menu.xhtml">
 
-	<ui:define name="titulo">RelatÃ³rios Quantitativos</ui:define>
+	<ui:define name="titulo">Relatórios Quantitativos</ui:define>
 	<ui:define name="body">
 
-		<b:panel title="RelatÃ³rios de Atividades" collapsible="false">
+		<b:panel title="Relatórios de Atividades" collapsible="false">
 			<h:form>
 				<h:dataTable headerClass="headerRelAtv" value="#{AtvMB.atividades}"
 					var="item">
@@ -26,14 +26,14 @@
 
 					<p:column>
 						<f:facet name="header">
-							<h:outputText value="DescriÃ§Ã£o" />
+							<h:outputText value="Descrição" />
 						</f:facet>
 						<h:outputText value="#{item.descricao}" />
 					</p:column>
 
 					<p:column styleClass="acoes">
 						<f:facet name="header">
-							<h:outputText value="AÃ§Ãµes" />
+							<h:outputText value="Ações" />
 						</f:facet>
 						<b:button icon="glyphicon glyphicon-info-sign" tooltip="Detalhes"
 							value="" />

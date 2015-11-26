@@ -1,5 +1,6 @@
-<?xml version='1.0' encoding='UTF-8' ?>
-<!DOCTYPE html>
+<?xml version='1.0' encoding='ISO-8859-1' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:b="http://bootsfaces.net/ui" xmlns:p="http://primefaces.org/ui"
 	xmlns:f="http://java.sun.com/jsf/core"
@@ -14,70 +15,71 @@
 	<ui:define name="body">
 		<div align="center">
 
-			<H2>Cadastro de Aluno</H2>
-			<HR />
+			<h2>Cadastro de Aluno</h2>
+			<hr />
 			<h:form>
 				<h:panelGrid columns="2" cellspacing="20" cellpadding="20">
-				
+
 					<h:outputLabel value="Nome" />
 					<b:inputText id="nome" required="true"
-						requiredMessage="Obrigat贸rio" value="#{alunoMB.aluno.nome}">
+						requiredMessage="Obrigat髍io" value="#{alunoMB.aluno.nome}">
 						<h:message for="nome" style="color:red" />
 					</b:inputText>
-					
-					<h:outputLabel value="Matr铆cula" />
+
+					<h:outputLabel value="Matr韈ula" />
 					<b:inputText id="matricula" required="true"
 						value="#{alunoMB.aluno.matricula}" type="number"
-						requiredMessage="Obrigat贸rio">
+						requiredMessage="Obrigat髍io">
 						<h:message for="matricula" style="color:red" />
 					</b:inputText>
 
 					<h:outputLabel value="Edital" for="edital" />
 					<b:selectOneMenu required="true" id="edital">
-						<f:selectItem itemLabel="Selecione um edital" value="" />
+						<f:selectItem itemLabel="Selecione um edital" value=""
+							itemValue="1" />
 						<f:selectItems value="#{editalMB.editais}"
 							itemValue="#{editalMB.editais}" />
 					</b:selectOneMenu>
 
 					<h:outputLabel value="Curso" />
 					<b:inputText id="curso" required="true"
-						value="#{alunoMB.aluno.curso}" requiredMessage="Obrigat贸rio">
+						value="#{alunoMB.aluno.curso}" requiredMessage="Obrigat髍io">
 						<h:message for="curso" style="color:red" />
 					</b:inputText>
 
 					<h:outputLabel value="Campus" />
 					<b:inputText id="campus" required="true"
-						value="#{alunoMB.aluno.campus}" requiredMessage="Obrigat贸rio">
+						value="#{alunoMB.aluno.campus}" requiredMessage="Obrigat髍io">
 						<h:message for="campus" style="color:red" />
 					</b:inputText>
 
 					<h:outputLabel value="CR" />
-					<b:inputText id="cr" required="true" requiredMessage="Obrigat贸rio"
-						value="#{alunoMB.aluno.cr}" type="number">
+					<b:inputText id="cr" required="true" requiredMessage="Obrigat髍io"
+						value="#{alunoMB.aluno.cr}" >
 						<h:message for="cr" style="color:red" />
 					</b:inputText>
 					<h:outputLabel value="Disciplina" />
 					<b:inputText id="disciplina" required="true"
-						value="#{alunoMB.aluno.disciplina}" requiredMessage="Obrigat贸rio">
+						value="#{alunoMB.aluno.disciplina}" requiredMessage="Obrigat髍io">
 						<h:message for="disciplina" style="color:red" />
 					</b:inputText>
 					<h:outputLabel value="RG" />
-					<b:inputText id="rg" required="true" requiredMessage="Obrigat贸rio"
+					<b:inputText id="rg" required="true" requiredMessage="Obrigat髍io"
 						value="#{alunoMB.aluno.rg}">
 						<h:message for="rg" style="color:red" />
 					</b:inputText>
 					<h:outputLabel value="E-mail" />
 					<b:inputText id="mail" required="true"
-						value="#{alunoMB.aluno.email}" requiredMessage="Obrigat贸rio">
+						value="#{alunoMB.aluno.email}" requiredMessage="Obrigat髍io">
 						<h:message for="mail" style="color:red" />
 					</b:inputText>
 
 					<h:outputLabel value="Senha" />
 					<p:password id="pw1" required="true" feedback="true" match="pw2"
 						promptLabel="Insira a senha" weakLabel="Fraca" goodLabel="Boa"
-						strongLabel="Forte" validatorMessage="As senhas n茫o s茫o iguais"
-						value="#{funcionarioMB.funcionario.senha}" size="67"
-						requiredMessage="Obrigat贸rio" />
+						strongLabel="Forte" validatorMessage="As senhas n鉶 s鉶 iguais"
+						value="#{alunoMB.aluno.senha}" size="67"
+						requiredMessage="Obrigat髍io" />
 					<h:outputLabel value="Confirme a senha" />
 					<p:password id="pw2" feedback="true" promptLabel="Insira a senha"
 						weakLabel="Fraca" goodLabel="Boa" strongLabel="Forte" size="67" />

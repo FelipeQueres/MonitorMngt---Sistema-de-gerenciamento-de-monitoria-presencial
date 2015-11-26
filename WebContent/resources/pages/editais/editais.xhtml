@@ -1,4 +1,4 @@
-<?xml version='1.0' encoding='UTF-8' ?>
+<?xml version='1.0' encoding='ISO-8859-1' ?>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:b="http://bootsfaces.net/ui" xmlns:p="http://primefaces.org/ui"
@@ -20,7 +20,7 @@
 					var="item">
 					<p:column>
 						<f:facet name="header">
-							<h:outputText value="NÃºmero" />
+							<h:outputText value="Número" />
 						</f:facet>
 						<h:outputText value="#{item.numero}" />
 					</p:column>
@@ -41,14 +41,14 @@
 
 					<p:column>
 						<f:facet name="header">
-							<h:outputText value="PerÃ­odo letivo" />
+							<h:outputText value="Período letivo" />
 						</f:facet>
 						<h:outputText value="#{item.periodoLetivo}" />
 					</p:column>
 
 					<p:column>
 						<f:facet name="header">
-							<h:outputText value="AÃ§Ãµes" />
+							<h:outputText value="Ações" />
 						</f:facet>
 						<h:panelGrid columns="4">
 							<b:commandButton value="" tooltip="Adicionar diciplina"
@@ -72,13 +72,13 @@
 								tooltip="Excluir" value="" size="sm"
 								onclick="$('.modalPseudoClass').modal();return false;">
 
-								<b:modal id="amodal" title="ConfirmaÃ§Ã£o"
+								<b:modal id="amodal" title="Confirmação"
 									styleClass="modalPseudoClass" close-on-escape="false"
 									backdrop="false" closable="false" size="modal-sm">
 									<p>Deseja realmente excluir este edital?</p>
 									<f:facet name="footer">
 										<b:button value="Sim" dismiss="modal" />
-										<b:button value="NÃ£o" dismiss="modal" look="primary" />
+										<b:button value="Não" dismiss="modal" look="primary" />
 									</f:facet>
 								</b:modal>
 							</b:commandButton>

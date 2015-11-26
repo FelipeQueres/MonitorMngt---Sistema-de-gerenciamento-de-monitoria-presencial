@@ -24,8 +24,8 @@ public class AtividadePlanejada {
 	private Date data;
 	private String local;
 
-	@OneToMany(mappedBy = "AtvPLanejada")
-	private List<Aluno> alunos;
+//	@OneToMany(mappedBy = "AtvPLanejada")
+//	private List<Aluno> alunos;
 
 	public String getLocal() {
 		return local;
@@ -56,9 +56,9 @@ public class AtividadePlanejada {
 		this.nome = nome;
 	}
 
-	public List<Aluno> getAlunos() {
-		return this.alunos;
-	}
+//	public List<Aluno> getAlunos() {
+//		return this.alunos;
+//	}
 
 	public String getDescricao() {
 		return descricao;
@@ -68,19 +68,19 @@ public class AtividadePlanejada {
 		this.descricao = descricao;
 	}
 
-	public String toString() {
-		if (this.alunos == null || this.alunosString.length == 0)
-			return "";
-		StringBuilder sbAluno = new StringBuilder();
-		for (String aluno : this.alunosString) {
-			sbAluno.append(aluno + ", ");
-		}
-		sbAluno.reverse();
-		sbAluno.replace(0, 2, ".");
-		sbAluno.reverse();
-		String retorno = sbAluno.toString();
-		return retorno;
-	}
+//	public String toString() {
+//		if (this.alunos == null || this.alunosString.length == 0)
+//			return "";
+//		StringBuilder sbAluno = new StringBuilder();
+//		for (String aluno : this.alunosString) {
+//			sbAluno.append(aluno + ", ");
+//		}
+//		sbAluno.reverse();
+//		sbAluno.replace(0, 2, ".");
+//		sbAluno.reverse();
+//		String retorno = sbAluno.toString();
+//		return retorno;
+//	}
 
 	public Long getId() {
 		return id;
@@ -98,7 +98,7 @@ public class AtividadePlanejada {
 		this.alunosString = alunosString;
 	}
 
-	public void setAlunos(List<Aluno> alunos) {
-		this.alunos = alunos;
-	}
+//	public void setAlunos(List<Aluno> alunos) {
+//		this.alunos = alunos;
+//	}
 }

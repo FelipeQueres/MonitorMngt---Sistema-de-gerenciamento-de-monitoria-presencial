@@ -3,21 +3,26 @@ package dominio;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "Professor")
-public class Professor {
+@Table(name = "Professores")
+public class Professor extends Pessoa {
 
 	@Id
 	@GeneratedValue
 	private Long id;
 
-	private String nome;
+	@OneToOne
+	private Pessoa pessoa;
+
 	private int matricula;
 	private String escola;
-	private String email;
-	private String senha;
+
+	public Professor() {
+		super();
+	}
 
 	public Long getId() {
 		return id;
@@ -25,14 +30,6 @@ public class Professor {
 
 	public void setId(Long id) {
 		this.id = id;
-	}
-
-	public String getNome() {
-		return nome;
-	}
-
-	public void setNome(String nome) {
-		this.nome = nome;
 	}
 
 	public int getMatricula() {
@@ -51,20 +48,11 @@ public class Professor {
 		this.escola = escola;
 	}
 
-	public String getEmail() {
-		return email;
+	public Pessoa getPessoa() {
+		return pessoa;
 	}
 
-	public void setEmail(String email) {
-		this.email = email;
+	public void setPessoa(Pessoa pessoa) {
+		this.pessoa = pessoa;
 	}
-
-	public String getSenha() {
-		return senha;
-	}
-
-	public void setSenha(String senha) {
-		this.senha = senha;
-	}
-
 }

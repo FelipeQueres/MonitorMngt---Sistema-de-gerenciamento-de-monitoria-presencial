@@ -4,6 +4,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -22,8 +23,8 @@ public class Edital {
 	private String escola;
 	private String curso;
 
-	@OneToMany(mappedBy = "Edital")
-	private List<Disciplina> disciplinas;// TODO anotaÃ§Ã£o
+	@OneToMany(mappedBy = "edital", cascade=CascadeType.ALL)
+	private List<Disciplina> disciplinas;// TODO anotação
 
 	private String periodoLetivo;
 	private Date inicioInscricao;

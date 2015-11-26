@@ -1,8 +1,11 @@
 package dominio;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -15,6 +18,13 @@ public class Disciplina {
 
 	private String nome;
 	private int quantidadeVagas;
+
+	@ManyToOne(cascade = CascadeType.ALL)
+	private Edital edital;
+
+	public Disciplina() {
+		super();
+	}
 
 	public Disciplina(String nome, int numVagas) {
 		this.nome = nome;
@@ -53,4 +63,11 @@ public class Disciplina {
 		this.quantidadeVagas = numVagas;
 	}
 
+	public Edital getEdital() {
+		return edital;
+	}
+
+	public void setEdital(Edital edital) {
+		this.edital = edital;
+	}
 }

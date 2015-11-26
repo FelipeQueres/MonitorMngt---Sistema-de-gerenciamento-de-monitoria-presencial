@@ -1,4 +1,4 @@
-<?xml version='1.0' encoding='UTF-8' ?>
+<?xml version='1.0' encoding='ISO-8859-1' ?>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:b="http://bootsfaces.net/ui" xmlns:p="http://primefaces.org/ui"
@@ -14,29 +14,29 @@
 		PrimeFaces.locales['pt'] = {
 			closeText : 'Fechar',
 			prevText : 'Anterior',
-			nextText : 'PrÃ³ximo',
-			currentText : 'ComeÃ§o',
-			monthNames : [ 'Janeiro', 'Fevereiro', 'MarÃ§o', 'Abril', 'Maio',
+			nextText : 'Próximo',
+			currentText : 'Começo',
+			monthNames : [ 'Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio',
 					'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro',
 					'Novembro', 'Dezembro' ],
 			monthNamesShort : [ 'Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun',
 					'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez' ],
-			dayNames : [ 'Domingo', 'Segunda', 'TerÃ§a', 'Quarta', 'Quinta',
-					'Sexta', 'SÃ¡bado' ],
-			dayNamesShort : [ 'Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'SÃ¡b' ],
+			dayNames : [ 'Domingo', 'Segunda', 'Terça', 'Quarta', 'Quinta',
+					'Sexta', 'Sábado' ],
+			dayNamesShort : [ 'Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb' ],
 			dayNamesMin : [ 'D', 'S', 'T', 'Q', 'Q', 'S', 'S' ],
 			weekHeader : 'Semana',
 			firstDay : 0,
 			isRTL : false,
 			showMonthAfterYear : false,
 			yearSuffix : '',
-			timeOnlyTitle : 'SÃ³ Horas',
+			timeOnlyTitle : 'Só Horas',
 			timeText : 'Tempo',
 			hourText : 'Hora',
 			minuteText : 'Minuto',
 			secondText : 'Segundo',
 			ampm : false,
-			month : 'MÃªs',
+			month : 'Mês',
 			week : 'Semana',
 			day : 'Dia',
 			allDayText : 'Todo o Dia'
@@ -51,7 +51,7 @@
 			<h:form>
 				<h:panelGrid columns="2">
 
-					<h:outputLabel value="NÃºmero" />
+					<h:outputLabel value="Número" />
 					<b:inputText value="#{editalMB.edital.numero}">
 
 					</b:inputText>
@@ -66,15 +66,15 @@
 					<h:outputLabel value="Curso" />
 					<b:inputText value="#{editalMB.edital.curso}" />
 
-					<h:outputLabel value="PerÃ­odo Letivo" />
+					<h:outputLabel value="Período Letivo" />
 					<b:selectOneMenu required="true" value="#{editalMB.edital.semestre}">
-						<f:selectItem itemLabel="Escolha um perÃ­odo" value=""
+						<f:selectItem itemLabel="Escolha um período" value=""
 							noSelectionOption="true" />
-						<f:selectItem itemLabel="1Âº semestre" value="1" />
-						<f:selectItem itemLabel="2Âº semestre" value="2" />
+						<f:selectItem itemLabel="1º semestre" value="1" />
+						<f:selectItem itemLabel="2º semestre" value="2" />
 					</b:selectOneMenu>
 
-					<h:outputLabel value="PerÃ­odo de InscriÃ§Ã£o" />
+					<h:outputLabel value="Período de Inscrição" />
 					<h:column>
 						<p:calendar locale="pt" pattern="dd/mm/yyyy"
 							value="#{editalMB.edital.inicioInscricao}" />
@@ -82,7 +82,7 @@
 							value="#{editalMB.edital.fimInscricao}" />
 					</h:column>
 
-					<h:outputLabel value="PerÃ­odo de Atividade" />
+					<h:outputLabel value="Período de Atividade" />
 					<h:column>
 						<p:calendar locale="pt" pattern="dd/mm/yyyy"
 							value="#{editalMB.edital.inicioAtividade}" />
@@ -90,7 +90,7 @@
 							value="#{editalMB.edital.fimAtividade}" />
 					</h:column>
 
-					<h:outputLabel value="ConteÃºdo ProgramÃ¡tico " />
+					<h:outputLabel value="Conteúdo Programático " />
 					<h:inputTextarea cols="42" value="#{editalMB.edital.conteudo}" />
 
 					<h:outputLabel value="Bibliografia" />

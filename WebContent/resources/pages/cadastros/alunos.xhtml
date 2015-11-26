@@ -1,4 +1,4 @@
-<?xml version='1.0' encoding='UTF-8' ?>
+<?xml version='1.0' encoding='ISO-8859-1' ?>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:b="http://bootsfaces.net/ui" xmlns:p="http://primefaces.org/ui"
@@ -28,7 +28,7 @@
 
 					<p:column>
 						<f:facet name="header">
-							<h:outputText value="MatrÃ­cula" />
+							<h:outputText value="Matrícula" />
 						</f:facet>
 						<h:outputText value="#{item.matricula}" />
 					</p:column>
@@ -48,7 +48,7 @@
 
 					<p:column>
 						<f:facet name="header">
-							<h:outputText value="AÃ§Ãµes" />
+							<h:outputText value="Ações" />
 						</f:facet>
 						<h:panelGrid columns="3">
 							<b:commandButton icon="glyphicon glyphicon-info-sign"
@@ -65,14 +65,14 @@
 								tooltip="Excluir" value="" size="sm"
 								onclick="$('.modalPseudoClass').modal();return false;">
 
-								<b:modal id="modalExcl" title="ConfirmaÃ§Ã£o"
+								<b:modal id="modalExcl" title="Confirmação"
 									styleClass="modalPseudoClass" close-on-escape="false"
 									backdrop="false" closable="false" size="modal-sm">
 									<p>Deseja realmente excluir este aluno?</p>
 									<f:facet name="footer">
 										<b:commandButton value="Sim" dismiss="modal"
 											action="#{alunoMB.excluir(item)}" />
-										<b:commandButton value="NÃ£o" dismiss="modal" look="primary" />
+										<b:commandButton value="Não" dismiss="modal" look="primary" />
 									</f:facet>
 								</b:modal>
 							</b:commandButton>

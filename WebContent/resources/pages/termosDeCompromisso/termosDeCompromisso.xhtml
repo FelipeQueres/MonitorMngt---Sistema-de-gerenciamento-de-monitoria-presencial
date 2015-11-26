@@ -1,4 +1,4 @@
-<?xml version='1.0' encoding='UTF-8' ?>
+<?xml version='1.0' encoding='ISO-8859-1' ?>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:b="http://bootsfaces.net/ui" xmlns:p="http://primefaces.org/ui"
@@ -38,7 +38,7 @@
 
 					<p:column>
 						<f:facet name="header">
-							<h:outputText value="MatrÃ­cula" />
+							<h:outputText value="Matrícula" />
 						</f:facet>
 						<h:outputText value="#{item.matricula}" styleClass="bodyDate" />
 					</p:column>
@@ -52,14 +52,14 @@
 
 					<p:column>
 						<f:facet name="header">
-							<h:outputText value="ResponsÃ¡vel" />
+							<h:outputText value="Responsável" />
 						</f:facet>
 						<h:outputText value="#{item.responsavel}" />
 					</p:column>
 
 					<p:column>
 						<f:facet name="header">
-							<h:outputText value="AÃ§Ãµes" styleClass="bodyDate" />
+							<h:outputText value="Ações" styleClass="bodyDate" />
 						</f:facet>
 						<h:panelGrid columns="2">
 							<b:commandButton icon="glyphicon glyphicon-print"
@@ -77,13 +77,13 @@
 								value="" size="sm"
 								onclick="$('.modalPseudoClass').modal();return false;">
 
-								<b:modal id="amodal" title="ConfirmaÃ§Ã£o"
+								<b:modal id="amodal" title="Confirmação"
 									styleClass="modalPseudoClass" close-on-escape="false"
 									backdrop="false" closable="false" size="modal-sm">
 									<p>Deseja realmente excluir este termo?</p>
 									<f:facet name="footer">
 										<b:button value="Sim" dismiss="modal" />
-										<b:button value="NÃ£o" dismiss="modal" look="primary" />
+										<b:button value="Não" dismiss="modal" look="primary" />
 									</f:facet>
 								</b:modal>
 							</b:button>

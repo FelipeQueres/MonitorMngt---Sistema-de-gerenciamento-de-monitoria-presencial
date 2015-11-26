@@ -1,4 +1,4 @@
-<?xml version='1.0' encoding='UTF-8' ?>
+<?xml version='1.0' encoding='ISO-8859-1' ?>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:b="http://bootsfaces.net/ui" xmlns:p="http://primefaces.org/ui"
@@ -8,51 +8,51 @@
 
 <ui:composition template="/resources/pages/_menu.xhtml">
 
-	<ui:define name="titulo">Cadastro de FuncionÃ¡rio</ui:define>
+	<ui:define name="titulo">Cadastro de Funcionário</ui:define>
 
 
 	<ui:define name="body">
 		<div align="center">
-			<H2>Cadastro de FuncionÃ¡rio</H2>
+			<H2>Cadastro de Funcionário</H2>
 			<HR />
 			<h:form>
 				<h:panelGrid columns="2" cellspacing="20" cellpadding="20" id="grid">
 					<h:outputLabel value="Nome" />
 					<b:inputText value="#{funcionarioMB.funcionario.nome}"
-						required="true" requiredMessage="ObrigatÃ³rio" id="nome">
+						required="true" requiredMessage="Obrigatório" id="nome">
 						<h:message style="color:red;" for="nome" />
 					</b:inputText>
 					<h:outputLabel value="CPF" />
 					<b:inputText value="#{funcionarioMB.funcionario.cpf}"
-						required="true" requiredMessage="ObrigatÃ³rio" id="cpf">
+						required="true" requiredMessage="Obrigatório" id="cpf">
 						<h:message style="color:red;" for="cpf" />
 					</b:inputText>
 					<h:outputLabel value="E-mail" />
 					<b:inputText value="#{funcionarioMB.funcionario.email}"
-						required="true" requiredMessage="ObrigatÃ³rio" id="mail">
+						required="true" requiredMessage="Obrigatório" id="mail">
 						<h:message style="color:red;" for="mail" />
 					</b:inputText>
 					<h:outputLabel value="Telefone" />
 					<b:inputText value="#{funcionarioMB.funcionario.telefone}"
-						required="true" requiredMessage="ObrigatÃ³rio" id="tel">
+						required="true" requiredMessage="Obrigatório" id="tel">
 						<h:message style="color:red;" for="tel" />
 					</b:inputText>
-					<h:outputLabel value="FunÃ§Ã£o" />
+					<h:outputLabel value="Função" />
 					<b:inputText value="#{funcionarioMB.funcionario.funcao}"
-						required="true" requiredMessage="ObrigatÃ³rio" id="func">
+						required="true" requiredMessage="Obrigatório" id="func">
 						<h:message style="color:red;" for="func" />
 					</b:inputText>
 					<h:outputLabel value="Administrador" />
 					<h:selectOneRadio value="#{funcionarioMB.funcionario.adm}"
-						required="true" requiredMessage="ObrigatÃ³rio" id="adm">
+						required="true" requiredMessage="Obrigatório" id="adm">
 						<f:selectItem itemValue="true" itemLabel="Sim" />
-						<f:selectItem itemValue="false" itemLabel="NÃ£o" />
+						<f:selectItem itemValue="false" itemLabel="Não" />
 						<h:message for="adm" style="color:red;" />
 					</h:selectOneRadio>
 					<h:outputLabel value="Senha" />
 					<p:password id="pw1" required="true" feedback="true" match="pw2"
 						promptLabel="Insira a senha" weakLabel="Fraca" goodLabel="Boa"
-						strongLabel="Forte" validatorMessage="As senhas nÃ£o sÃ£o iguais"
+						strongLabel="Forte" validatorMessage="As senhas não são iguais"
 						value="#{funcionarioMB.funcionario.senha}" />
 					<h:outputLabel value="Confirme a senha" />
 					<p:password id="pw2" required="true" feedback="true"

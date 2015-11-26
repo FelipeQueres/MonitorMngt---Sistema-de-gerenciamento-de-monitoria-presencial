@@ -1,4 +1,4 @@
-<?xml version='1.0' encoding='UTF-8' ?>
+<?xml version='1.0' encoding='ISO-8859-1' ?>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:b="http://bootsfaces.net/ui" xmlns:p="http://primefaces.org/ui"
@@ -21,12 +21,12 @@
 				<h:panelGrid columns="2" cellspacing="20" cellpadding="20">
 					<h:outputLabel value="Nome" />
 					<b:inputText value="#{professorMB.professor.nome}" required="true"
-						requiredMessage="ObrigatÃ³rio" id="prof">
+						requiredMessage="Obrigatório" id="prof">
 						<h:message for="prof" style="color:red;" />
 					</b:inputText>
-					<h:outputLabel value="MatrÃ­cula" />
+					<h:outputLabel value="Matrícula" />
 					<b:inputText value="#{professorMB.professor.matricula}"
-						required="true" requiredMessage="ObrigatÃ³rio" id="mat"
+						required="true" requiredMessage="Obrigatório" id="mat"
 						type="number">
 						<h:message for="mat" style="color:red;" />
 					</b:inputText>
@@ -41,13 +41,13 @@
 
 					<h:outputLabel value="E-mail" />
 					<b:inputText value="#{professorMB.professor.email}" required="true"
-						requiredMessage="ObrigatÃ³rio" id="mail">
+						requiredMessage="Obrigatório" id="mail">
 						<h:message for="mail" style="color:red;" />
 					</b:inputText>
 					<h:outputLabel value="Senha" />
 					<p:password id="pw1" required="true" feedback="true" match="pw2"
 						promptLabel="Insira a senha" weakLabel="Fraca" goodLabel="Boa"
-						strongLabel="Forte" validatorMessage="As senhas nÃ£o sÃ£o iguais"
+						strongLabel="Forte" validatorMessage="As senhas não são iguais"
 						value="#{funcionarioMB.funcionario.senha}" />
 					<h:outputLabel value="Confirme a senha" />
 					<p:password id="pw2" required="true" feedback="true"

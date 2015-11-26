@@ -33,6 +33,11 @@ public class AlunoMB {
 		this.alunos = alunos;
 	}
 
+	public String acaoEditar(Aluno aluno) {
+		this.aluno = aluno;
+		return "manterAluno";
+	}
+	
 	public String acaoInfo(Aluno aluno) {
 		this.aluno = aluno;
 		return "infoAluno";

@@ -4,35 +4,32 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "Aluno")
-public class Aluno {
+@Table(name = "Alunos")
+public class Aluno extends Pessoa {
 
 	@Id
 	@GeneratedValue
 	private Long id;
 
-	private String nome;
-	private String email;
+	@OneToOne
+	private Pessoa pessoa;
+
 	private int matricula;
 	private String curso;
 	private String disciplina;
 	private String rg;
 	private int cr;
 	private String campus;
-	private String senha;
 	@ManyToOne
 	private Edital edital;
 
-	public String getNome() {
-		return nome;
-	}
-
-	public void setNome(String nome) {
-		this.nome = nome;
+	public Aluno() {
+		super();
+		this.pessoa = new Pessoa();
 	}
 
 	public int getMatricula() {
@@ -67,14 +64,6 @@ public class Aluno {
 		this.rg = rg;
 	}
 
-	public String getEmail() {
-		return email;
-	}
-
-	public void setEmail(String email) {
-		this.email = email;
-	}
-
 	public int getEdital() {
 		return edital.getNumero();
 	}
@@ -99,14 +88,6 @@ public class Aluno {
 		this.campus = campus;
 	}
 
-	public String getSenha() {
-		return senha;
-	}
-
-	public void setSenha(String senha) {
-		this.senha = senha;
-	}
-
 	public Long getId() {
 		return id;
 	}
@@ -117,6 +98,14 @@ public class Aluno {
 
 	@Override
 	public String toString() {
-		return this.nome + " - " + this.matricula;
+		return this.getNome() + " - " + this.matricula;
+	}
+
+	public Pessoa getPessoa() {
+		return pessoa;
+	}
+
+	public void setPessoa(Pessoa pessoa) {
+		this.pessoa = pessoa;
 	}
 }
