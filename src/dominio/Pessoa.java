@@ -5,27 +5,20 @@ import java.security.MessageDigest;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.OneToOne;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "Pessoas")
-public class Pessoa {
+@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
+public abstract class Pessoa {
 	@Id
 	@GeneratedValue
 	private Long id;
 	private String nome;
 	private String email;
 	private String senha;
-
-	@OneToOne(mappedBy = "pessoa")
-	private Aluno aluno;
-
-	@OneToOne(mappedBy = "pessoa")
-	private Funcionario funcionario;
-
-	@OneToOne(mappedBy = "pessoa")
-	private Professor professor;
 
 	public String getNome() {
 		return nome;
@@ -73,29 +66,5 @@ public class Pessoa {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-	}
-
-	public Aluno getAluno() {
-		return aluno;
-	}
-
-	public void setAluno(Aluno aluno) {
-		this.aluno = aluno;
-	}
-
-	public Funcionario getFuncionario() {
-		return funcionario;
-	}
-
-	public void setFuncionario(Funcionario funcionario) {
-		this.funcionario = funcionario;
-	}
-
-	public Professor getProfessor() {
-		return professor;
-	}
-
-	public void setProfessor(Professor professor) {
-		this.professor = professor;
 	}
 }
