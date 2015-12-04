@@ -1,6 +1,7 @@
 package dominio;
 
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -12,7 +13,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "Edital")
+@Table(name = "Editais")
 public class Edital {
 
 	@Id
@@ -24,7 +25,7 @@ public class Edital {
 	private String curso;
 
 	@OneToMany(mappedBy = "edital", cascade=CascadeType.ALL)
-	private List<Disciplina> disciplinas;// TODO anotação
+	private List<Disciplina> disciplinas = new ArrayList<Disciplina>();// TODO anotação
 
 	private String periodoLetivo;
 	private Date inicioInscricao;
@@ -33,7 +34,6 @@ public class Edital {
 	private Date fimAtividade;
 	private String conteudo;
 	private String bibliografia;
-	private int semestre;
 
 	// public Edital() {
 	// this.disciplinas = new ArrayList<Disciplina>();
@@ -75,8 +75,12 @@ public class Edital {
 		return disciplinas;
 	}
 
-	public void setDisciplinas(String nome, int numVagas) {
+	public void addDisciplina(String nome, int numVagas) {
 		this.disciplinas.add(new Disciplina(nome, numVagas));
+	}
+
+	public void addDisciplina(Disciplina disciplina) {
+		this.disciplinas.add(disciplina);
 	}
 
 	public String getPeriodoLetivo() {
@@ -141,7 +145,7 @@ public class Edital {
 
 		SimpleDateFormat sdt = new SimpleDateFormat("dd/MM/yyyy");
 
-		return sdt.format(this.inicioInscricao).toString() + " atÃ© "
+		return sdt.format(this.inicioInscricao).toString() + " até "
 				+ sdt.format(this.fimInscricao).toString();
 	}
 
@@ -151,16 +155,8 @@ public class Edital {
 
 		SimpleDateFormat sdt = new SimpleDateFormat("dd/MM/yyyy");
 
-		return sdt.format(this.inicioAtividade) + " atÃ© "
+		return sdt.format(this.inicioAtividade) + " até "
 				+ sdt.format(this.fimAtividade);
-	}
-
-	public int getSemestre() {
-		return semestre;
-	}
-
-	public void setSemestre(int semestre) {
-		this.semestre = semestre;
 	}
 
 	public void setDisciplinas(List<Disciplina> disciplinas) {

@@ -10,7 +10,6 @@
 
 	<ui:define name="titulo">Dados de Professor</ui:define>
 
-
 	<ui:define name="body">
 		<div align="center">
 
@@ -44,19 +43,23 @@
 						requiredMessage="Obrigatório" id="mail">
 						<h:message for="mail" style="color:red;" />
 					</b:inputText>
+
 					<h:outputLabel value="Senha" />
 					<p:password id="pw1" required="true" feedback="true" match="pw2"
 						promptLabel="Insira a senha" weakLabel="Fraca" goodLabel="Boa"
 						strongLabel="Forte" validatorMessage="As senhas não são iguais"
-						value="#{funcionarioMB.funcionario.senha}" />
+						value="#{professorMB.professor.senha}" />
 					<h:outputLabel value="Confirme a senha" />
+
 					<p:password id="pw2" required="true" feedback="true"
 						promptLabel="Insira a senha" weakLabel="Fraca" goodLabel="Boa"
 						strongLabel="Forte" />
 				</h:panelGrid>
 				<h:message for="pw1" style="color:red;" />
 				<br />
-				<b:commandButton value="Cadastrar" update="grid" action="#{professorMB.salvar}"/>
+
+				<b:commandButton value="Cadastrar" update="grid"
+					action="#{professorMB.salvar}" />
 				<b:button value="Cancelar" outcome="professores" />
 			</h:form>
 		</div>

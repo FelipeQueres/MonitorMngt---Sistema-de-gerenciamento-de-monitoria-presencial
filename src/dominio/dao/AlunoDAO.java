@@ -12,7 +12,7 @@ public class AlunoDAO extends JpaDAO<Aluno> {
 	public AlunoDAO() {
 		super();
 	}
-	
+
 	public AlunoDAO(EntityManager manager) {
 		super(manager);
 	}
@@ -21,7 +21,7 @@ public class AlunoDAO extends JpaDAO<Aluno> {
 		Aluno resultado;
 
 		Query query = this.getEntityManager().createQuery(
-				"FROM Aluno a WHERE a.email = :email");
+				"FROM Alunos a WHERE a.email = :email");
 
 		query.setParameter("email", email);
 
@@ -32,5 +32,4 @@ public class AlunoDAO extends JpaDAO<Aluno> {
 		}
 		return resultado;
 	}
-
 }

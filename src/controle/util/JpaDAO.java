@@ -97,7 +97,6 @@ public abstract class JpaDAO<T> extends GenericDAO<T> {
 	public void gravarTransacao() {
 		this.getEntityManager().flush();
 		this.getEntityManager().getTransaction().commit();
-
 	}
 
 	@Override

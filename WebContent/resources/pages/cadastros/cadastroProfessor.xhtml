@@ -26,15 +26,15 @@
 						type="number">
 						<h:message for="mat" style="color:red;" />
 					</b:inputText>
+					
 					<h:outputLabel value="Escola" />
-<!-- 
 					<b:selectMultiMenu nonSelectedText="Selecione uma escola"
 						allSelectedText="Todas as escolas" nSelectedText="Selecionadas"
 						numberDisplayed="1">
 						<f:selectItems value="#{check.escolas}" var="item"
 							itemLabel="#{item}" itemValue="#{item}" />
 					</b:selectMultiMenu>
- -->
+ 
 					<h:outputLabel value="E-mail" />
 					<b:inputText value="#{professorMB.professor.email}" required="true"
 						requiredMessage="Obrigatório" id="mail">
@@ -44,7 +44,7 @@
 					<p:password id="pw1" required="true" feedback="true" match="pw2"
 						promptLabel="Insira a senha" weakLabel="Fraca" goodLabel="Boa"
 						strongLabel="Forte" validatorMessage="As senhas não são iguais"
-						value="#{funcionarioMB.funcionario.senha}" />
+						value="#{professorMB.professor.senha}" />
 					<h:outputLabel value="Confirme a senha" />
 					<p:password id="pw2" required="true" feedback="true"
 						promptLabel="Insira a senha" weakLabel="Fraca" goodLabel="Boa"

@@ -43,7 +43,6 @@
 		};
 	</script>
 
-
 	<ui:define name="body">
 		<div align="center">
 			<h2>Cadastrar Edital</h2>
@@ -56,22 +55,22 @@
 
 					</b:inputText>
 					<h:outputLabel value="Escola" />
-<!-- 
-					<b:selectOneMenu>
+
+					<b:selectOneMenu value="#{editalMB.edital.escola}">
 						<f:selectItem itemLabel="Escolha uma escola" itemValue="" />
 						<f:selectItems value="#{check.escolas}" var="item"
 							itemLabel="#{item}" itemValue="#{item}" />
 					</b:selectOneMenu>
- -->
+
 					<h:outputLabel value="Curso" />
 					<b:inputText value="#{editalMB.edital.curso}" />
 
 					<h:outputLabel value="Período Letivo" />
-					<b:selectOneMenu required="true" value="#{editalMB.edital.semestre}">
-						<f:selectItem itemLabel="Escolha um período" value=""
-							noSelectionOption="true" />
-						<f:selectItem itemLabel="1º semestre" value="1" />
-						<f:selectItem itemLabel="2º semestre" value="2" />
+					<b:selectOneMenu required="true"
+						value="#{editalMB.edital.periodoLetivo}">
+						<f:selectItem itemLabel="Escolha um período" value="" />
+						<f:selectItem itemLabel="1º semestre" itemValue="1º semestre" />
+						<f:selectItem itemLabel="2º semestre" itemValue="2º semestre" />
 					</b:selectOneMenu>
 
 					<h:outputLabel value="Período de Inscrição" />

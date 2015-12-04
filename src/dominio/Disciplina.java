@@ -4,7 +4,6 @@ import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
@@ -53,14 +52,6 @@ public class Disciplina {
 
 	public void setNome(String nome) {
 		this.nome = nome;
-	}
-
-	public int getNumVagas() {
-		return quantidadeVagas;
-	}
-
-	public void setNumVagas(int numVagas) {
-		this.quantidadeVagas = numVagas;
 	}
 
 	public Edital getEdital() {

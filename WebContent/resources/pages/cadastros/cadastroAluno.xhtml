@@ -11,7 +11,6 @@
 
 	<ui:define name="titulo">Cadastro de Aluno</ui:define>
 
-
 	<ui:define name="body">
 		<div align="center">
 
@@ -34,7 +33,7 @@
 					</b:inputText>
 
 					<h:outputLabel value="Edital" for="edital" />
-					<b:selectOneMenu required="true" id="edital">
+					<b:selectOneMenu required="true" id="edital" value="#{alunoMB.aluno.edital}">
 						<f:selectItem itemLabel="Selecione um edital" value=""
 							itemValue="1" />
 						<f:selectItems value="#{editalMB.editais}"
@@ -63,11 +62,13 @@
 						value="#{alunoMB.aluno.disciplina}" requiredMessage="Obrigatório">
 						<h:message for="disciplina" style="color:red" />
 					</b:inputText>
+					
 					<h:outputLabel value="RG" />
 					<b:inputText id="rg" required="true" requiredMessage="Obrigatório"
 						value="#{alunoMB.aluno.rg}">
 						<h:message for="rg" style="color:red" />
 					</b:inputText>
+					
 					<h:outputLabel value="E-mail" />
 					<b:inputText id="mail" required="true"
 						value="#{alunoMB.aluno.email}" requiredMessage="Obrigatório">

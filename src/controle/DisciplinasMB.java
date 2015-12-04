@@ -1,23 +1,17 @@
 package controle;
 
-import java.util.ArrayList;
 import java.util.List;
 
-import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
 
 import dominio.Disciplina;
+import dominio.dao.DisciplinaDAO;
 
 @ManagedBean(name = "disciplinaMB")
 public class DisciplinasMB {
-	private List<Disciplina> disciplinas;
-
-	@PostConstruct
-	public void iniciar() {
-		this.disciplinas = new ArrayList<Disciplina>();
-		Disciplina disciplina = new Disciplina("FDP II", 23);
-		this.disciplinas.add(disciplina);
-	}
+	private List<Disciplina> disciplinas = null;
+	private Disciplina disciplina = new Disciplina();
+	private DisciplinaDAO dao = new DisciplinaDAO();
 
 	public List<Disciplina> getDisciplinas() {
 		return this.disciplinas;
@@ -27,4 +21,23 @@ public class DisciplinasMB {
 		this.disciplinas = disciplinas;
 	}
 
+	public Disciplina getDisciplina() {
+		return disciplina;
+	}
+
+	public void setDisciplina(Disciplina disciplina) {
+		this.disciplina = disciplina;
+	}
+
+	public String salvar() {
+		if ((this.getDisciplina().getId() != null)
+				&& (this.getDisciplina().getId().longValue() == 0))
+			this.getDisciplina().setId(null);
+
+		this.dao.salvar(this.getDisciplina());
+		this.setDisciplina(new Disciplina());
+		this.disciplinas = null;
+
+		return "adicionarDisciplina";
+	}
 }

@@ -14,37 +14,50 @@
 		<div align="center">
 			<h2>Adicionar Disciplinas</h2>
 			<hr />
-			<h:panelGrid columns="2">
-				<h:outputLabel value="Número" />
-				<b:inputText readonly="true" value="#{editalMB.edital.numero}" />
-				<h:outputLabel value="Escola" />
-				<b:inputText readonly="true" value="#{editalMB.edital.escola}" />
-				<h:outputLabel value="Curso" />
-				<b:inputText readonly="true" value="#{editalMB.edital.curso}" />
-				<h:outputLabel value="Período Letivo" />
-				<b:inputText readonly="true"
-					value="#{editalMB.edital.periodoLetivo}" />
+			<h:form>
+				<h:inputHidden value="#{editalMB.edital.id}" />
+				<h:panelGrid columns="2">
+					<h:outputLabel value="Número" />
+					<b:inputText readonly="true" value="#{editalMB.edital.numero}" />
 
-				<h:outputLabel value="Período de Inscrição" />
-				<b:inputText value="#{editalMB.edital.periodoInscricao}"
-					readonly="true" />
-				<h:outputLabel value="Período de Atividade" />
-				<b:inputText value="#{editalMB.edital.periodoAtividade}"
-					readonly="true" />
-				<h:outputLabel value="Conteúdo Programático " />
-				<h:inputTextarea cols="42" value="#{editalMB.edital.conteudo}"
-					readonly="true" />
-				<h:outputLabel value="Bibliografia" />
-				<h:inputTextarea cols="42" value="#{editalMB.edital.bibliografia}"
-					readonly="true" />
-				<h:outputLabel value="Nova disciplina" />
-				<h:panelGrid columns="2" width="316">
-					<b:inputText placeholder="Nome" size="24" />
-					<b:inputText placeholder="Quantidade" type="number"/>
-					<!-- <p:spinner min="0" /> -->
+					<h:outputLabel value="Escola" />
+					<b:inputText readonly="true" value="#{editalMB.edital.escola}" />
+
+					<h:outputLabel value="Curso" />
+					<b:inputText readonly="true" value="#{editalMB.edital.curso}" />
+
+					<h:outputLabel value="Período Letivo" />
+					<b:inputText readonly="true"
+						value="#{editalMB.edital.periodoLetivo}" />
+
+					<h:outputLabel value="Período de Inscrição" />
+					<b:inputText value="#{editalMB.edital.periodoInscricao}"
+						readonly="true" />
+
+					<h:outputLabel value="Período de Atividade" />
+					<b:inputText value="#{editalMB.edital.periodoAtividade}"
+						readonly="true" />
+
+					<h:outputLabel value="Conteúdo Programático " />
+					<h:inputTextarea cols="42" value="#{editalMB.edital.conteudo}"
+						readonly="true" />
+
+					<h:outputLabel value="Bibliografia" />
+					<h:inputTextarea cols="42" value="#{editalMB.edital.bibliografia}"
+						readonly="true" />
+
+					<h:outputLabel value="Nova disciplina" />
+					<h:panelGrid columns="2" width="316">
+						<b:inputText placeholder="Nome" size="24"
+							value="#{disciplinaMB.disciplina.nome}" />
+						<b:inputText placeholder="Quantidade" type="number"
+							value="#{disciplinaMB.disciplina.quantidadeVagas}" />
+					</h:panelGrid>
+
+					<b:commandButton value="Adicionar" action="#{disciplinaMB.salvar}" />
 				</h:panelGrid>
-			</h:panelGrid>
-			<b:button value="Adicionar" />
+			</h:form>
+
 			<h:panelGrid columns="2">
 				<h:outputLabel value="Disciplinas" />
 				<h:dataTable value="#{editalMB.edital.disciplinas}" var="item"
@@ -59,7 +72,7 @@
 						<f:facet name="header">
 							<h:outputText value="VAGAS" />
 						</f:facet>
-						<h:outputText value="#{item.numVagas}" />
+						<h:outputText value="#{item.quantidadeVagas}" />
 					</p:column>
 				</h:dataTable>
 			</h:panelGrid>
